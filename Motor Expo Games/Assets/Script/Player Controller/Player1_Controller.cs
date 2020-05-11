@@ -8,12 +8,13 @@ public class Player1_Controller : MonoBehaviour
     protected Joystick joystick;
     protected JoyButton joybutton;
 
+
     public float moveSpeed;
 
 
     Vector2 movement;
 
-    private void Start()
+    void Start()
     {
         joystick = FindObjectOfType<Joystick>();
         joybutton = FindObjectOfType<JoyButton>();
