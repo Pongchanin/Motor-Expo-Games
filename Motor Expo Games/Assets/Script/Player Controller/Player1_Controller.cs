@@ -21,6 +21,8 @@ public class Player1_Controller : MonoBehaviour
     private int numOfRescue;
     [SerializeField]
     private bool isStun;
+    [SerializeField]
+    private bool atBase;
 
     Vector2 movement;
 
@@ -75,6 +77,44 @@ public class Player1_Controller : MonoBehaviour
     public void setStun(bool val)
     {
         isStun = val;
+    }
+
+    public bool getIsBase()
+    {
+        return atBase;
+    }
+    public void setAtBase(bool val)
+    {
+        atBase = val;
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.tag == "RescuePlace")
+        {
+            print("RescuePlace collide");
+            setInRescue(true);
+        }
+
+        if(collision.tag == "PlayerBase")
+        {
+            print("At Player Base");
+            setAtBase(true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag == "RescuePlace")
+        {
+            print("Exit from RescuePlace");
+            setInRescue(false);
+        }
+        
+        if (collision.tag == "PlayerBase")
+        {
+            print("Exit Player Base");
+            setAtBase(false);
+        }
+        
     }
 }
 
