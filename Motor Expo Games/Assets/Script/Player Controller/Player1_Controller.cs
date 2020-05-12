@@ -8,9 +8,19 @@ public class Player1_Controller : MonoBehaviour
     protected Joystick joystick;
     protected JoyButton joybutton;
 
-
+    [Header("Player Parameter")] 
     public float moveSpeed;
+    public float stunDuration;
 
+    [Header("Condition Checker")]
+    [SerializeField]
+    private bool getAttack;
+    [SerializeField]
+    private bool inRescue;
+    [SerializeField]
+    private int numOfRescue;
+    [SerializeField]
+    private bool isStun;
 
     Vector2 movement;
 
@@ -39,6 +49,32 @@ public class Player1_Controller : MonoBehaviour
         {
            transform.Translate(new Vector3(0f, Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime, 0f));
         }
+    }
+
+    public bool checkGetAttack()
+    {
+        return getAttack;
+    }
+    public void setGetAttack(bool val)
+    {
+        getAttack = val;
+    }
+    public bool checkInRescue()
+    {
+        return inRescue;
+    }
+    public void setInRescue(bool val)
+    {
+        inRescue = val;
+    }
+
+    public bool getIsStun()
+    {
+        return isStun;
+    }
+    public void setStun(bool val)
+    {
+        isStun = val;
     }
 }
 
