@@ -180,7 +180,7 @@ public class charcustomizablecon : MonoBehaviour
     }
     public void button1up()
     {
-        if (selected1 > array1.Length)
+        if (selected1 >= array1.Length -1)
         {
             selected1 = 0;
         }
@@ -191,7 +191,7 @@ public class charcustomizablecon : MonoBehaviour
     }
     public void button2up()
     {
-        if (selected2 > array2.Length)
+        if (selected2 >= array2.Length -1)
         {
             selected2 = 0;
         }
@@ -202,7 +202,7 @@ public class charcustomizablecon : MonoBehaviour
     }
     public void button3up()
     {
-        if (selected3 > array3.Length)
+        if (selected3 >= array3.Length -1)
         {
             selected3 = 0;
         }
@@ -213,7 +213,7 @@ public class charcustomizablecon : MonoBehaviour
     }
     public void button4up()
     {
-        if (selected4 > array4.Length)
+        if (selected4 >= array4.Length -1)
         {
             selected4 = 0;
         }
@@ -224,9 +224,9 @@ public class charcustomizablecon : MonoBehaviour
     }
     public void button1down()
     {
-        if (selected1 < 0)
+        if (selected1 <= 0)
         {
-            selected1 = array1.Length;
+            selected1 = array1.Length -1;
         }
         else
         {
@@ -235,9 +235,9 @@ public class charcustomizablecon : MonoBehaviour
     }
     public void button2down()
     {
-        if (selected2 < 0)
+        if (selected2 <= 0)
         {
-            selected2 = array2.Length;
+            selected2 = array2.Length -1;
         }
         else
         {
@@ -247,9 +247,9 @@ public class charcustomizablecon : MonoBehaviour
     }
     public void button3down()
     {
-        if (selected3 < 0)
+        if (selected3 <= 0)
         {
-            selected3 = array3.Length;
+            selected3 = array3.Length -1;
         }
         else
         {
@@ -258,9 +258,9 @@ public class charcustomizablecon : MonoBehaviour
     }
     public void button4down()
     {
-        if (selected4 < 0)
+        if (selected4 <= 0)
         {
-            selected4 = array4.Length;
+            selected4 = array4.Length -1;
         }
         else
         {
