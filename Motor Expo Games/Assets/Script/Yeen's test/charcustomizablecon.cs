@@ -11,11 +11,6 @@ public class charcustomizablecon : MonoBehaviour
     public int array2size;
     public int array3size;
     public int array4size;
-    [Header("Image array (Temporary)")]
-    public GameObject shippart1;
-    public GameObject shippart2;
-    public GameObject shippart3;
-    public GameObject shippart4;
     //VARIBLE FOR ARRAY CYCLING----
     int selected1 = 0;
     int selected2 = 0;
@@ -93,10 +88,6 @@ public class charcustomizablecon : MonoBehaviour
         speed.text = "Move speed: " + (array1[selected1].movementspeed + array2[selected2].movementspeed + array3[selected3].movementspeed + array4[selected4].movementspeed);
         weight.text = "weight: " + (array1[selected1].weight + array2[selected2].weight + array3[selected3].weight + array4[selected4].weight);
         power.text = "power: " + (array1[selected1].power + array2[selected2].power + array3[selected3].power + array4[selected4].power);
-        shippart1.GetComponent<Image>().color = new Color32((byte)(50* selected1), (byte)(34* selected1), (byte)(42*selected1), 255);
-        shippart2.GetComponent<Image>().color = new Color32((byte)(50 * selected2), (byte)(34 * selected2), (byte)(42 * selected2), 255);
-        shippart3.GetComponent<Image>().color = new Color32((byte)(50 * selected3), (byte)(34 * selected3), (byte)(42 * selected3), 255);
-        shippart4.GetComponent<Image>().color = new Color32((byte)(50 * selected4), (byte)(34 * selected4), (byte)(42 * selected4), 255);
     }
     void partvaluesetting()
     {

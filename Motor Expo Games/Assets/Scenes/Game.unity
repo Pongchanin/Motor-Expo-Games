@@ -253,7 +253,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4c4db714b73b43949b84b2a99968ba27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -295,8 +295,6 @@ MonoBehaviour:
   moveSpeed: 20
   isPlayerAttacked: 0
   playerCollideRescueBase: 0
-  followPlayer: 0
-  stopPos: 5
 --- !u!58 &455852535
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -312,7 +310,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 5.64
 --- !u!50 &455852536
 Rigidbody2D:
   serializedVersion: 4
@@ -321,7 +319,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455852531}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -333,7 +331,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!1 &830569418
 GameObject:
   m_ObjectHideFlags: 0
