@@ -14,6 +14,9 @@ public class Refugee : MonoBehaviour
     bool isPlayerAttacked;
     [SerializeField]
     bool playerCollideRescueBase;
+    [SerializeField]
+    bool moveWithPlayer;
+    public float nearRadius;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +28,11 @@ public class Refugee : MonoBehaviour
     {
         checkPlayerAttacked();
         checkPlayerCollideRescueBase();
-        moveToPlayer();
+        if (moveWithPlayer)
+        {
+            moveToPlayer();
+        }
+        transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 
     public void checkPlayerAttacked()
@@ -38,34 +45,29 @@ public class Refugee : MonoBehaviour
         playerCollideRescueBase = player.checkInRescue();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-       
+        if (collision.tag == "Player")
+        {
+            moveWithPlayer = true;
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            if (player.checkInRescue())
-            {
-                this.gameObject.transform.LookAt(collision.transform.position);
-                if(Vector2.Distance(transform
-                    .position,collision.transform.position)> 1f)
-                {
-                    transform.Translate(new Vector2(moveSpeed * Time.deltaTime,0f));
-                }
-            }
+            moveWithPlayer = true;
         }
     }
     public void moveToPlayer()
     {
-        if (player.checkInRescue())
-        {
             gameObject.transform.LookAt(player.transform.position);
             if(Vector2.Distance(transform.position,player.transform.position) > 1f)
             {
-                transform.Translate(new Vector2(moveSpeed * Time.deltaTime, 0f));
+            // transform.Translate(new Vector2(moveSpeed * Time.deltaTime, 0f));
+            transform.position = Vector3.Lerp(transform.position, player.transform.position, 2f);
+            transform.rotation = new Quaternion(0, 0, 0, 0);
             }
-        }
+       
     }
 }
