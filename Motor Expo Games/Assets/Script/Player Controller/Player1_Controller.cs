@@ -28,6 +28,7 @@ public class Player1_Controller : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 60;
         joystick = FindObjectOfType<Joystick>();
         joybutton = FindObjectOfType<JoyButton>();
     }

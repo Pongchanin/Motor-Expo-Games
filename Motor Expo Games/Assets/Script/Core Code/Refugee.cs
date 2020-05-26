@@ -32,9 +32,12 @@ public class Refugee : MonoBehaviour
         {
             moveToPlayer();
         }
+        
+    }
+    private void LateUpdate()
+    {
         transform.rotation = new Quaternion(0, 0, 0, 0);
     }
-
     public void checkPlayerAttacked()
     {
         isPlayerAttacked = player.checkGetAttack();
@@ -65,7 +68,7 @@ public class Refugee : MonoBehaviour
             if(Vector2.Distance(transform.position,player.transform.position) > 1f)
             {
             // transform.Translate(new Vector2(moveSpeed * Time.deltaTime, 0f));
-            transform.position = Vector3.Lerp(transform.position, player.transform.position, 2f);
+            transform.position = Vector3.Lerp(transform.position, player.transform.position, .1f);
             transform.rotation = new Quaternion(0, 0, 0, 0);
             }
        
