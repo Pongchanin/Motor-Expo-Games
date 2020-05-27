@@ -6,19 +6,19 @@ public static class boatstatus
 {
     private static Part1 turn1 = new Part1();
     private static Part1 turn2 = new Part1();
-    private static Part1 turn3 = new Part1();
+    //private static Part1 turn3 = new Part1();
 
     private static Part2 body1 = new Part2();
     private static Part2 body2 = new Part2();
-    private static Part2 body3 = new Part2();
+    //private static Part2 body3 = new Part2();
 
     private static Part3 ancor1 = new Part3();
     private static Part3 ancor2 = new Part3();
-    private static Part3 ancor3 = new Part3();
+    //private static Part3 ancor3 = new Part3();
 
     private static Part4 Cloth1 = new Part4();
     private static Part4 Cloth2 = new Part4();
-    private static Part4 Cloth3 = new Part4();
+    //private static Part4 Cloth3 = new Part4();
 
     public static Part1 Turn1
     {
@@ -44,7 +44,7 @@ public static class boatstatus
         }
     }
 
-    public static Part1 Turn3
+    /*public static Part1 Turn3
     {
         get
         {
@@ -54,7 +54,7 @@ public static class boatstatus
         {
             turn3 = value;
         }
-    }
+    }*/
 
     public static Part2 Body1
     {
@@ -80,7 +80,7 @@ public static class boatstatus
         }
     }
 
-    public static Part2 Body3
+    /*public static Part2 Body3
     {
         get
         {
@@ -90,7 +90,7 @@ public static class boatstatus
         {
             body3 = value;
         }
-    }
+    }*/
 
     public static Part3 Ancor1
     {
@@ -116,7 +116,7 @@ public static class boatstatus
         }
     }
 
-    public static Part3 Ancor3
+    /*public static Part3 Ancor3
     {
         get
         {
@@ -126,7 +126,7 @@ public static class boatstatus
         {
             ancor3 = value;
         }
-    }
+    }*/
 
     public static Part4 cloth1
     {
@@ -152,7 +152,7 @@ public static class boatstatus
         }
     }
 
-    public static Part4 cloth3
+    /*public static Part4 cloth3
     {
         get
         {
@@ -162,5 +162,5 @@ public static class boatstatus
         {
             Cloth3 = value;
         }
-    }
+    }*/
 }
