@@ -54,6 +54,12 @@ public class Refugee : MonoBehaviour
         {
             moveWithPlayer = true;
         }
+        if(collision.tag == "PlayerBase")
+        {
+            GameManager gm = GameObject.FindObjectOfType<GameManager>();
+            gm.point += 1;
+            Destroy(this.gameObject);
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
