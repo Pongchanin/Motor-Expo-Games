@@ -78,6 +78,7 @@ public class charcustomizablecon : MonoBehaviour
     public Animator mortor;
     public Animator shape;
     public Animator weel;
+    public Animator life;
 
 
     // Start is called before the first frame update
@@ -95,6 +96,7 @@ public class charcustomizablecon : MonoBehaviour
         mortor.SetInteger("selected1", selected1);
         shape.SetInteger("selected2", selected2);
         weel.SetInteger("selected3", selected3);
+        life.SetInteger("selected4",selected4);
     }
     void partvaluesetting()
     {
