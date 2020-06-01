@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
+    public Animator transition;
+    public float transitionTime = 1f;
 	public void StartButton()
 	{
-		Application.LoadLevel("ChooseCharacterScene");
+        StartCoroutine(LOADLEVEL(6));
 	}
 	public void OptionButton()
 	{
@@ -18,4 +20,13 @@ public class MenuScript : MonoBehaviour
 	{
 		Application.Quit();
 	}
+
+    IEnumerator LOADLEVEL(int buildindex)
+    {
+        transition.SetTrigger("start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(buildindex);
+    }
 }

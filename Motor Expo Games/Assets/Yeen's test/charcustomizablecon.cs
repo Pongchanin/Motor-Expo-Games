@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class charcustomizablecon : MonoBehaviour
 {
@@ -16,10 +18,10 @@ public class charcustomizablecon : MonoBehaviour
     int selected2 = 0;
     int selected3 = 0;
     int selected4 = 0;
-    //TEXT-------------------------
-    public Text speed;
-    public Text power;
-    public Text weight;
+    //BAR--------------------------
+    public Animator speed;
+    public Animator power;
+    public Animator weight;
     //Arrays-----------------------
     Part1[] array1;
     Part2[] array2;
@@ -80,8 +82,8 @@ public class charcustomizablecon : MonoBehaviour
     public Animator weel;
     public Animator life;
 
+    //public boat thisboat;
 
-    // Start is called before the first frame update
     void Start()
     {
         partvaluesetting();
@@ -90,9 +92,9 @@ public class charcustomizablecon : MonoBehaviour
 
     void Update()
     {
-        speed.text = "Move speed: " + (array1[selected1].movementspeed + array2[selected2].movementspeed + array3[selected3].movementspeed + array4[selected4].movementspeed);
-        weight.text = "weight: " + (array1[selected1].weight + array2[selected2].weight + array3[selected3].weight + array4[selected4].weight);
-        power.text = "power: " + (array1[selected1].power + array2[selected2].power + array3[selected3].power + array4[selected4].power);
+        speed.SetInteger("value", (array1[selected1].movementspeed + array2[selected2].movementspeed + array3[selected3].movementspeed + array4[selected4].movementspeed));
+        weight.SetInteger("value", (array1[selected1].weight + array2[selected2].weight + array3[selected3].weight + array4[selected4].weight));
+        power.SetInteger("value", (array1[selected1].power + array2[selected2].power + array3[selected3].power + array4[selected4].power));
         mortor.SetInteger("selected1", selected1);
         shape.SetInteger("selected2", selected2);
         weel.SetInteger("selected3", selected3);
@@ -250,8 +252,7 @@ public class charcustomizablecon : MonoBehaviour
         }
         else
         {
-            selected2
- -= 1;
+            selected2 -= 1;
         }
     }
     public void button3down()
@@ -275,5 +276,21 @@ public class charcustomizablecon : MonoBehaviour
         {
             selected4 -= 1;
         }
+    }
+    
+    public void finish()
+    {
+        boatstatus.Player1.part1 = array1[selected1];
+        boatstatus.Player1.part2 = array2[selected2];
+        boatstatus.Player1.part3 = array3[selected3];
+        boatstatus.Player1.part4 = array4[selected4];
+        StartCoroutine(Finish(2));
+    }
+
+    IEnumerator Finish(int buildindex)
+    {
+        GetComponent<MenuScript>().transition.SetTrigger("start");
+        yield return new WaitForSeconds(GetComponent<MenuScript>().transitionTime);
+        SceneManager.LoadScene(buildindex);
     }
 }
