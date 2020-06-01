@@ -74,7 +74,7 @@ public class Refugee : MonoBehaviour
             if(Vector2.Distance(transform.position,player.transform.position) > 1f)
             {
             // transform.Translate(new Vector2(moveSpeed * Time.deltaTime, 0f));
-            transform.position = Vector3.Lerp(transform.position, player.transform.position, .1f);
+            transform.position = Vector3.Lerp(transform.position, player.transform.position, .15f);
             transform.rotation = new Quaternion(0, 0, 0, 0);
             }
        
