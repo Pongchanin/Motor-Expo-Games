@@ -15,10 +15,18 @@ public class GameManager : MonoBehaviour
     public Text TimeUI;
 
     public Text RescueUI;
+
+    [Header("Game Parameter")]
+    public int limitRefugee;
+    [SerializeField]
+    int curRefugee;
+    public GameObject refugeePrefab;
+    Transform rescueBasePos;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindObjectOfType<Player1_Controller>();
+        rescueBasePos = GameObject.FindGameObjectWithTag("RescuePlace").transform;
     }
 
     // Update is called once per frame
@@ -35,6 +43,8 @@ public class GameManager : MonoBehaviour
         OnRescue = player.NumOfRescue;
         RescueUI.text = OnRescue.ToString();
 
+        getNumOfRefugee();
+        SpawnRefugee();
     }
 
     void CountDown()
@@ -47,6 +57,19 @@ public class GameManager : MonoBehaviour
         else
         {
             //Do something, when time ran out
+        }
+    }
+    void getNumOfRefugee()
+    {
+        Refugee[] refugee;
+        refugee = GameObject.FindObjectsOfType<Refugee>();
+        curRefugee = refugee.Length; 
+    }
+    void SpawnRefugee()
+    {
+        if(curRefugee < limitRefugee)
+        {
+            Instantiate(refugeePrefab, rescueBasePos);
         }
     }
 }

@@ -100,12 +100,20 @@ public class Player1_Controller : MonoBehaviour
             print("At Player Base");
             setAtBase(true);
         }
+        
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         Collider2D[] refugees = Physics2D.OverlapCircleAll(transform.position, 5f);
         for (int i = 0; i < refugees.Length; i++)
         {
             if (refugees[i].tag == "RescuePeople")
             {
-                NumOfRescue += 1;
+                Refugee temp = refugees[i].GetComponent<Refugee>();
+                if (temp.moveWithPlayer)
+                {
+                    NumOfRescue += 1;
+                }
             }
         }
     }
@@ -122,7 +130,18 @@ public class Player1_Controller : MonoBehaviour
             print("Exit Player Base");
             setAtBase(false);
         }
-
+        Collider2D[] refugees = Physics2D.OverlapCircleAll(transform.position, 5f);
+        for (int i = 0; i < refugees.Length; i++)
+        {
+            if (refugees[i].tag == "RescuePeople")
+            {
+                Refugee temp = refugees[i].GetComponent<Refugee>();
+                if (temp.moveWithPlayer)
+                {
+                    NumOfRescue -= 1;
+                }
+            }
+        }
     }
 }
 

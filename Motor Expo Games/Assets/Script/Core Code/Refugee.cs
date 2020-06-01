@@ -14,8 +14,7 @@ public class Refugee : MonoBehaviour
     bool isPlayerAttacked;
     [SerializeField]
     bool playerCollideRescueBase;
-    [SerializeField]
-    bool moveWithPlayer;
+    public bool moveWithPlayer;
     public float nearRadius;
     // Start is called before the first frame update
     void Start()
