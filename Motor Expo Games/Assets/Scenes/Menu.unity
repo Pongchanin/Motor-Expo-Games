@@ -1049,7 +1049,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit
+  m_Text: Credits
 --- !u!222 &1787591956
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1243,6 +1243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Leveltransitor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332570903386854951, guid: b8fa81df58950c248bbd09a49c9c03db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8fa81df58950c248bbd09a49c9c03db, type: 3}
