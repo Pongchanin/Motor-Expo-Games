@@ -114,8 +114,21 @@ public class boat
 
     boat(Part1 part1_, Part2 part2_, Part3 part3_, Part4 part4_)
     {
+        part1 = part1_;
+        part2 = part2_;
+        part3 = part3_;
+        part4 = part4_;
+
         power = part1_.power + part2_.power + part3_.power + part4_.power;
         weight = part1_.weight + part2_.weight + part3_.weight + part4_.weight;
         movementspeed = part1_.movementspeed + part2_.movementspeed + part3_.movementspeed + part4_.movementspeed;
+    }
+
+    public boat()
+    {
+        part1 = new Part1();
+        part2 = new Part2();
+        part3 = new Part3();
+        part4 = new Part4();
     }
 }
