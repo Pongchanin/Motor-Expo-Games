@@ -18,11 +18,10 @@ public class Player1_Controller : MonoBehaviour
     [SerializeField]
     private bool inRescue;
     [SerializeField]
-    private int numOfRescue;
-    [SerializeField]
     private bool isStun;
     [SerializeField]
     private bool atBase;
+    public int NumOfRescue;
 
     Vector2 movement;
 
@@ -101,6 +100,14 @@ public class Player1_Controller : MonoBehaviour
             print("At Player Base");
             setAtBase(true);
         }
+        Collider2D[] refugees = Physics2D.OverlapCircleAll(transform.position, 5f);
+        for (int i = 0; i < refugees.Length; i++)
+        {
+            if (refugees[i].tag == "RescuePeople")
+            {
+                NumOfRescue += 1;
+            }
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -115,7 +122,7 @@ public class Player1_Controller : MonoBehaviour
             print("Exit Player Base");
             setAtBase(false);
         }
-        
+
     }
 }
 

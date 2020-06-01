@@ -53,6 +53,7 @@ public class Refugee : MonoBehaviour
         if (collision.tag == "Player")
         {
             moveWithPlayer = true;
+            player.NumOfRescue += 1;
         }
         if(collision.tag == "PlayerBase")
         {
@@ -66,6 +67,14 @@ public class Refugee : MonoBehaviour
         if (collision.tag == "Player")
         {
             moveWithPlayer = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            moveWithPlayer = false;
+            player.NumOfRescue -= 1;
         }
     }
     public void moveToPlayer()
