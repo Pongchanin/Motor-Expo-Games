@@ -22,11 +22,14 @@ public class GameManager : MonoBehaviour
     int curRefugee;
     public GameObject refugeePrefab;
     Transform rescueBasePos;
+
+    public Transform[] spawnPts;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindObjectOfType<Player1_Controller>();
         rescueBasePos = GameObject.FindGameObjectWithTag("RescuePlace").transform;
+        InvokeRepeating("SpawnRefugee",0f,.5f);
     }
 
     // Update is called once per frame
@@ -44,7 +47,6 @@ public class GameManager : MonoBehaviour
         RescueUI.text = curRefugee.ToString();
 
         getNumOfRefugee();
-        SpawnRefugee();
     }
 
     void CountDown()
@@ -56,7 +58,11 @@ public class GameManager : MonoBehaviour
 
         else
         {
-            //Do something, when time ran out
+            Time.timeScale = 0;
+            SaveScore();
+            Time.timeScale = 1;
+            Application.LoadLevel("LoseScene");
+
         }
     }
     void getNumOfRefugee()
@@ -67,9 +73,15 @@ public class GameManager : MonoBehaviour
     }
     void SpawnRefugee()
     {
+        int rand = Mathf.CeilToInt(Random.Range(0, spawnPts.Length));
         if(curRefugee < limitRefugee)
         {
-            Instantiate(refugeePrefab, rescueBasePos);
+            Instantiate(refugeePrefab, new Vector3(spawnPts[rand-1].localPosition.x
+                , spawnPts[rand - 1].localPosition.y),Quaternion.identity);
         }
+    }
+    void SaveScore()
+    {
+        PlayerPrefs.SetInt("Score", point);
     }
 }

@@ -72,6 +72,8 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Script\Core Code\GameManager.cs" />
     <Compile Include="Assets\Script\Core Code\Refugee.cs" />
+    <Compile Include="Assets\Script\Core Code\SceneButton.cs" />
+    <Compile Include="Assets\Script\Core Code\ScoreManager.cs" />
     <Compile Include="Assets\Script\Menu Script\BackToMenuScript.cs" />
     <Compile Include="Assets\Script\Menu Script\MenuScript.cs" />
     <Compile Include="Assets\Script\Player Controller\Camera_Control.cs" />
