@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{931CE0BB-4591-DC16-E8EC-0E64E7322DAB}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Core Code/GameManager.cs">
     <Files>
-      <File FileName="Assets/Script/Core Code/Refugee.cs" Line="16" Column="34" />
-      <File FileName="Assets/Script/Core Code/GameManager.cs" Line="72" Column="53" />
+      <File FileName="Assets/Script/Core Code/Refugee.cs" Line="74" Column="36" />
+      <File FileName="Assets/Script/Core Code/GameManager.cs" Line="44" Column="35" />
       <File FileName="Assets/Script/Player Controller/Player1_Controller.cs" Line="141" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c50468b9-b1b6-4e4a-ac42-ea2d3e67d3cc" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="014fd949-4564-4c8a-9537-3ab83e787a5b" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         TimeUI.text = ((int)time).ToString();
         CountDown();
         OnRescue = player.NumOfRescue;
-        RescueUI.text = OnRescue.ToString();
+        RescueUI.text = curRefugee.ToString();
 
         getNumOfRefugee();
         SpawnRefugee();
