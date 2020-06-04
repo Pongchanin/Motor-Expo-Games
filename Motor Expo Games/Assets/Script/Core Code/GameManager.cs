@@ -73,11 +73,11 @@ public class GameManager : MonoBehaviour
     }
     void SpawnRefugee()
     {
-        int rand = Mathf.CeilToInt(Random.Range(0, spawnPts.Length));
+        int rand = Mathf.CeilToInt(Random.Range(0, spawnPts.Length-1));
         if(curRefugee < limitRefugee)
         {
-            Instantiate(refugeePrefab, new Vector3(spawnPts[rand-1].localPosition.x
-                , spawnPts[rand - 1].localPosition.y),Quaternion.identity);
+            Instantiate(refugeePrefab, new Vector3(spawnPts[rand].localPosition.x
+                , spawnPts[rand].localPosition.y),Quaternion.identity);
         }
     }
     void SaveScore()

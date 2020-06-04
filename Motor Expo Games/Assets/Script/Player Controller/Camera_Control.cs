@@ -9,6 +9,8 @@ public class Camera_Control : MonoBehaviour
 	private Vector3 lastPLayerPosition;
 	private float distanceToMove;
 
+	public Vector3 offset;
+
 	void Start()
 	{
 		player1 = FindObjectOfType<Player1_Controller>();
@@ -18,9 +20,12 @@ public class Camera_Control : MonoBehaviour
 	void Update()
 	{
 		distanceToMove = player1.transform.position.x - lastPLayerPosition.x;
-
-		transform.position = new Vector2(transform.position.x + distanceToMove, player1.transform.position.y);
-
+		transform.position = new Vector3(transform.position.x + distanceToMove, player1.transform.position.y) + offset;
 		lastPLayerPosition = player1.transform.position;
+	}
+    private void LateUpdate()
+    {
+		
+		
 	}
 }
