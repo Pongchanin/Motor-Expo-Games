@@ -1413,7 +1413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   point: 0
-  time: 20
+  time: 60
   OnRescue: 0
   ScoreUI: {fileID: 1765004248}
   TimeUI: {fileID: 959722385}
