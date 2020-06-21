@@ -628,6 +628,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.multiplayer-hlapi.Editor">
+      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -643,6 +646,9 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.multiplayer-weaver.Editor">
+      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
@@ -654,12 +660,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-hlapi.Editor">
-      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-weaver.Editor">
-      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
       <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>

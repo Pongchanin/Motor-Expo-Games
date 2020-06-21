@@ -65,7 +65,7 @@ public class Player1_Controller : MonoBehaviour
 
     public bool checkGetAttack()
     {
-        return getAttack;
+       return getAttack;
     }
     public void setGetAttack(bool val)
     {

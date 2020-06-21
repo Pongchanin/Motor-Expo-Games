@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
+public enum Type
+{
+    Normal, Hurry, Traveler
+}
 public class Refugee : MonoBehaviour
 {
     [Header("Player Reference")]
     [SerializeField]
     Player1_Controller player;
+    public Type type;  
 
     [Header("Refugee Parameter")]
     public float moveSpeed;
@@ -16,11 +22,18 @@ public class Refugee : MonoBehaviour
     bool playerCollideRescueBase;
     public bool moveWithPlayer;
     public float nearRadius;
+    [SerializeField]
+    string RefugeeType;
+    [SerializeField]
+    int scoreVal;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindObjectOfType<Player1_Controller>();
+        checkRefugeeType();
+        setRefugeeType();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -31,7 +44,7 @@ public class Refugee : MonoBehaviour
         {
             moveToPlayer();
         }
-        
+        setRefugeeType();
     }
     private void LateUpdate()
     {
@@ -39,12 +52,18 @@ public class Refugee : MonoBehaviour
     }
     public void checkPlayerAttacked()
     {
-        isPlayerAttacked = player.checkGetAttack();
+        if(player != null)
+        {
+            isPlayerAttacked = player.checkGetAttack();
+        }
     }
 
     public void checkPlayerCollideRescueBase()
     {
-        playerCollideRescueBase = player.checkInRescue();
+        if (player != null)
+        {
+            playerCollideRescueBase = player.checkInRescue();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,7 +75,7 @@ public class Refugee : MonoBehaviour
         if(collision.tag == "PlayerBase")
         {
             GameManager gm = GameObject.FindObjectOfType<GameManager>();
-            gm.point += 1;
+            gm.point += scoreVal;
             Destroy(this.gameObject);
         }
     }
@@ -84,5 +103,26 @@ public class Refugee : MonoBehaviour
             transform.rotation = new Quaternion(0, 0, 0, 0);
             }
        
+    }
+    public string checkRefugeeType()
+    {
+        return RefugeeType;
+    }
+
+    public void setRefugeeType()
+    {
+        RefugeeType = type.ToString();
+        if(type.ToString() == "Normal")
+        {
+            scoreVal = 1;
+        }
+        else if(type.ToString() == "Hurry")
+        {
+            scoreVal = 2;
+        }
+        else
+        {
+            scoreVal = 5;
+        }
     }
 }

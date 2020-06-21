@@ -97,11 +97,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  type: 2
   moveSpeed: 10
   isPlayerAttacked: 0
   playerCollideRescueBase: 0
   moveWithPlayer: 0
   nearRadius: 10
+  RefugeeType: 
 --- !u!58 &8771277994476024461
 CircleCollider2D:
   m_ObjectHideFlags: 0
