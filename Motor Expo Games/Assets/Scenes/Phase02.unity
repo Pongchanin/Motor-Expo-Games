@@ -1628,6 +1628,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prototype Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3419296618401011227, guid: d1cf4c69db4204448975e51885c991db,
+        type: 3}
+      propertyPath: stunDuration
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3419296618401011229, guid: d1cf4c69db4204448975e51885c991db,
         type: 3}
       propertyPath: m_LocalPosition.x
