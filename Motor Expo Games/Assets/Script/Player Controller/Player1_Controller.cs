@@ -25,6 +25,14 @@ public class Player1_Controller : MonoBehaviour
 
     Vector2 movement;
 
+    //----------------------
+    private bool QTE = false;
+    private bool result_pass = true;
+    public GameObject bar;
+    public GameObject arrow;
+    public GameObject press;
+
+
     void Start()
     {
         Application.targetFrameRate = 60;
@@ -35,37 +43,44 @@ public class Player1_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float angle;
-        if ((joystick.input.x > 0 ||joystick.input.x < 0) && isStun != true  )
+        //float angle;
+        if ((joystick.input.x > 0 ||joystick.input.x < 0) && isStun != true && !QTE)
         {
             transform.Translate(new Vector3(joystick.input.x * moveSpeed * Time.deltaTime, 0f, 0f));
             /*angle = Mathf.Atan2(joystick.input.y, joystick.input.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);*/
-            print("X: " + joystick.input.x);
+            //print("X: " + joystick.input.x);
            // transform.rotation = new Quaternion(0, 0, 180 * joystick.input.x,0);
         }
-        if ((joystick.input.y > 0 || joystick.input.y < 0) && isStun != true)
+        if ((joystick.input.y > 0 || joystick.input.y < 0) && isStun != true && !QTE)
         {
             transform.Translate(new Vector3(0f, joystick.input.y * moveSpeed * Time.deltaTime, 0f));
             /*angle = Mathf.Atan2(joystick.input.y, joystick.input.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);*/
-            print("Y: " + joystick.input.y);
+            //print("Y: " + joystick.input.y);
         }
-        if ((Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f) && isStun != true)
+        if ((Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f) && isStun != true && !QTE)
         {
             transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, 0f, 0f));
-            print("X: " + Input.GetAxisRaw("Horizontal"));
+            //print("X: " + Input.GetAxisRaw("Horizontal"));
         }
-        if ((Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f) && isStun != true)
+        if ((Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f) && isStun != true && !QTE)
         {
            transform.Translate(new Vector3(0f, Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime, 0f));
-            print("Y: " + Input.GetAxisRaw("Vertical"));
+            //print("Y: " + Input.GetAxisRaw("Vertical"));
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        if (!result_pass)
         {
             setStun(true);
             Invoke("ResetStun", stunDuration);
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            QTE = true;
+        }
+
+        quicktimeevent();
     }
 
     public bool checkGetAttack()
@@ -106,13 +121,13 @@ public class Player1_Controller : MonoBehaviour
     {
         if(collision.tag == "RescuePlace")
         {
-            print("RescuePlace collide");
+            //print("RescuePlace collide");
             setInRescue(true);
         }
 
         if(collision.tag == "PlayerBase")
         {
-            print("At Player Base");
+            //print("At Player Base");
             setAtBase(true);
         }
         
@@ -158,14 +173,95 @@ public class Player1_Controller : MonoBehaviour
             }
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //-------------------------
+        if (collision.gameObject.tag == "Player" && !QTE)
+        {
+            QTE = true;
+        }
+        //-------------------------
+    }
     void ResetStun()
     {
         isStun = false;
+        result_pass = true;
     }
     IEnumerator StunCountdown(float time)
     {
         yield return new WaitForSeconds(time);
     }
+
+    private void quicktimeevent()
+    {
+        if (QTE)
+        {
+            bar.SetActive(true);
+            arrow.SetActive(true);
+            press.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                print("L");
+                if (arrow.GetComponent<arrow>().value >= (50 - press.GetComponent<clickdis>().size) && arrow.GetComponent<arrow>().value <= (50 + press.GetComponent<clickdis>().size))
+                {
+                    print("goood");
+                    bar.SetActive(false);
+                    arrow.SetActive(false);
+                    press.SetActive(false);
+                    QTE = false;
+                    result_pass = true;
+
+                }
+                else
+                {
+                    print("bad");
+                    bar.SetActive(false);
+                    arrow.SetActive(false);
+                    press.SetActive(false);
+                    QTE = false;
+                    result_pass = false;
+                }
+            }
+        }
+    }
+
+    //------------------------------
+    /*
+    IEnumerator quicktimeevent()
+    {
+        bar.SetActive(true);
+        arrow.SetActive(true);
+        press.SetActive(true);
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            print("L");
+            if (arrow.GetComponent<arrow>().value >= (50 - press.GetComponent<clickdis>().size) && arrow.GetComponent<arrow>().value <= (50 + press.GetComponent<clickdis>().size))
+            {
+                print("goood");
+                bar.SetActive(false);
+                arrow.SetActive(false);
+                press.SetActive(false);
+                QTE = false;
+                yield return result_pass = true;
+
+            }
+            else
+            {
+                print("bad");
+                bar.SetActive(false);
+                arrow.SetActive(false);
+                press.SetActive(false);
+                QTE = false;
+                yield return result_pass = false;
+            }
+        }
+    }
+    */
+
+    //-----------------------------
 }
 
 
