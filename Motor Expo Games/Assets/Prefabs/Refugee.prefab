@@ -104,6 +104,9 @@ MonoBehaviour:
   moveWithPlayer: 0
   nearRadius: 10
   RefugeeType: 
+  scoreVal: 0
+  waitTimer: 5
+  timerRunning: 0
 --- !u!58 &8771277994476024461
 CircleCollider2D:
   m_ObjectHideFlags: 0

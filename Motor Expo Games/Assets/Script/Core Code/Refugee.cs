@@ -26,12 +26,16 @@ public class Refugee : MonoBehaviour
     string RefugeeType;
     [SerializeField]
     int scoreVal;
+    public float waitTimer;
+    [SerializeField]
+    bool timerRunning;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindObjectOfType<Player1_Controller>();
         checkRefugeeType();
         setRefugeeType();
+        timerRunning = true;
     }
 
 
@@ -45,6 +49,8 @@ public class Refugee : MonoBehaviour
             moveToPlayer();
         }
         setRefugeeType();
+        TimeCountDown();
+        
     }
     private void LateUpdate()
     {
@@ -123,6 +129,20 @@ public class Refugee : MonoBehaviour
         else
         {
             scoreVal = 5;
+        }
+    }
+    void TimeCountDown()
+    {
+        if (timerRunning)
+        {
+            if (waitTimer > 0)
+            {
+                waitTimer -= Time.deltaTime;
+            }
+            else
+            {
+                timerRunning = false;
+            }
         }
     }
 }
