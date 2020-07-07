@@ -28,6 +28,7 @@ public class Player1_Controller : MonoBehaviour
     //----------------------
     private bool QTE = false;
     private bool result_pass = true;
+    public bool noquicktime = false;
     public GameObject bar;
     public GameObject arrow;
     public GameObject press;
@@ -177,7 +178,7 @@ public class Player1_Controller : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //-------------------------
-        if (collision.gameObject.tag == "Player" && !QTE)
+        if (collision.gameObject.tag == "Player" && !QTE && !noquicktime)
         {
             QTE = true;
         }
@@ -226,42 +227,6 @@ public class Player1_Controller : MonoBehaviour
             }
         }
     }
-
-    //------------------------------
-    /*
-    IEnumerator quicktimeevent()
-    {
-        bar.SetActive(true);
-        arrow.SetActive(true);
-        press.SetActive(true);
-
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            print("L");
-            if (arrow.GetComponent<arrow>().value >= (50 - press.GetComponent<clickdis>().size) && arrow.GetComponent<arrow>().value <= (50 + press.GetComponent<clickdis>().size))
-            {
-                print("goood");
-                bar.SetActive(false);
-                arrow.SetActive(false);
-                press.SetActive(false);
-                QTE = false;
-                yield return result_pass = true;
-
-            }
-            else
-            {
-                print("bad");
-                bar.SetActive(false);
-                arrow.SetActive(false);
-                press.SetActive(false);
-                QTE = false;
-                yield return result_pass = false;
-            }
-        }
-    }
-    */
-
-    //-----------------------------
 }
 
 
