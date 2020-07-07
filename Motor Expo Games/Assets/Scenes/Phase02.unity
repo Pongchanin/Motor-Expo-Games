@@ -2526,8 +2526,10 @@ MonoBehaviour:
   RescueUI: {fileID: 1091209712}
   limitRefugee: 4
   curRefugee: 0
-  refugeePrefab: {fileID: 8771277994476024457, guid: bed4b4ce147024f0fb563f09dc5322fc,
-    type: 3}
+  refugeePrefab:
+  - {fileID: 8771277994476024457, guid: bed4b4ce147024f0fb563f09dc5322fc, type: 3}
+  - {fileID: 8771277994476024457, guid: d67d541dedec44ede867d129e64b67a3, type: 3}
+  - {fileID: 8771277994476024457, guid: 7534f3ae6b8874af9a7a1f7a15e378f8, type: 3}
   spawnPts:
   - {fileID: 2028288042}
   - {fileID: 1420935154}

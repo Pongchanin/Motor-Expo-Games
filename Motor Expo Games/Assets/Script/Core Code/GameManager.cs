@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public int limitRefugee;
     [SerializeField]
     int curRefugee;
-    public GameObject refugeePrefab;
+    public GameObject[] refugeePrefab;
     Transform rescueBasePos;
 
     public Transform[] spawnPts;
@@ -76,7 +76,9 @@ public class GameManager : MonoBehaviour
         int rand = Mathf.CeilToInt(Random.Range(0, spawnPts.Length-1));
         if(curRefugee < limitRefugee)
         {
-            Instantiate(refugeePrefab, new Vector3(spawnPts[rand].localPosition.x
+            int randInt;
+            randInt = (int)Random.Range(0, 3);
+            Instantiate(refugeePrefab[randInt], new Vector3(spawnPts[rand].localPosition.x
                 , spawnPts[rand].localPosition.y),Quaternion.identity);
         }
     }
