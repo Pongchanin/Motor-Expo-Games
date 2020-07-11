@@ -74,13 +74,29 @@ public class GameManager : MonoBehaviour
     void SpawnRefugee()
     {
         int rand = Mathf.CeilToInt(Random.Range(0, spawnPts.Length-1));
-        if(curRefugee < limitRefugee)
+        //int randDest = Mathf.CeilToInt(Random.Range(0, spawnPts.Length - 1));
+
+        if (curRefugee < limitRefugee)
         {
             int randInt;
             randInt = (int)Random.Range(0, 3);
+          /*  if(rand == randDest)
+            {
+                if(randDest == spawnPts.Length - 1)
+                {
+                    randDest = 0;
+                }
+                else
+                {
+                    randDest = rand + 1;
+                }
+            }*/
+
             Instantiate(refugeePrefab[randInt], new Vector3(spawnPts[rand].localPosition.x
                 , spawnPts[rand].localPosition.y),Quaternion.identity);
         }
+
+
     }
     void SaveScore()
     {

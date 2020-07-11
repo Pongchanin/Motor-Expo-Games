@@ -2,8 +2,6 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-    <CscToolPath>C:\Program Files\Unity\Hub\Editor\2019.4.0f1\Editor\Data\Tools\RoslynScripts</CscToolPath>
-    <CscToolExe>unity_csc.bat</CscToolExe>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -54,6 +52,9 @@
     <UnityVersion>2019.4.0f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.0f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -80,6 +81,7 @@
     <Compile Include="Assets\Script\Player Controller\JoyButton.cs" />
     <Compile Include="Assets\Script\Player Controller\Noquicktime.cs" />
     <Compile Include="Assets\Script\Player Controller\Player1_Controller.cs" />
+    <Compile Include="Assets\Script\Player Controller\Scoremal.cs" />
     <Compile Include="Assets\Script\Player Controller\speed.cs" />
     <Compile Include="Assets\Script\QTE\arrow.cs" />
     <Compile Include="Assets\Script\QTE\clickdis.cs" />

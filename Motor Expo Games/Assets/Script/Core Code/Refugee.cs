@@ -29,6 +29,9 @@ public class Refugee : MonoBehaviour
     public float waitTimer;
     [SerializeField]
     bool timerRunning;
+    [SerializeField]
+    int dest;
+    bool isStun = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +39,9 @@ public class Refugee : MonoBehaviour
         checkRefugeeType();
         setRefugeeType();
         timerRunning = true;
+        dest = (int)Random.Range(0,  4);
+        animate();
+
     }
 
 
@@ -74,11 +80,32 @@ public class Refugee : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print("hit");
+
         if (collision.tag == "Player")
         {
             moveWithPlayer = true;
         }
-        if(collision.tag == "PlayerBase")
+
+        if(collision.tag == "dest1" && dest == 0)
+        {
+            GameManager gm = GameObject.FindObjectOfType<GameManager>();
+            gm.point += scoreVal;
+            Destroy(this.gameObject);
+        }
+        else if (collision.tag == "dest2" && dest == 1)
+        {
+            GameManager gm = GameObject.FindObjectOfType<GameManager>();
+            gm.point += scoreVal;
+            Destroy(this.gameObject);
+        }
+        else if (collision.tag == "dest3" && dest == 2)
+        {
+            GameManager gm = GameObject.FindObjectOfType<GameManager>();
+            gm.point += scoreVal;
+            Destroy(this.gameObject);
+        }
+        else if (collision.tag == "dest4" && dest == 3)
         {
             GameManager gm = GameObject.FindObjectOfType<GameManager>();
             gm.point += scoreVal;
@@ -89,7 +116,15 @@ public class Refugee : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            moveWithPlayer = true;
+            if (!isStun)
+            {
+                moveWithPlayer = true;
+            }
+            else
+            {
+                moveWithPlayer = false;
+            }
+            
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -120,15 +155,15 @@ public class Refugee : MonoBehaviour
         RefugeeType = type.ToString();
         if(type.ToString() == "Normal")
         {
-            scoreVal = 1;
+            scoreVal = (int)(1 * player.scoreMultiplier);
         }
         else if(type.ToString() == "Hurry")
         {
-            scoreVal = 2;
+            scoreVal = (int)(2 * player.scoreMultiplier);
         }
         else
         {
-            scoreVal = 5;
+            scoreVal = (int)(5 * player.scoreMultiplier);
         }
     }
     void TimeCountDown()
@@ -144,5 +179,25 @@ public class Refugee : MonoBehaviour
                 timerRunning = false;
             }
         }
+    }
+
+    void animate()
+    {
+        Animator animate = gameObject.GetComponent<Animator>();
+        if (RefugeeType == "Hurry")
+        {
+            animate.SetInteger("type", 1);
+        }
+        else if (RefugeeType == "Normal")
+        {
+            animate.SetInteger("type", 2);
+        }
+        else if (RefugeeType == "Traveler")
+        {
+            animate.SetInteger("type", 3);
+        }
+
+        animate.SetInteger("DestAnim", dest + 1);
+
     }
 }

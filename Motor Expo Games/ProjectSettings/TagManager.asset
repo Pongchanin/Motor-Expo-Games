@@ -8,6 +8,10 @@ TagManager:
   - RescuePlace
   - PlayerBase
   - Item
+  - dest1
+  - dest2
+  - dest3
+  - dest4
   layers:
   - Default
   - TransparentFX

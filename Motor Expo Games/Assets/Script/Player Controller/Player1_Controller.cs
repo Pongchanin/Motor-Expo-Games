@@ -11,6 +11,7 @@ public class Player1_Controller : MonoBehaviour
     [Header("Player Parameter")] 
     public float moveSpeed;
     public float stunDuration;
+    public float scoreMultiplier;
 
     [Header("Condition Checker")]
     [SerializeField]
