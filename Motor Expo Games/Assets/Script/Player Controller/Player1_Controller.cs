@@ -48,7 +48,8 @@ public class Player1_Controller : MonoBehaviour
         //float angle;
         if ((joystick.input.x > 0 ||joystick.input.x < 0) && isStun != true && !QTE)
         {
-            transform.Translate(new Vector3(joystick.input.x * moveSpeed * Time.deltaTime, 0f, 0f));
+                transform.Translate(new Vector3(joystick.input.x * moveSpeed * Time.deltaTime, 0f, 0f));
+            
             /*angle = Mathf.Atan2(joystick.input.y, joystick.input.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);*/
             //print("X: " + joystick.input.x);
@@ -83,6 +84,8 @@ public class Player1_Controller : MonoBehaviour
         }
 
         quicktimeevent();
+        turnSprite();
+        print(transform.position);
     }
 
     public bool checkGetAttack()
@@ -227,6 +230,17 @@ public class Player1_Controller : MonoBehaviour
                 }
             }
         }
+    }
+    void turnSprite(){
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 10;
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+
+        Vector2 direc = new Vector2(Input.GetAxisRaw("Horizontal") + joystick.input.x,
+                Input.GetAxisRaw("Vertical") + joystick.input.y); 
+
+            
+        transform.up = direc;
     }
 }
 
