@@ -7,6 +7,6 @@ public class BackToMenuScript : MonoBehaviour
 {
 	public void BackButton()
 	{
-		Application.LoadLevel("Menu");
+		SceneManager.LoadScene("Menu");
 	}
 }

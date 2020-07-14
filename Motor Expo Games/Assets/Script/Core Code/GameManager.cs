@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -61,7 +62,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
             SaveScore();
             Time.timeScale = 1;
-            Application.LoadLevel("LoseScene");
+            SceneManager.LoadScene("LoseScene");
 
         }
     }

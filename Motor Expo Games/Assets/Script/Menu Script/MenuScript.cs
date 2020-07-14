@@ -13,7 +13,7 @@ public class MenuScript : MonoBehaviour
 	}
 	public void OptionButton()
 	{
-		Application.LoadLevel("Option"); 
+		SceneManager.LoadScene("Option");
 	}
 
 	public void QuitButton()
