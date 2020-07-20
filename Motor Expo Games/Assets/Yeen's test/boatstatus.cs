@@ -21,6 +21,11 @@ public static class boatstatus
     //private static Part4 Cloth3 = new Part4();
 
     private static boat player1 = new boat();
+    private static boat player2 = new boat();
+    private static boat player3 = new boat();
+    private static boat player4 = new boat();
+
+
 
     public static Part1 Turn1
     {
@@ -175,6 +180,42 @@ public static class boatstatus
         set
         {
             player1 = value;
+        }
+    }
+
+    public static boat Player2
+    {
+        get
+        {
+            return player2;
+        }
+        set
+        {
+            player2 = value;
+        }
+    }
+
+    public static boat Player3
+    {
+        get
+        {
+            return player3;
+        }
+        set
+        {
+            player3 = value;
+        }
+    }
+
+    public static boat Player4
+    {
+        get
+        {
+            return player4;
+        }
+        set
+        {
+            player4 = value;
         }
     }
 }
