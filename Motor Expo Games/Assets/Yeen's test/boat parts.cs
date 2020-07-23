@@ -8,14 +8,16 @@ public class Part1
     public int movementspeed;
     public int power;
     public int weight;
+    public int strength;
     public string name;
 
-    Part1(string Name, int Weight, int Power, int Movementspeed)
+    Part1(string Name, int Weight, int Power, int Movementspeed, int Strength)
     {
         name = Name;
         power = Power;
         weight = Weight;
         movementspeed = Movementspeed;
+        strength = Strength;
     }
     public Part1()
     {
@@ -23,6 +25,7 @@ public class Part1
         power = 1;
         weight = 1;
         movementspeed = 1;
+        strength = 1;
     }
 }
 
@@ -32,14 +35,16 @@ public class Part2
     public int movementspeed;
     public int power;
     public int weight;
+    public int strength;
     public string name;
 
-    Part2(string Name, int Weight, int Power, int Movementspeed)
+    Part2(string Name, int Weight, int Power, int Movementspeed, int Strength)
     {
         name = Name;
         power = Power;
         weight = Weight;
         movementspeed = Movementspeed;
+        strength = Strength;
     }
 
     public Part2()
@@ -48,6 +53,7 @@ public class Part2
         power = 1;
         weight = 1;
         movementspeed = 1;
+        strength = 1;
     }
 }
 
@@ -57,14 +63,16 @@ public class Part3
     public int movementspeed;
     public int power;
     public int weight;
+    public int strength;
     public string name;
 
-    Part3(string Name, int Weight, int Power, int Movementspeed)
+    Part3(string Name, int Weight, int Power, int Movementspeed, int Strength)
     {
         name = Name;
         power = Power;
         weight = Weight;
         movementspeed = Movementspeed;
+        strength = Strength;
     }
 
     public Part3()
@@ -73,30 +81,7 @@ public class Part3
         power = 1;
         weight = 1;
         movementspeed = 1;
-    }
-}
-
-[System.Serializable]
-public class Part4
-{
-    public int movementspeed;
-    public int power;
-    public int weight;
-    public string name;
-
-    Part4(string Name, int Weight, int Power, int Movementspeed)
-    {
-        name = Name;
-        power = Power;
-        weight = Weight;
-        movementspeed = Movementspeed;
-    }
-    public Part4()
-    {
-        name = "defult";
-        power = 1;
-        weight = 1;
-        movementspeed = 1;
+        strength = 1;
     }
 }
 
@@ -106,22 +91,23 @@ public class boat
     public Part1 part1;
     public Part2 part2;
     public Part3 part3;
-    public Part4 part4;
     public int power;
     public int weight;
     public int movementspeed;
+    public int strength;
   
 
-    boat(Part1 part1_, Part2 part2_, Part3 part3_, Part4 part4_)
+    boat(Part1 part1_, Part2 part2_, Part3 part3_)
     {
         part1 = part1_;
         part2 = part2_;
         part3 = part3_;
-        part4 = part4_;
 
-        power = part1_.power + part2_.power + part3_.power + part4_.power;
-        weight = part1_.weight + part2_.weight + part3_.weight + part4_.weight;
-        movementspeed = part1_.movementspeed + part2_.movementspeed + part3_.movementspeed + part4_.movementspeed;
+        power = part1_.power + part2_.power + part3_.power;
+        weight = part1_.weight + part2_.weight + part3_.weight;
+        movementspeed = part1_.movementspeed + part2_.movementspeed + part3_.movementspeed;
+        strength = part1_.strength + part2_.strength + part3_.strength;
+        
     }
 
     public boat()
@@ -129,6 +115,5 @@ public class boat
         part1 = new Part1();
         part2 = new Part2();
         part3 = new Part3();
-        part4 = new Part4();
     }
 }

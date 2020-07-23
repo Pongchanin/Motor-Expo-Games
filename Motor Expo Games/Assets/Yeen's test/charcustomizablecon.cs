@@ -12,30 +12,30 @@ public class charcustomizablecon : MonoBehaviour
     public int array1size;
     public int array2size;
     public int array3size;
-    public int array4size;
     //VARIBLE FOR ARRAY CYCLING----
-    int selected1 = 0;
-    int selected2 = 0;
-    int selected3 = 0;
-    int selected4 = 0;
+    public int selected1 = 0;
+    public int selected2 = 0;
+    public int selected3 = 0;
     //BAR--------------------------
     public Animator speed;
     public Animator power;
     public Animator weight;
+    public Animator strength;
     //Arrays-----------------------
-    Part1[] array1;
-    Part2[] array2;
-    Part3[] array3;
-    Part4[] array4;
+    public Part1[] array1;
+    public Part2[] array2;
+    public Part3[] array3;
     //VARIBLE TO SET THE VALUE-----
     [Header("turn1")]
     public int turn1movespeed;
     public int turn1weight;
     public int turn1power;
+    public int turn1strength;
     [Header("turn2")]
     public int turn2movespeed;
     public int turn2weight;
     public int turn2power;
+    public int turn2strength;
     //[Header("turn3")]
     //public int turn3movespeed;
     //public int turn3weight;
@@ -44,43 +44,41 @@ public class charcustomizablecon : MonoBehaviour
     public int body1movespeed;
     public int body1weight;
     public int body1power;
+    public int body1strength;
     [Header("body2")]
     public int body2movespeed;
     public int body2weight;
     public int body2power;
-    //[Header("body3")]
-    //public int body3movespeed;
-    //public int body3weight;
-    //public int body3power;
+    public int body2strength;
+    [Header("body3")]
+    public int body3movespeed;
+    public int body3weight;
+    public int body3power;
+    public int body3strength;
     [Header("ancor1")]
     public int ancor1movespeed;
     public int ancor1weight;
     public int ancor1power;
+    public int ancor1strength;
     [Header("ancor2")]
     public int ancor2movespeed;
     public int ancor2weight;
     public int ancor2power;
-    //[Header("ancor3")]
-    //public int ancor3movespeed;
-    //public int ancor3weight;
-    //public int ancor3power;
-    [Header("cloth1")]
-    public int cloth1movespeed;
-    public int cloth1weight;
-    public int cloth1power;
-    [Header("cloth2")]
-    public int cloth2movespeed;
-    public int cloth2weight;
-    public int cloth2power;
-    //[Header("cloth3")]
-    //public int cloth3movespeed;
-    //public int cloth3weight;
-    //public int cloth3power;
+    public int ancor2strength;
+    [Header("ancor3")]
+    public int ancor3movespeed;
+    public int ancor3weight;
+    public int ancor3power;
+    public int ancor3strength;
+    [Header("ancor4")]
+    public int ancor4movespeed;
+    public int ancor4weight;
+    public int ancor4power;
+    public int ancor4strength;
     [Header("animcontrolers")]
     public Animator mortor;
     public Animator shape;
     public Animator weel;
-    public Animator life;
 
     //public boat thisboat;
 
@@ -92,23 +90,27 @@ public class charcustomizablecon : MonoBehaviour
 
     void Update()
     {
-        speed.SetInteger("value", (array1[selected1].movementspeed + array2[selected2].movementspeed + array3[selected3].movementspeed + array4[selected4].movementspeed));
-        weight.SetInteger("value", (array1[selected1].weight + array2[selected2].weight + array3[selected3].weight + array4[selected4].weight));
-        power.SetInteger("value", (array1[selected1].power + array2[selected2].power + array3[selected3].power + array4[selected4].power));
+        speed.SetInteger("value", (array1[selected1].movementspeed + array2[selected2].movementspeed + array3[selected3].movementspeed));
+        weight.SetInteger("value", (array1[selected1].weight + array2[selected2].weight + array3[selected3].weight));
+        power.SetInteger("value", (array1[selected1].power + array2[selected2].power + array3[selected3].power));
+        strength.SetInteger("value", (array1[selected1].strength + array2[selected2].strength + array3[selected3].strength));
+
         mortor.SetInteger("selected1", selected1);
         shape.SetInteger("selected2", selected2);
         weel.SetInteger("selected3", selected3);
-        life.SetInteger("selected4",selected4);
+
     }
     void partvaluesetting()
     {
         boatstatus.Turn1.movementspeed = turn1movespeed;
         boatstatus.Turn1.weight = turn1weight;
         boatstatus.Turn1.power = turn1power;
+        boatstatus.Turn1.strength = turn1strength;
         //-------------------------------------------------------
         boatstatus.Turn2.movementspeed = turn2movespeed;
         boatstatus.Turn2.weight = turn2weight;
         boatstatus.Turn2.power = turn2power;
+        boatstatus.Turn2.strength = turn2strength;
         //-------------------------------------------------------
         //boatstatus.Turn3.movementspeed = turn3movespeed;
         //boatstatus.Turn3.weight = turn3weight;
@@ -117,38 +119,37 @@ public class charcustomizablecon : MonoBehaviour
         boatstatus.Body1.movementspeed = body1movespeed;
         boatstatus.Body1.weight = body1weight;
         boatstatus.Body1.power = body1power;
+        boatstatus.Body1.strength = body1strength;
         //-------------------------------------------------------
         boatstatus.Body2.movementspeed = body2movespeed;
         boatstatus.Body2.weight = body2weight;
         boatstatus.Body2.power = body2power;
+        boatstatus.Body2.strength = body2strength;
         //-------------------------------------------------------
-        //boatstatus.Body3.movementspeed = body3movespeed;
-        //boatstatus.Body3.weight = body3weight;
-        //boatstatus.Body3.power = body3power;
+        boatstatus.Body3.movementspeed = body3movespeed;
+        boatstatus.Body3.weight = body3weight;
+        boatstatus.Body3.power = body3power;
+        boatstatus.Body3.strength = body3strength;
         //-------------------------------------------------------
         boatstatus.Ancor1.movementspeed = ancor1movespeed;
         boatstatus.Ancor1.weight = ancor1weight;
         boatstatus.Ancor1.power = ancor1power;
+        boatstatus.Ancor1.strength = ancor1strength;
         //-------------------------------------------------------
         boatstatus.Ancor2.movementspeed = ancor2movespeed;
         boatstatus.Ancor2.weight = ancor2weight;
         boatstatus.Ancor2.power = ancor2power;
+        boatstatus.Ancor2.strength = ancor2strength;
         //-------------------------------------------------------
-        //boatstatus.Ancor3.movementspeed = ancor3movespeed;
-        //boatstatus.Ancor3.weight = ancor3weight;
-        //boatstatus.Ancor3.power = ancor3power;
+        boatstatus.Ancor3.movementspeed = ancor3movespeed;
+        boatstatus.Ancor3.weight = ancor3weight;
+        boatstatus.Ancor3.power = ancor3power;
+        boatstatus.Ancor3.strength = ancor3strength;
         //-------------------------------------------------------
-        boatstatus.cloth1.movementspeed = cloth1movespeed;
-        boatstatus.cloth1.weight = cloth1weight;
-        boatstatus.cloth1.power = cloth1power;
-        //-------------------------------------------------------
-        boatstatus.cloth2.movementspeed = cloth2movespeed;
-        boatstatus.cloth2.weight = cloth2weight;
-        boatstatus.cloth2.power = cloth2power;
-        //-------------------------------------------------------
-        //boatstatus.cloth3.movementspeed = cloth3movespeed;
-        //boatstatus.cloth3.weight = cloth3weight;
-        //boatstatus.cloth3.power = cloth3power;
+        boatstatus.Ancor4.movementspeed = ancor4movespeed;
+        boatstatus.Ancor4.weight = ancor4weight;
+        boatstatus.Ancor4.power = ancor4power;
+        boatstatus.Ancor4.strength = ancor4strength;
         //-------------------------------------------------------
     }
     void array()
@@ -169,7 +170,7 @@ public class charcustomizablecon : MonoBehaviour
         }
         array2[0] = boatstatus.Body1;
         array2[1] = boatstatus.Body2;
-        //array2[2] = boatstatus.Body3;
+        array2[2] = boatstatus.Body3;
 
         array3 = new Part3[array3size];
         for (int i = 0; i < array3.Length; i++)
@@ -178,16 +179,8 @@ public class charcustomizablecon : MonoBehaviour
         }
         array3[0] = boatstatus.Ancor1;
         array3[1] = boatstatus.Ancor2;
-        //array3[2] = boatstatus.Ancor3;
-
-        array4 = new Part4[array4size];
-        for (int i = 0; i < array4.Length; i++)
-        {
-            array4[i] = new Part4();
-        }
-        array4[0] = boatstatus.cloth1;
-        array4[1] = boatstatus.cloth2;
-        //array4[2] = boatstatus.cloth3;
+        array3[2] = boatstatus.Ancor3;
+        array3[3] = boatstatus.Ancor4;
     }
     public void button1up()
     {
@@ -220,17 +213,6 @@ public class charcustomizablecon : MonoBehaviour
         else
         {
             selected3 += 1;
-        }
-    }
-    public void button4up()
-    {
-        if (selected4 >= array4.Length -1)
-        {
-            selected4 = 0;
-        }
-        else
-        {
-            selected4 += 1;
         }
     }
     public void button1down()
@@ -266,24 +248,17 @@ public class charcustomizablecon : MonoBehaviour
             selected3 -= 1;
         }
     }
-    public void button4down()
-    {
-        if (selected4 <= 0)
-        {
-            selected4 = array4.Length -1;
-        }
-        else
-        {
-            selected4 -= 1;
-        }
-    }
     
     public void finish()
     {
         boatstatus.Player1.part1 = array1[selected1];
         boatstatus.Player1.part2 = array2[selected2];
         boatstatus.Player1.part3 = array3[selected3];
-        boatstatus.Player1.part4 = array4[selected4];
+
+        boatstatus.Player1.power = array1[selected1].power + array2[selected2].power + array3[selected3].power;
+        boatstatus.Player1.weight = array1[selected1].weight + array2[selected2].weight + array3[selected3].weight;
+        boatstatus.Player1.movementspeed = array1[selected1].movementspeed + array2[selected2].movementspeed + array3[selected3].movementspeed;
+        boatstatus.Player1.strength = array1[selected1].strength + array2[selected2].strength + array3[selected3].strength;
         StartCoroutine(Finish(2));
     }
 

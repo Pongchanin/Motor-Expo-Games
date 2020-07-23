@@ -10,15 +10,12 @@ public static class boatstatus
 
     private static Part2 body1 = new Part2();
     private static Part2 body2 = new Part2();
-    //private static Part2 body3 = new Part2();
+    private static Part2 body3 = new Part2();
 
     private static Part3 ancor1 = new Part3();
     private static Part3 ancor2 = new Part3();
-    //private static Part3 ancor3 = new Part3();
-
-    private static Part4 Cloth1 = new Part4();
-    private static Part4 Cloth2 = new Part4();
-    //private static Part4 Cloth3 = new Part4();
+    private static Part3 ancor3 = new Part3();
+    private static Part3 ancor4 = new Part3();
 
     private static boat player1 = new boat();
     private static boat player2 = new boat();
@@ -87,7 +84,7 @@ public static class boatstatus
         }
     }
 
-    /*public static Part2 Body3
+    public static Part2 Body3
     {
         get
         {
@@ -97,7 +94,7 @@ public static class boatstatus
         {
             body3 = value;
         }
-    }*/
+    }
 
     public static Part3 Ancor1
     {
@@ -123,7 +120,7 @@ public static class boatstatus
         }
     }
 
-    /*public static Part3 Ancor3
+    public static Part3 Ancor3
     {
         get
         {
@@ -133,43 +130,19 @@ public static class boatstatus
         {
             ancor3 = value;
         }
-    }*/
-
-    public static Part4 cloth1
-    {
-        get
-        {
-            return Cloth1;
-        }
-        set
-        {
-            Cloth1 = value;
-        }
     }
 
-    public static Part4 cloth2
+    public static Part3 Ancor4
     {
         get
         {
-            return Cloth2;
+            return ancor4;
         }
         set
         {
-            Cloth2 = value;
+            ancor4 = value;
         }
     }
-
-    /*public static Part4 cloth3
-    {
-        get
-        {
-            return Cloth3;
-        }
-        set
-        {
-            Cloth3 = value;
-        }
-    }*/
 
     public static boat Player1
     {
