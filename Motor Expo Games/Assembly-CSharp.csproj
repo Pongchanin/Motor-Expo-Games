@@ -86,6 +86,7 @@
     <Compile Include="Assets\Script\Player Controller\speed.cs" />
     <Compile Include="Assets\Script\QTE\arrow.cs" />
     <Compile Include="Assets\Script\QTE\clickdis.cs" />
+    <Compile Include="Assets\Script\multiplay\lobby.cs" />
     <Compile Include="Assets\Yeen's test\boat parts.cs" />
     <Compile Include="Assets\Yeen's test\boatstatus.cs" />
     <Compile Include="Assets\Yeen's test\charcustomizablecon.cs" />

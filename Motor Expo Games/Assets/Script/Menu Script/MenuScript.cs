@@ -7,10 +7,27 @@ public class MenuScript : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 1f;
+	public GameObject selectmode;
+	public GameObject option;
+	public GameObject exit;
+	public GameObject start;
 	public void StartButton()
 	{
-        StartCoroutine(LOADLEVEL(6));
+		selectmode.SetActive(true);
+		option.SetActive(false);
+		exit.SetActive(false);
+		start.SetActive(false);
+		//StartCoroutine(LOADLEVEL(6));
 	}
+
+	public void modeselectback()
+    {
+		selectmode.SetActive(false);
+		option.SetActive(true);
+		exit.SetActive(true);
+		start.SetActive(true);
+	}
+
 	public void OptionButton()
 	{
 		SceneManager.LoadScene("Option");
