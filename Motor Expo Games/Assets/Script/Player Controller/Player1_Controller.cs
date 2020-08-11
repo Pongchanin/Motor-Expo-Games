@@ -41,6 +41,22 @@ public class Player1_Controller : MonoBehaviour
         Application.targetFrameRate = 60;
         joystick = FindObjectOfType<Joystick>();
         joybutton = FindObjectOfType<JoyButton>();
+        bar = GameObject.Find("Bar");
+        arrow = GameObject.Find("arrow");
+        press = GameObject.Find("press");
+
+        if(bar != null)
+        {
+            bar.SetActive(false);
+        }
+        if(arrow != null)
+        {
+            arrow.SetActive(false);
+        }
+        if(press != null)
+        {
+            press.SetActive(false);
+        }
     }
 
     // Update is called once per frame

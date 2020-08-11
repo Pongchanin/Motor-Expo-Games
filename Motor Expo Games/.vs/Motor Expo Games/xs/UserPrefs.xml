@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{931CE0BB-4591-DC16-E8EC-0E64E7322DAB}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Core Code/GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Menu Script/MenuScript.cs">
     <Files>
+      <File FileName="Assets/Script/Player Controller/Player1_Controller.cs" Line="1" Column="1" />
       <File FileName="Assets/Script/CustomNetwork.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/Core Code/Refugee.cs" />
+      <File FileName="Assets/Script/Core Code/Refugee.cs" Line="1" Column="1" />
       <File FileName="Assets/Script/Core Code/GameManager.cs" Line="72" Column="38" />
-      <File FileName="Assets/Script/Player Controller/Player1_Controller.cs" />
-      <File FileName="Assets/Yeen's test/charcustomizablecon.cs" />
-      <File FileName="Assets/Script/Core Code/SceneButton.cs" />
-      <File FileName="Assets/Script/Core Code/ScoreManager.cs" />
+      <File FileName="Assets/Yeen's test/charcustomizablecon.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Core Code/SceneButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Core Code/ScoreManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Menu Script/MenuScript.cs" Line="12" Column="23" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,10 +16,13 @@
           <Node name="Motor Expo Games" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Script" expanded="True">
-                <Node name="Core Code" expanded="True">
-                  <Node name="GameManager.cs" selected="True" />
+                <Node name="Core Code" expanded="True" />
+                <Node name="Menu Script" expanded="True">
+                  <Node name="MenuScript.cs" selected="True" />
                 </Node>
+                <Node name="Player Controller" expanded="True" />
               </Node>
+              <Node name="Yeen's test" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -27,7 +31,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5879d79c-d42a-4645-afbd-878c5cf9ddfd" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fbdd1a69-2794-4ba0-92ee-4aa24959027b" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

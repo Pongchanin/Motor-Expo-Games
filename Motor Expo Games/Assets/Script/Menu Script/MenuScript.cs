@@ -20,6 +20,11 @@ public class MenuScript : MonoBehaviour
 		//StartCoroutine(LOADLEVEL(6));
 	}
 
+	public void startgame()
+    {
+		StartCoroutine(LOADLEVEL(6));
+	}
+
 	public void modeselectback()
     {
 		selectmode.SetActive(false);
