@@ -22,10 +22,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -44,6 +42,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Networking.NetworkIdentity
     - UnityEngine.Networking.NetworkLobbyPlayer
     - UnityEngine.Networking.NetworkManagerHUD
+    - UnityEngine.Networking.NetworkStartPosition
     - UnityEngine.Networking.NetworkTransform
   sceneClasses:
     Assets/Scenes/ChooseCharacterScene.unity:
@@ -100,7 +99,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11150}
     - Class: 114
-      Script: {instanceID: 11152}
+      Script: {instanceID: 11154}
     - Class: 114
       Script: {instanceID: 11370}
     - Class: 114
@@ -114,7 +113,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13074}
     - Class: 114
-      Script: {instanceID: 13340}
+      Script: {instanceID: 13338}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -157,7 +156,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11150}
     - Class: 114
-      Script: {instanceID: 11152}
+      Script: {instanceID: 11154}
     - Class: 114
       Script: {instanceID: 11370}
     - Class: 114
@@ -169,7 +168,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12914}
     - Class: 114
-      Script: {instanceID: 13340}
+      Script: {instanceID: 13338}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -208,7 +207,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11150}
     - Class: 114
-      Script: {instanceID: 11152}
+      Script: {instanceID: 11154}
     - Class: 114
       Script: {instanceID: 11370}
     - Class: 114
@@ -220,7 +219,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12914}
     - Class: 114
-      Script: {instanceID: 13340}
+      Script: {instanceID: 13338}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -273,6 +272,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11152}
     - Class: 114
+      Script: {instanceID: 11154}
+    - Class: 114
       Script: {instanceID: 11278}
     - Class: 114
       Script: {instanceID: 11298}
@@ -293,11 +294,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12914}
     - Class: 114
-      Script: {instanceID: 13266}
+      Script: {instanceID: 13338}
     - Class: 114
-      Script: {instanceID: 13340}
-    - Class: 114
-      Script: {instanceID: 13388}
+      Script: {instanceID: 13386}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -350,7 +349,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11150}
     - Class: 114
-      Script: {instanceID: 11152}
+      Script: {instanceID: 11154}
     - Class: 114
       Script: {instanceID: 11370}
     - Class: 114
@@ -366,6 +365,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12120}
     - Class: 114
+      Script: {instanceID: 12470}
+    - Class: 114
       Script: {instanceID: 12664}
     - Class: 114
       Script: {instanceID: 12688}
@@ -376,9 +377,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12920}
     - Class: 114
-      Script: {instanceID: 13334}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 13340}
+      Script: {instanceID: 13338}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -431,6 +432,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: e0ee4b3d4e27318934cc940a969d3d96
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkManagerHUD
   - hash:
       serializedVersion: 2
       Hash: 89f9a1b4c64db9559e39f4a2e3bfaadd
@@ -989,12 +996,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Outline
-  - hash:
-      serializedVersion: 2
-      Hash: e0ee4b3d4e27318934cc940a969d3d96
-    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
-    namespaceName: UnityEngine.Networking
-    className: NetworkManagerHUD
   - hash:
       serializedVersion: 2
       Hash: a63fc1a3b035e5a0b5839cd7f7b3086e

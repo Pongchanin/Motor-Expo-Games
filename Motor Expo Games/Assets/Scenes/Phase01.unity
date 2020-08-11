@@ -1322,7 +1322,7 @@ PrefabInstance:
     - target: {fileID: 301733633395967033, guid: fa009b1e3955048309ed145bc7c46a77,
         type: 3}
       propertyPath: m_PlayerSpawnMethod
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 301733633395967033, guid: fa009b1e3955048309ed145bc7c46a77,
         type: 3}
