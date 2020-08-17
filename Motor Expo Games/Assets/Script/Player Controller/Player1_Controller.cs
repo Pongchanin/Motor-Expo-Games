@@ -35,6 +35,8 @@ public class Player1_Controller : MonoBehaviour
     public GameObject press;
     public GameObject sprite;
 
+    bool quickTimePressed;
+
 
     void Start()
     {
@@ -226,7 +228,7 @@ public class Player1_Controller : MonoBehaviour
             arrow.SetActive(true);
             press.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.L))
+            if (Input.GetKeyDown(KeyCode.L) || quickTimePressed)
             {
                 print("L");
                 if (arrow.GetComponent<arrow>().value >= (50 - press.GetComponent<clickdis>().size) && arrow.GetComponent<arrow>().value <= (50 + press.GetComponent<clickdis>().size))
@@ -237,7 +239,7 @@ public class Player1_Controller : MonoBehaviour
                     press.SetActive(false);
                     QTE = false;
                     result_pass = true;
-
+                    quickTimePressed = false;
                 }
                 else
                 {
@@ -247,6 +249,7 @@ public class Player1_Controller : MonoBehaviour
                     press.SetActive(false);
                     QTE = false;
                     result_pass = false;
+                    quickTimePressed = false;
                 }
             }
         }
@@ -261,6 +264,11 @@ public class Player1_Controller : MonoBehaviour
 
             
         sprite.transform.up = direc;
+    }
+
+    public void QuickTimePressed()
+    {
+        quickTimePressed = true;
     }
 }
 

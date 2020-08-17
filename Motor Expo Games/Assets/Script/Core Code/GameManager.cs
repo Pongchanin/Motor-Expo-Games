@@ -22,15 +22,24 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     int curRefugee;
     public GameObject[] refugeePrefab;
+
+    [Header("Item Parameter")]
+    public int limitItem;
+    [SerializeField]
+    int curItem;
+    public GameObject[] itemPrefab;
+
     Transform rescueBasePos;
 
     public Transform[] spawnPts;
+    public Transform[] itemSpawnPts;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindObjectOfType<Player1_Controller>();
-        rescueBasePos = GameObject.FindGameObjectWithTag("RescuePlace").transform;
+        //rescueBasePos = GameObject.FindGameObjectWithTag("RescuePlace").transform;
         InvokeRepeating("SpawnRefugee",0f,.5f);
+        InvokeRepeating("SpawnItem", 0f, 3f);
     }
 
     // Update is called once per frame
@@ -81,23 +90,27 @@ public class GameManager : MonoBehaviour
         {
             int randInt;
             randInt = (int)Random.Range(0, 3);
-          /*  if(rand == randDest)
-            {
-                if(randDest == spawnPts.Length - 1)
-                {
-                    randDest = 0;
-                }
-                else
-                {
-                    randDest = rand + 1;
-                }
-            }*/
 
             Instantiate(refugeePrefab[randInt], new Vector3(spawnPts[rand].localPosition.x
                 , spawnPts[rand].localPosition.y),Quaternion.identity);
         }
 
 
+    }
+
+    void SpawnItem()
+    {
+        int rand = Mathf.CeilToInt(Random.Range(0, spawnPts.Length - 1));
+        //int randDest = Mathf.CeilToInt(Random.Range(0, spawnPts.Length - 1));
+
+        if (curItem < limitItem)
+        {
+            int randInt;
+            randInt = (int)Random.Range(0, 3);
+
+            Instantiate(itemPrefab[randInt], new Vector3(itemSpawnPts[rand].localPosition.x
+                , itemSpawnPts[rand].localPosition.y), Quaternion.identity);
+        }
     }
     void SaveScore()
     {
