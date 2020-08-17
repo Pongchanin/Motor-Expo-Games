@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
 
     void SpawnItem()
     {
-        int rand = Mathf.CeilToInt(Random.Range(0, spawnPts.Length - 1));
+        int rand = Mathf.CeilToInt(Random.Range(0, itemSpawnPts.Length - 1));
         //int randDest = Mathf.CeilToInt(Random.Range(0, spawnPts.Length - 1));
 
         if (curItem < limitItem)
