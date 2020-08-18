@@ -108,8 +108,8 @@ public class GameManager : MonoBehaviour
             int randInt;
             randInt = (int)Random.Range(0, 3);
 
-            Instantiate(itemPrefab[randInt], new Vector3(itemSpawnPts[rand].localPosition.x
-                , itemSpawnPts[rand].localPosition.y), Quaternion.identity);
+            Instantiate(itemPrefab[randInt], new Vector3(itemSpawnPts[rand].position.x
+                , itemSpawnPts[rand].position.y), Quaternion.identity);
         }
     }
     void SaveScore()
