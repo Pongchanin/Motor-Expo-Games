@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{931CE0BB-4591-DC16-E8EC-0E64E7322DAB}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player Controller/Player1_Controller.cs">
     <Files>
-      <File FileName="Assets/Script/Player Controller/Player1_Controller.cs" Line="263" Column="9" />
+      <File FileName="Assets/Script/Player Controller/Player1_Controller.cs" Line="278" Column="1" />
       <File FileName="Assets/Script/CustomNetwork.cs" />
       <File FileName="Assets/Script/Core Code/Refugee.cs" />
       <File FileName="Assets/Script/Core Code/GameManager.cs" />
       <File FileName="Assets/Yeen's test/charcustomizablecon.cs" />
       <File FileName="Assets/Script/Core Code/SceneButton.cs" />
       <File FileName="Assets/Script/Core Code/ScoreManager.cs" />
-      <File FileName="Assets/Script/Menu Script/MenuScript.cs" Line="36" Column="28" />
+      <File FileName="Assets/Script/Menu Script/MenuScript.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -31,7 +31,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8ed442d7-1610-451d-b119-12b130ab1acf" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="240cd51e-0ea4-4f55-a668-d7a78419eed2" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

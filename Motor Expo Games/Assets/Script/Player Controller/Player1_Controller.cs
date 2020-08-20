@@ -34,6 +34,7 @@ public class Player1_Controller : MonoBehaviour
     public GameObject arrow;
     public GameObject press;
     public GameObject sprite;
+    public GameObject waveSprite;
 
     bool quickTimePressed;
 
@@ -264,6 +265,7 @@ public class Player1_Controller : MonoBehaviour
 
             
         sprite.transform.up = direc;
+        waveSprite.transform.up = direc;
     }
 
     public void QuickTimePressed()
