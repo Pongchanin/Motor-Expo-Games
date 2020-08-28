@@ -27,8 +27,12 @@ public class speed : MonoBehaviour
 
         if (timer == 0 && timerstart)
         {
-            playerhitted.GetComponent<Player1_Controller>().moveSpeed = playerspeed;
-            Destroy(this.gameObject);
+            if(playerhitted != null)
+            {
+                playerhitted.GetComponent<Player1_Controller>().moveSpeed = playerspeed;
+                Destroy(this.gameObject);
+            }
+            
         }
     }
 
@@ -44,8 +48,12 @@ public class speed : MonoBehaviour
     {
         timer = duration;
         timerstart = true;
-        playerspeed = playerhitted.GetComponent<Player1_Controller>().moveSpeed;
-        playerhitted.GetComponent<Player1_Controller>().moveSpeed += speedbonus;
+        if (playerhitted != null)
+        {
+            playerspeed = playerhitted.GetComponent<Player1_Controller>().moveSpeed;
+            playerhitted.GetComponent<Player1_Controller>().moveSpeed += speedbonus;
+        }
+        
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(2.5f);
