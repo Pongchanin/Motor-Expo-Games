@@ -27,8 +27,12 @@ public class speed : MonoBehaviour
 
         if (timer == 0 && timerstart)
         {
-            playerhitted.GetComponent<Player1_Controller>().moveSpeed = playerspeed;
-            Destroy(this.gameObject);
+            if(playerhitted != null)
+            {
+                playerhitted.GetComponent<Player1_Controller>().moveSpeed = playerspeed;
+                Destroy(this.gameObject);
+            }
+            
         }
     }
 
