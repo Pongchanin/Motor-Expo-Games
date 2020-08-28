@@ -32,6 +32,7 @@ public class Refugee : MonoBehaviour
     [SerializeField]
     int dest;
     bool isStun = false;
+    public Animator bubble;
     // Start is called before the first frame update
     void Start()
     {
@@ -184,6 +185,7 @@ public class Refugee : MonoBehaviour
     void animate()
     {
         Animator animate = gameObject.GetComponent<Animator>();
+
         if (RefugeeType == "Hurry")
         {
             animate.SetInteger("type", 1);
@@ -197,7 +199,7 @@ public class Refugee : MonoBehaviour
             animate.SetInteger("type", 3);
         }
 
-        animate.SetInteger("DestAnim", dest + 1);
+        bubble.SetInteger("DestAnim", dest + 1);
 
     }
 }
