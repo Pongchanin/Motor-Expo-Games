@@ -259,7 +259,7 @@ public class charcustomizablecon : MonoBehaviour
         boatstatus.Player1.weight = array1[selected1].weight + array2[selected2].weight + array3[selected3].weight;
         boatstatus.Player1.movementspeed = array1[selected1].movementspeed + array2[selected2].movementspeed + array3[selected3].movementspeed;
         boatstatus.Player1.strength = array1[selected1].strength + array2[selected2].strength + array3[selected3].strength;
-        StartCoroutine(Finish(2));
+        StartCoroutine(Finish(8));
     }
 
     IEnumerator Finish(int buildindex)

@@ -9,8 +9,8 @@
       <File FileName="Assets/Script/Core Code/SceneButton.cs" />
       <File FileName="Assets/Script/Core Code/ScoreManager.cs" />
       <File FileName="Assets/Script/Menu Script/MenuScript.cs" />
-      <File FileName="Assets/Script/Player Controller/speed.cs" Line="32" Column="1" />
-      <File FileName="Assets/Script/Player Controller/Noquicktime.cs" Line="30" Column="30" />
+      <File FileName="Assets/Script/Player Controller/speed.cs" />
+      <File FileName="Assets/Script/Player Controller/Noquicktime.cs" Line="12" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -33,7 +33,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="01c10b9e-0638-4aa0-a5c1-bf0a89a55d8f" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1f796453-f87b-4eb5-a184-65bfc77e8e8c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
