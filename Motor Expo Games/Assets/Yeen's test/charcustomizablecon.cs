@@ -36,10 +36,11 @@ public class charcustomizablecon : MonoBehaviour
     public int turn2weight;
     public int turn2power;
     public int turn2strength;
-    //[Header("turn3")]
-    //public int turn3movespeed;
-    //public int turn3weight;
-    //public int turn3power;
+   /* [Header("turn3")]
+    public int turn3movespeed;
+    public int turn3weight;
+    public int turn3power;
+    */public int turn3strength;
     [Header("body1")]
     public int body1movespeed;
     public int body1weight;
@@ -80,12 +81,18 @@ public class charcustomizablecon : MonoBehaviour
     public Animator shape;
     public Animator weel;
 
+    [Header("Boat Completed")]
+    public Image selected;
+    public Sprite[] BoatPics;
+    [SerializeField]
+    int index;
     //public boat thisboat;
 
     void Start()
     {
         partvaluesetting();
         array();
+        selected.sprite = BoatPics[0];
     }
 
     void Update()
@@ -98,6 +105,8 @@ public class charcustomizablecon : MonoBehaviour
         mortor.SetInteger("selected1", selected1);
         shape.SetInteger("selected2", selected2);
         weel.SetInteger("selected3", selected3);
+
+        changeBoatFinished();
 
     }
     void partvaluesetting()
@@ -112,9 +121,10 @@ public class charcustomizablecon : MonoBehaviour
         boatstatus.Turn2.power = turn2power;
         boatstatus.Turn2.strength = turn2strength;
         //-------------------------------------------------------
-        //boatstatus.Turn3.movementspeed = turn3movespeed;
-        //boatstatus.Turn3.weight = turn3weight;
-        //boatstatus.Turn3.power = turn3power;
+        /*boatstatus.Turn3.movementspeed = turn3movespeed;
+        boatstatus.Turn3.weight = turn3weight;
+        boatstatus.Turn3.power = turn3power;
+        boatstatus.Turn3.strength = turn3strength;*/
         //-------------------------------------------------------
         boatstatus.Body1.movementspeed = body1movespeed;
         boatstatus.Body1.weight = body1weight;
@@ -267,5 +277,187 @@ public class charcustomizablecon : MonoBehaviour
         GetComponent<MenuScript>().transition.SetTrigger("start");
         yield return new WaitForSeconds(GetComponent<MenuScript>().transitionTime);
         SceneManager.LoadScene(buildindex);
+    }
+
+    void changeBoatFinished()
+    {
+        
+        if(selected1 == 0)
+        {
+            if (selected2 == 0) {
+                if(selected3 == 0)
+                {
+                    index = 0;
+                }
+                else if(selected3 == 1)
+                {
+                    index = 1;
+                }
+                else if(selected3 == 2)
+                {
+                    index = 2;
+                }
+                else if (selected3 == 3)
+                {
+                    index = 3;
+                }
+            }
+            else if (selected2 == 1)
+            {
+                if (selected3 == 0)
+                {
+                    index = 12;
+                }
+                else if (selected3 == 1)
+                {
+                    index = 13;
+                }
+                else if (selected3 == 2)
+                {
+                    index = 14;
+                }
+                else if (selected3 == 3)
+                {
+                    index = 15;
+                }
+            }
+            else if (selected2 == 2)
+            {
+                if (selected3 == 0)
+                {
+                    index = 24;
+                }
+                else if (selected3 == 1)
+                {
+                    index = 25;
+                }
+                else if (selected3 == 2)
+                {
+                    index = 26;
+                }
+                else if (selected3 == 3)
+                {
+                    index = 27;
+                }
+            }
+            else if (selected2 == 3)
+            {
+                if (selected3 == 0)
+                {
+                    index = 24;
+                }
+                else if (selected3 == 1)
+                {
+                    index = 25;
+                }
+                else if (selected3 == 2)
+                {
+                    index = 26;
+                }
+                else if (selected3 == 3)
+                {
+                    index = 27;
+                }
+            }
+            else if (selected2 == 4)
+            {
+                if (selected3 == 0)
+                {
+                    index = 32;
+                }
+                else if (selected3 == 1)
+                {
+                    index = 33;
+                }
+                else if (selected3 == 2)
+                {
+                    index = 34;
+                }
+                else if (selected3 == 3)
+                {
+                    index = 35;
+                }
+            }
+        }
+        else if(selected1 == 1)
+        {
+            if (selected2 == 0)
+            {
+                if (selected3 == 0)
+                {
+                    index = 4;
+                }
+                else if (selected3 == 1)
+                {
+                    index = 5;
+                }
+                else if (selected3 == 2)
+                {
+                    index = 6;
+                }
+                else if (selected3 == 3)
+                {
+                    index = 7;
+                }
+            }
+            else if (selected2 == 1)
+            {
+                if (selected3 == 0)
+                {
+                    index = 16;
+                }
+                else if (selected3 == 1)
+                {
+                    index = 17;
+                }
+                else if (selected3 == 2)
+                {
+                    index = 18;
+                }
+                else if (selected3 == 3)
+                {
+                    index = 19;
+                }
+            }
+            else if (selected2 == 2)
+            {
+                if (selected3 == 0)
+                {
+                    index = 28;
+                }
+                else if (selected3 == 1)
+                {
+                    index = 29;
+                }
+                else if (selected3 == 2)
+                {
+                    index = 30;
+                }
+                else if (selected3 == 3)
+                {
+                    index = 31;
+                }
+            }
+            else if (selected2 == 3)
+            {
+                if (selected3 == 0)
+                {
+                    index = 28;
+                }
+                else if (selected3 == 1)
+                {
+                    index = 29;
+                }
+                else if (selected3 == 2)
+                {
+                    index = 30;
+                }
+                else if (selected3 == 3)
+                {
+                    index = 31;
+                }
+            }
+        }
+        selected.sprite = BoatPics[index];
     }
 }

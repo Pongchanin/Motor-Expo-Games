@@ -48,7 +48,7 @@ public static class boatstatus
         }
     }
 
-    /*public static Part1 Turn3
+    public static Part1 Turn3
     {
         get
         {
@@ -58,7 +58,7 @@ public static class boatstatus
         {
             turn3 = value;
         }
-    }*/
+    }
 
     public static Part2 Body1
     {
