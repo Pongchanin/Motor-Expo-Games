@@ -21,7 +21,7 @@ public class arrow : MonoBehaviour
     {
         actualvalue = (value / 100) * 504;
         actactualvalue = actualvalue - 252;
-        this.GetComponent<RectTransform>().localPosition = new Vector3(actactualvalue, -195, 0);
+        this.GetComponent<RectTransform>().localPosition = new Vector3(actactualvalue, -195, transform.localPosition.z);
 
 
 
