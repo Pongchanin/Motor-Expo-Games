@@ -36,7 +36,7 @@ public class Refugee : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Canvas layer1").GetComponent<Localplayer>().THisislocalplayer.GetComponent<Player1_Controller>();
+        player = GameObject.FindObjectOfType<Player1_Controller>();
         checkRefugeeType();
         setRefugeeType();
         timerRunning = true;
@@ -81,7 +81,7 @@ public class Refugee : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //print("hit");
+        print("hit");
 
         if (collision.tag == "Player")
         {

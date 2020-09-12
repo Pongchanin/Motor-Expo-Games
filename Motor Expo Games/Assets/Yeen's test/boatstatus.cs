@@ -6,7 +6,7 @@ public static class boatstatus
 {
     private static Part1 turn1 = new Part1();
     private static Part1 turn2 = new Part1();
-    private static Part1 turn3 = new Part1();
+    //private static Part1 turn3 = new Part1();
 
     private static Part2 body1 = new Part2();
     private static Part2 body2 = new Part2();
@@ -21,8 +21,6 @@ public static class boatstatus
     private static boat player2 = new boat();
     private static boat player3 = new boat();
     private static boat player4 = new boat();
-
-    private static int Thisisplayer;
 
 
 
@@ -192,11 +190,5 @@ public static class boatstatus
         {
             player4 = value;
         }
-    }
-
-    public static int thisisplayer
-    {
-        get;
-        set;
     }
 }
