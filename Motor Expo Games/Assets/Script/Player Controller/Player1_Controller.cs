@@ -34,7 +34,7 @@ public class Player1_Controller : MonoBehaviour
     public GameObject arrow;
     public GameObject press;
     public GameObject sprite;
-    public GameObject waveSprite;
+    //public GameObject waveSprite;
 
     bool quickTimePressed;
 
@@ -255,17 +255,17 @@ public class Player1_Controller : MonoBehaviour
             }
         }
     }
-    void turnSprite(){
+    void turnSprite() {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 10;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
-        Vector2 direc = new Vector2(Input.GetAxisRaw("Horizontal") + joystick.input.x,
-                Input.GetAxisRaw("Vertical") + joystick.input.y); 
-
-            
-        sprite.transform.up = direc;
-        waveSprite.transform.up = direc;
+        if ((joystick.input.y > 0 || joystick.input.y < 0 || joystick.input.x > 0 || joystick.input.x < 0) && !QTE && !isStun)
+        {
+            Vector2 direc = new Vector2(Input.GetAxisRaw("Horizontal") + joystick.input.x,
+        Input.GetAxisRaw("Vertical") + joystick.input.y);
+            sprite.transform.up = direc;
+        }
     }
 
     public void QuickTimePressed()
