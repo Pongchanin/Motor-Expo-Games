@@ -36,11 +36,11 @@ public class charcustomizablecon : MonoBehaviour
     public int turn2weight;
     public int turn2power;
     public int turn2strength;
-   /* [Header("turn3")]
+    [Header("turn3")]
     public int turn3movespeed;
     public int turn3weight;
     public int turn3power;
-    */public int turn3strength;
+    public int turn3strength;
     [Header("body1")]
     public int body1movespeed;
     public int body1weight;
@@ -121,10 +121,10 @@ public class charcustomizablecon : MonoBehaviour
         boatstatus.Turn2.power = turn2power;
         boatstatus.Turn2.strength = turn2strength;
         //-------------------------------------------------------
-        /*boatstatus.Turn3.movementspeed = turn3movespeed;
+        boatstatus.Turn3.movementspeed = turn3movespeed;
         boatstatus.Turn3.weight = turn3weight;
         boatstatus.Turn3.power = turn3power;
-        boatstatus.Turn3.strength = turn3strength;*/
+        boatstatus.Turn3.strength = turn3strength;
         //-------------------------------------------------------
         boatstatus.Body1.movementspeed = body1movespeed;
         boatstatus.Body1.weight = body1weight;
@@ -281,19 +281,20 @@ public class charcustomizablecon : MonoBehaviour
 
     void changeBoatFinished()
     {
-        
-        if(selected1 == 0)
+
+        if (selected1 == 0)
         {
-            if (selected2 == 0) {
-                if(selected3 == 0)
+            if (selected2 == 0)
+            {
+                if (selected3 == 0)
                 {
                     index = 0;
                 }
-                else if(selected3 == 1)
+                else if (selected3 == 1)
                 {
                     index = 1;
                 }
-                else if(selected3 == 2)
+                else if (selected3 == 2)
                 {
                     index = 2;
                 }
@@ -379,7 +380,7 @@ public class charcustomizablecon : MonoBehaviour
                 }
             }
         }
-        else if(selected1 == 1)
+        else if (selected1 == 1)
         {
             if (selected2 == 0)
             {
@@ -455,6 +456,85 @@ public class charcustomizablecon : MonoBehaviour
                 else if (selected3 == 3)
                 {
                     index = 31;
+                }
+            }
+        }
+        else if (selected1 == 2)
+        {
+            if (selected2 == 0)
+            {
+                if (selected3 == 0)
+                {
+                    index = 8;
+                }
+                else if (selected3 == 1)
+                {
+                    index = 9;
+                }
+                else if (selected3 == 2)
+                {
+                    index = 10;
+                }
+                else if (selected3 == 3)
+                {
+                    index = 11;
+                }
+            }
+            else if (selected2 == 1)
+            {
+                if (selected3 == 0)
+                {
+                    index = 20;
+                }
+                else if (selected3 == 1)
+                {
+                    index = 21;
+                }
+                else if (selected3 == 2)
+                {
+                    index = 22;
+                }
+                else if (selected3 == 3)
+                {
+                    index = 23;
+                }
+            }
+            else if (selected2 == 2)
+            {
+                if (selected3 == 0)
+                {
+                    index = 32;
+                }
+                else if (selected3 == 1)
+                {
+                    index = 33;
+                }
+                else if (selected3 == 2)
+                {
+                    index = 34;
+                }
+                else if (selected3 == 3)
+                {
+                    index = 35;
+                }
+            }
+            else if (selected2 == 3)
+            {
+                if (selected3 == 0)
+                {
+                    index = 32;
+                }
+                else if (selected3 == 1)
+                {
+                    index = 33;
+                }
+                else if (selected3 == 2)
+                {
+                    index = 34;
+                }
+                else if (selected3 == 3)
+                {
+                    index = 35;
                 }
             }
         }

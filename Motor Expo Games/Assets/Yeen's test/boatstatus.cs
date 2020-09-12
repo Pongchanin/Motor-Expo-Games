@@ -6,7 +6,7 @@ public static class boatstatus
 {
     private static Part1 turn1 = new Part1();
     private static Part1 turn2 = new Part1();
-    //private static Part1 turn3 = new Part1();
+    private static Part1 turn3 = new Part1();
 
     private static Part2 body1 = new Part2();
     private static Part2 body2 = new Part2();
@@ -49,7 +49,7 @@ public static class boatstatus
     }
 
 
-    /*public static Part1 Turn3
+    public static Part1 Turn3
     {
         get
         {
@@ -60,7 +60,7 @@ public static class boatstatus
             turn3 = value;
         }
     }
-    */
+    
     public static Part2 Body1
     {
         get
