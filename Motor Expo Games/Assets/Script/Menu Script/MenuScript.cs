@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-    public Animator transition;
-    public float transitionTime = 1f;
+	public Animator transition;
+	public float transitionTime = 1f;
 	public GameObject selectmode;
 	public GameObject option;
 	public GameObject exit;
@@ -20,10 +20,22 @@ public class MenuScript : MonoBehaviour
 		//StartCoroutine(LOADLEVEL(6));
 	}
 
-	public void startgame()
-    {
+	public void startgamemulti()
+	{
 		StartCoroutine(LOADLEVEL(6));
 	}
+
+	public void startgamesolo()
+	{
+		StartCoroutine(LOADLEVEL(9));
+	}
+
+	public void playSolo()
+	{
+		StartCoroutine(LOADLEVEL(10));
+
+	}
+
 
 	public void modeselectback()
     {

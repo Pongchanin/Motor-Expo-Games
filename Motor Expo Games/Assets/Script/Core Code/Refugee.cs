@@ -12,6 +12,7 @@ public class Refugee : MonoBehaviour
     [Header("Player Reference")]
     [SerializeField]
     Player1_Controller player;
+    Player1_Controller_Solo playerSolo;
     public Type type;  
 
     [Header("Refugee Parameter")]
@@ -36,7 +37,16 @@ public class Refugee : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindObjectOfType<Player1_Controller>();
+        if(GameObject.FindObjectOfType<Player1_Controller>() != null)
+        {
+            player = GameObject.FindObjectOfType<Player1_Controller>();
+        }
+        else
+        {
+            player = null;
+            playerSolo = GameObject.FindObjectOfType<Player1_Controller_Solo>();
+        }
+        
         checkRefugeeType();
         setRefugeeType();
         timerRunning = true;
@@ -69,6 +79,10 @@ public class Refugee : MonoBehaviour
         {
             isPlayerAttacked = player.checkGetAttack();
         }
+        else
+        {
+            isPlayerAttacked = playerSolo.checkGetAttack();
+        }
     }
 
     public void checkPlayerCollideRescueBase()
@@ -76,6 +90,10 @@ public class Refugee : MonoBehaviour
         if (player != null)
         {
             playerCollideRescueBase = player.checkInRescue();
+        }
+        else
+        {
+            playerCollideRescueBase = playerSolo.checkInRescue();
         }
     }
 
@@ -137,13 +155,27 @@ public class Refugee : MonoBehaviour
     }
     public void moveToPlayer()
     {
+        if(player != null)
+        {
             gameObject.transform.LookAt(player.transform.position);
-            if(Vector2.Distance(transform.position,player.transform.position) > 1f)
+            if (Vector2.Distance(transform.position, player.transform.position) > 1f)
             {
-            // transform.Translate(new Vector2(moveSpeed * Time.deltaTime, 0f));
-            transform.position = Vector3.Lerp(transform.position, player.transform.position, .15f);
-            transform.rotation = new Quaternion(0, 0, 0, 0);
+                // transform.Translate(new Vector2(moveSpeed * Time.deltaTime, 0f));
+                transform.position = Vector3.Lerp(transform.position, player.transform.position, .15f);
+                transform.rotation = new Quaternion(0, 0, 0, 0);
             }
+        }
+        else
+        {
+            gameObject.transform.LookAt(playerSolo.transform.position);
+            if (Vector2.Distance(transform.position, playerSolo.transform.position) > 1f)
+            {
+                // transform.Translate(new Vector2(moveSpeed * Time.deltaTime, 0f));
+                transform.position = Vector3.Lerp(transform.position, playerSolo.transform.position, .15f);
+                transform.rotation = new Quaternion(0, 0, 0, 0);
+            }
+        }
+            
        
     }
     public string checkRefugeeType()
@@ -156,15 +188,37 @@ public class Refugee : MonoBehaviour
         RefugeeType = type.ToString();
         if(type.ToString() == "Normal")
         {
-            scoreVal = (int)(1 * player.scoreMultiplier);
+            if(player != null)
+            {
+                scoreVal = (int)(1 * player.scoreMultiplier);
+            }
+            else
+            {
+                scoreVal = (int)(1 * playerSolo.scoreMultiplier);
+            }
+            
         }
         else if(type.ToString() == "Hurry")
         {
-            scoreVal = (int)(2 * player.scoreMultiplier);
+            if (player != null)
+            {
+                scoreVal = (int)(2 * player.scoreMultiplier);
+            }
+            else
+            {
+                scoreVal = (int)(2 * playerSolo.scoreMultiplier);
+            }
         }
         else
         {
-            scoreVal = (int)(5 * player.scoreMultiplier);
+            if (player != null)
+            {
+                scoreVal = (int)(5 * player.scoreMultiplier);
+            }
+            else
+            {
+                scoreVal = (int)(5 * playerSolo.scoreMultiplier);
+            }
         }
     }
     void TimeCountDown()

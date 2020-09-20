@@ -27,8 +27,17 @@ public class Noquicktime : MonoBehaviour
         {
             if(playerhitted != null)
             {
-                playerhitted.GetComponent<Player1_Controller>().noquicktime = false;
-                Destroy(this.gameObject);
+                if (playerhitted.GetComponent<Player1_Controller>() != null)
+                {
+                    playerhitted.GetComponent<Player1_Controller>().noquicktime = false;
+                    Destroy(this.gameObject);
+                }
+                else
+                {
+                    playerhitted.GetComponent<Player1_Controller_Solo>().noquicktime = false;
+                    Destroy(this.gameObject);
+                }
+
             }
             
         }
@@ -46,7 +55,16 @@ public class Noquicktime : MonoBehaviour
     {
         timer = duration;
         timerstart = true;
-        playerhitted.GetComponent<Player1_Controller>().noquicktime = true;
+
+        if (playerhitted.GetComponent<Player1_Controller>() != null)
+        {
+            playerhitted.GetComponent<Player1_Controller>().noquicktime = true;
+        }
+        else
+        {
+            playerhitted.GetComponent<Player1_Controller_Solo>().noquicktime = true;
+        }
+
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(2.5f);

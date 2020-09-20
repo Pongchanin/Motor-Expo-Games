@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public float time;
     [SerializeField]
     int OnRescue;
+    Player1_Controller_Solo playerSolo;
     Player1_Controller player;
 
     public Text ScoreUI;
@@ -36,7 +37,16 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindObjectOfType<Player1_Controller>();
+        if(GameObject.FindObjectOfType<Player1_Controller>() != null)
+        {
+            player = GameObject.FindObjectOfType<Player1_Controller>();
+        }
+        else
+        {
+            player = null;
+            playerSolo = GameObject.FindObjectOfType<Player1_Controller_Solo>();
+        }
+        
         //rescueBasePos = GameObject.FindGameObjectWithTag("RescuePlace").transform;
         InvokeRepeating("SpawnRefugee",0f,.5f);
         InvokeRepeating("SpawnItem", 0f, 3f);
@@ -53,7 +63,15 @@ public class GameManager : MonoBehaviour
 
         TimeUI.text = ((int)time).ToString();
         CountDown();
-        OnRescue = player.NumOfRescue;
+        if(player != null)
+        {
+            OnRescue = player.NumOfRescue;
+        }
+        else
+        {
+            OnRescue = playerSolo.NumOfRescue;
+        }
+       
         RescueUI.text = curRefugee.ToString();
 
         getNumOfRefugee();

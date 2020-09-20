@@ -57,9 +57,8 @@ GameObject:
   m_Component:
   - component: {fileID: 157608782550783074}
   - component: {fileID: 1637071313241895782}
-  - component: {fileID: 8732744791610253547}
+  - component: {fileID: 996902361809554972}
   - component: {fileID: 7823715881615912208}
-  - component: {fileID: -8972912613089713212}
   m_Layer: 0
   m_Name: Prototype Player Solo
   m_TagString: Player
@@ -104,7 +103,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8732744791610253547
+--- !u!114 &996902361809554972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,18 +112,57 @@ MonoBehaviour:
   m_GameObject: {fileID: 3989356090248189576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d96ee2c8deba6d4db500938945001b1, type: 3}
+  m_Script: {fileID: 11500000, guid: e06421b103b01df44af7d236f1f23519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlaYer: []
-  moveSpeed: 10
-  stunDuration: 1.5
-  scoreMultiplier: 1
+  moveSpeed: 0
+  stunDuration: 0
+  scoreMultiplier: 0
   getAttack: 0
   inRescue: 0
   isStun: 0
   atBase: 0
   NumOfRescue: 0
+  picIndex: 0
+  boatPics:
+  - {fileID: 21300000, guid: 5c2f74d4b1ec54bf4a93fc300cd67131, type: 3}
+  - {fileID: 21300000, guid: abb6835a6609844bf8dbccb590993547, type: 3}
+  - {fileID: 21300000, guid: ad89528b394b24faea8009309d41d99c, type: 3}
+  - {fileID: 21300000, guid: f656fe9ad45704031a935d1057b11c80, type: 3}
+  - {fileID: 21300000, guid: daab6b7e51c10412c91311ef6a2167cb, type: 3}
+  - {fileID: 21300000, guid: 02064418a742643ea9e28e2eb791f7c4, type: 3}
+  - {fileID: 21300000, guid: ab97dda1618164586b211e023b8509fb, type: 3}
+  - {fileID: 21300000, guid: 107a8bcac6e2b49c9a1843f6c8e5f373, type: 3}
+  - {fileID: 21300000, guid: 9543a52b425664f1e9b7e78207c1821e, type: 3}
+  - {fileID: 21300000, guid: 4b8124b73e27a453a815e89f4f19c0d9, type: 3}
+  - {fileID: 21300000, guid: f9c6bc97eebcb4df397455444470b27a, type: 3}
+  - {fileID: 21300000, guid: c90f75d871dbc4460a0a952ccd4c2182, type: 3}
+  - {fileID: 21300000, guid: a27ba480a6d7b4c909b75d7971b88678, type: 3}
+  - {fileID: 21300000, guid: 9fa4dacbaf1f948319034516ec9dd81a, type: 3}
+  - {fileID: 21300000, guid: e4dac7406b9ec4d9082ffcb0f2507841, type: 3}
+  - {fileID: 21300000, guid: 96534937e14954a25947f2913c601e6b, type: 3}
+  - {fileID: 21300000, guid: da94f33c212bd49898fe203739b6f634, type: 3}
+  - {fileID: 21300000, guid: 0e26d08eec67746649a299c405dfcad8, type: 3}
+  - {fileID: 21300000, guid: 0524a9944c68c468984cdb869001eb4c, type: 3}
+  - {fileID: 21300000, guid: 19dfc28fc2894487cac6da066d198480, type: 3}
+  - {fileID: 21300000, guid: 9b27dcba281ea408e876f16b723f2da1, type: 3}
+  - {fileID: 21300000, guid: e543e6debf48c47498c0b16a42842b0e, type: 3}
+  - {fileID: 21300000, guid: 3ad3fcaf1ff8940e9b52d351a8f10a0e, type: 3}
+  - {fileID: 21300000, guid: 20a542b27bcf04b0485bde7a39bd33d8, type: 3}
+  - {fileID: 21300000, guid: ac3681189b2014aa894c86035c47c2f9, type: 3}
+  - {fileID: 21300000, guid: 0b0fb5ff010444100bd64ff0a571ec53, type: 3}
+  - {fileID: 21300000, guid: 44e2062070ba14e218157ef12aa91adc, type: 3}
+  - {fileID: 21300000, guid: 1bf604869014445988281451353740eb, type: 3}
+  - {fileID: 21300000, guid: 1f12db339520740dd93e2b8d08f3db47, type: 3}
+  - {fileID: 21300000, guid: 28dbb62e350884f32ad842ad9f64ea81, type: 3}
+  - {fileID: 21300000, guid: eef67fc61b31240efb613d6e07da23fa, type: 3}
+  - {fileID: 21300000, guid: c84d14acffe3141ecbc8c6bfe746293e, type: 3}
+  - {fileID: 21300000, guid: 10aee8517ca844630af6dd4410e0f4e6, type: 3}
+  - {fileID: 21300000, guid: 45468398a8a9f483ca8774ea682a6767, type: 3}
+  - {fileID: 21300000, guid: 0b493547a2c124fdf8b01491763f9df6, type: 3}
+  - {fileID: 21300000, guid: b1190305802e0471285fda362fca252f, type: 3}
+  currentSprite: {fileID: 0}
+  boatSprite: {fileID: 0}
   noquicktime: 0
   bar: {fileID: 0}
   arrow: {fileID: 0}
@@ -156,39 +194,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.12, y: 6.52}
   m_EdgeRadius: 0
---- !u!114 &-8972912613089713212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3989356090248189576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!1 &4906397932021175287
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,6 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5942147696149212752}
   - component: {fileID: 4268691330753222237}
+  - component: {fileID: 1881739058}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -271,6 +277,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1881739058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4906397932021175287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb9f969be6750f4c85d769f9791c6bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  sprite: {fileID: 0}
 --- !u!1 &9131649474163577081
 GameObject:
   m_ObjectHideFlags: 0

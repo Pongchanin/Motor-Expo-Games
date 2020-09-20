@@ -78,10 +78,12 @@
     <Compile Include="Assets\Script\CustomNetwork.cs" />
     <Compile Include="Assets\Script\Menu Script\BackToMenuScript.cs" />
     <Compile Include="Assets\Script\Menu Script\MenuScript.cs" />
+    <Compile Include="Assets\Script\Menu Script\MenuScript_Copy.cs" />
     <Compile Include="Assets\Script\Player Controller\Camera_Control.cs" />
     <Compile Include="Assets\Script\Player Controller\JoyButton.cs" />
     <Compile Include="Assets\Script\Player Controller\Noquicktime.cs" />
     <Compile Include="Assets\Script\Player Controller\Player1_Controller.cs" />
+    <Compile Include="Assets\Script\Player Controller\Player1_Controller_Solo.cs" />
     <Compile Include="Assets\Script\Player Controller\Scoremal.cs" />
     <Compile Include="Assets\Script\Player Controller\speed.cs" />
     <Compile Include="Assets\Script\QTE\arrow.cs" />
@@ -90,6 +92,8 @@
     <Compile Include="Assets\Yeen's test\boat parts.cs" />
     <Compile Include="Assets\Yeen's test\boatstatus.cs" />
     <Compile Include="Assets\Yeen's test\charcustomizablecon.cs" />
+    <Compile Include="Assets\Yeen's test\charcustomizablecon_Solo.cs" />
+    <Compile Include="Assets\spriteCheat.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -29,7 +29,15 @@ public class speed : MonoBehaviour
         {
             if(playerhitted != null)
             {
-                playerhitted.GetComponent<Player1_Controller>().moveSpeed = playerspeed;
+                if (playerhitted.GetComponent<Player1_Controller>() != null)
+                {
+                    playerhitted.GetComponent<Player1_Controller>().moveSpeed = playerspeed;
+                }
+                else
+                {
+                    playerhitted.GetComponent<Player1_Controller_Solo>().moveSpeed = playerspeed;
+                }
+                
                 Destroy(this.gameObject);
             }
             
@@ -50,8 +58,16 @@ public class speed : MonoBehaviour
         timerstart = true;
         if (playerhitted != null)
         {
-            playerspeed = playerhitted.GetComponent<Player1_Controller>().moveSpeed;
-            playerhitted.GetComponent<Player1_Controller>().moveSpeed += speedbonus;
+            if (playerhitted.GetComponent<Player1_Controller>() != null)
+            {
+                playerspeed = playerhitted.GetComponent<Player1_Controller>().moveSpeed;
+                playerhitted.GetComponent<Player1_Controller>().moveSpeed += speedbonus;
+            }
+            else
+            {
+                playerspeed = playerhitted.GetComponent<Player1_Controller_Solo>().moveSpeed;
+                playerhitted.GetComponent<Player1_Controller_Solo>().moveSpeed += speedbonus;
+            }
         }
         
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
