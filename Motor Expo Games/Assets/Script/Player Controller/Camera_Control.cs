@@ -5,26 +5,28 @@ using UnityEngine.Networking;
 
 public class Camera_Control : MonoBehaviour
 {
-	public GameObject player;
+	public Player1_Controller player1;
+
+	private Vector3 lastPLayerPosition;
+	private float distanceToMove;
+
+	public Vector3 offset;
 
 	void Start()
 	{
-
+		player1 = FindObjectOfType<Player1_Controller>();
+		lastPLayerPosition = player1.transform.position;
 	}
 
 	void Update()
 	{
-		if (player == null)
-        {
-			player = GameObject.Find("Canvas layer1").GetComponent<Localplayer>().THisislocalplayer;
-		}
-
-		transform.position = new Vector3(player.transform.position.x , player.transform.position.y , -29.804f);
-
+		distanceToMove = player1.transform.position.x - lastPLayerPosition.x;
+		transform.position = new Vector3(transform.position.x + distanceToMove, player1.transform.position.y) + offset;
+		lastPLayerPosition = player1.transform.position;
 	}
     private void LateUpdate()
     {
-
+		
+		
 	}
-
 }

@@ -1,7 +1,6 @@
 ﻿<Properties StartupConfiguration="{931CE0BB-4591-DC16-E8EC-0E64E7322DAB}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player Controller/Noquicktime.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player Controller/Player1_Controller.cs">
     <Files>
-      <File FileName="Assets/Script/Player Controller/Player1_Controller.cs" Line="278" Column="1" />
       <File FileName="Assets/Script/CustomNetwork.cs" />
       <File FileName="Assets/Script/Core Code/Refugee.cs" />
       <File FileName="Assets/Script/Core Code/GameManager.cs" />
@@ -11,6 +10,8 @@
       <File FileName="Assets/Script/Menu Script/MenuScript.cs" />
       <File FileName="Assets/Script/Player Controller/speed.cs" />
       <File FileName="Assets/Script/Player Controller/Noquicktime.cs" Line="12" Column="1" />
+      <File FileName="Assets/Yeen's test/boatstatus.cs" Line="63" Column="7" />
+      <File FileName="Assets/Script/Player Controller/Player1_Controller.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,7 +22,7 @@
                 <Node name="Core Code" expanded="True" />
                 <Node name="Menu Script" expanded="True" />
                 <Node name="Player Controller" expanded="True">
-                  <Node name="Noquicktime.cs" selected="True" />
+                  <Node name="Player1_Controller.cs" selected="True" />
                 </Node>
               </Node>
               <Node name="Yeen's test" expanded="True" />
@@ -33,7 +34,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1f796453-f87b-4eb5-a184-65bfc77e8e8c" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="277cd189-018a-4e0b-838f-a29e1452e2a9" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

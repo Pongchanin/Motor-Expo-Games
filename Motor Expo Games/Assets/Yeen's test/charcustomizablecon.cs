@@ -281,19 +281,20 @@ public class charcustomizablecon : MonoBehaviour
 
     void changeBoatFinished()
     {
-        
-        if(selected1 == 0)
+
+        if (selected1 == 0)
         {
-            if (selected2 == 0) {
-                if(selected3 == 0)
+            if (selected2 == 0)
+            {
+                if (selected3 == 0)
                 {
                     index = 0;
                 }
-                else if(selected3 == 1)
+                else if (selected3 == 1)
                 {
                     index = 1;
                 }
-                else if(selected3 == 2)
+                else if (selected3 == 2)
                 {
                     index = 2;
                 }
@@ -379,7 +380,7 @@ public class charcustomizablecon : MonoBehaviour
                 }
             }
         }
-        else if(selected1 == 1)
+        else if (selected1 == 1)
         {
             if (selected2 == 0)
             {

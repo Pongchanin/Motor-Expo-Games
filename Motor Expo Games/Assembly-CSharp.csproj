@@ -76,7 +76,6 @@
     <Compile Include="Assets\Script\Core Code\SceneButton.cs" />
     <Compile Include="Assets\Script\Core Code\ScoreManager.cs" />
     <Compile Include="Assets\Script\CustomNetwork.cs" />
-    <Compile Include="Assets\Script\Localplayer.cs" />
     <Compile Include="Assets\Script\Menu Script\BackToMenuScript.cs" />
     <Compile Include="Assets\Script\Menu Script\MenuScript.cs" />
     <Compile Include="Assets\Script\Player Controller\Camera_Control.cs" />
@@ -85,9 +84,6 @@
     <Compile Include="Assets\Script\Player Controller\Player1_Controller.cs" />
     <Compile Include="Assets\Script\Player Controller\Scoremal.cs" />
     <Compile Include="Assets\Script\Player Controller\speed.cs" />
-    <Compile Include="Assets\Script\PlayerColor.cs" />
-    <Compile Include="Assets\Script\PlayerID.cs" />
-    <Compile Include="Assets\Script\PlayerName.cs" />
     <Compile Include="Assets\Script\QTE\arrow.cs" />
     <Compile Include="Assets\Script\QTE\clickdis.cs" />
     <Compile Include="Assets\Script\multiplay\lobby.cs" />
