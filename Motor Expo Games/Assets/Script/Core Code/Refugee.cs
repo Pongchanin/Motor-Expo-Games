@@ -101,30 +101,30 @@ public class Refugee : MonoBehaviour
     {
         print("hit");
 
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             moveWithPlayer = true;
         }
 
-        if(collision.tag == "dest1" && dest == 0)
+        if(collision.CompareTag("dest1") && dest == 0)
         {
             GameManager gm = GameObject.FindObjectOfType<GameManager>();
             gm.point += scoreVal;
             Destroy(this.gameObject);
         }
-        else if (collision.tag == "dest2" && dest == 1)
+        else if (collision.CompareTag("dest2") && dest == 1)
         {
             GameManager gm = GameObject.FindObjectOfType<GameManager>();
             gm.point += scoreVal;
             Destroy(this.gameObject);
         }
-        else if (collision.tag == "dest3" && dest == 2)
+        else if (collision.CompareTag("dest3") && dest == 2)
         {
             GameManager gm = GameObject.FindObjectOfType<GameManager>();
             gm.point += scoreVal;
             Destroy(this.gameObject);
         }
-        else if (collision.tag == "dest4" && dest == 3)
+        else if (collision.CompareTag("dest4") && dest == 3)
         {
             GameManager gm = GameObject.FindObjectOfType<GameManager>();
             gm.point += scoreVal;
@@ -133,7 +133,7 @@ public class Refugee : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             if (!isStun)
             {
@@ -148,7 +148,7 @@ public class Refugee : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             moveWithPlayer = false;
         }

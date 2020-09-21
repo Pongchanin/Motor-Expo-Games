@@ -161,13 +161,13 @@ public class Player1_Controller_Solo : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.tag == "RescuePlace")
+        if(collision.CompareTag("RescuePlace"))
         {
             //print("RescuePlace collide");
             setInRescue(true);
         }
 
-        if(collision.tag == "PlayerBase")
+        if(collision.CompareTag("PlayerBase"))
         {
             //print("At Player Base");
             setAtBase(true);
@@ -191,13 +191,13 @@ public class Player1_Controller_Solo : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.tag == "RescuePlace")
+        if(collision.CompareTag("RescuePlace"))
         {
             print("Exit from RescuePlace");
             setInRescue(false);
         }
         
-        if (collision.tag == "PlayerBase")
+        if (collision.CompareTag("PlayerBase"))
         {
             print("Exit Player Base");
             setAtBase(false);
@@ -219,7 +219,7 @@ public class Player1_Controller_Solo : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //-------------------------
-        if (collision.gameObject.tag == "Player" && !QTE && !noquicktime)
+        if (collision.gameObject.CompareTag("Player") && !QTE && !noquicktime)
         {
             QTE = true;
         }

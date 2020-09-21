@@ -35,7 +35,7 @@ public class Scoremal : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             playerhitted = collision.gameObject;
             StartCoroutine(itemgetto());
@@ -45,8 +45,16 @@ public class Scoremal : MonoBehaviour
     {
         timer = duration;
         timerstart = true;
-        playermal = playerhitted.GetComponent<Player1_Controller>().scoreMultiplier;
-        playerhitted.GetComponent<Player1_Controller>().scoreMultiplier += scoremulti;
+        if(playerhitted.GetComponent<Player1_Controller>() != null)
+        {
+            playermal = playerhitted.GetComponent<Player1_Controller>().scoreMultiplier;
+            playerhitted.GetComponent<Player1_Controller>().scoreMultiplier += scoremulti;
+        }
+        else
+        {
+            playermal = playerhitted.GetComponent<Player1_Controller_Solo>().scoreMultiplier;
+            playerhitted.GetComponent<Player1_Controller_Solo>().scoreMultiplier += scoremulti;
+        }
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(2.5f);
