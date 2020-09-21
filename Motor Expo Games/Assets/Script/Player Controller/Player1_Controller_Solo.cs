@@ -45,6 +45,11 @@ public class Player1_Controller_Solo : MonoBehaviour
 
     bool quickTimePressed;
 
+    [Header("Boat Parameter")]
+    public GameObject[] passenger;
+    public int numOfPassenger;
+
+
 
     void Start()
     {
@@ -182,11 +187,13 @@ public class Player1_Controller_Solo : MonoBehaviour
             if (refugees[i].tag == "RescuePeople")
             {
                 Refugee temp = refugees[i].GetComponent<Refugee>();
+                passenger[i-1] = refugees[i].gameObject;
                 if (temp.moveWithPlayer)
                 {
                     NumOfRescue += 1;
                 }
             }
+            numOfPassenger = refugees.Length;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -208,6 +215,7 @@ public class Player1_Controller_Solo : MonoBehaviour
             if (refugees[i].tag == "RescuePeople")
             {
                 Refugee temp = refugees[i].GetComponent<Refugee>();
+                passenger[i - 1] = null;
                 if (temp.moveWithPlayer)
                 {
                     NumOfRescue -= 1;
@@ -285,6 +293,14 @@ public class Player1_Controller_Solo : MonoBehaviour
     public void QuickTimePressed()
     {
         quickTimePressed = true;
+    }
+
+    public void getRefugee()
+    {
+       /* for(int i = 0; i < numOfPassenger; i++)
+        {
+            passenger[i] = Game
+        }*/
     }
 }
 

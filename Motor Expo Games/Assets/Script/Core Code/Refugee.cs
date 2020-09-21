@@ -67,7 +67,7 @@ public class Refugee : MonoBehaviour
         }
         setRefugeeType();
         TimeCountDown();
-        
+        setSprite();
     }
     private void LateUpdate()
     {
@@ -161,7 +161,7 @@ public class Refugee : MonoBehaviour
             if (Vector2.Distance(transform.position, player.transform.position) > 1f)
             {
                 // transform.Translate(new Vector2(moveSpeed * Time.deltaTime, 0f));
-                transform.position = Vector3.Lerp(transform.position, player.transform.position, .15f);
+                transform.position = player.transform.position;
                 transform.rotation = new Quaternion(0, 0, 0, 0);
             }
         }
@@ -171,7 +171,7 @@ public class Refugee : MonoBehaviour
             if (Vector2.Distance(transform.position, playerSolo.transform.position) > 1f)
             {
                 // transform.Translate(new Vector2(moveSpeed * Time.deltaTime, 0f));
-                transform.position = Vector3.Lerp(transform.position, playerSolo.transform.position, .15f);
+                transform.position = playerSolo.transform.position;
                 transform.rotation = new Quaternion(0, 0, 0, 0);
             }
         }
@@ -255,5 +255,31 @@ public class Refugee : MonoBehaviour
 
         bubble.SetInteger("DestAnim", dest + 1);
 
+    }
+    public void setSprite()
+    {
+        if (!moveWithPlayer)
+        {
+            SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
+            var color = GetComponent<SpriteRenderer>().color;
+            color.a = 1;
+            for (int i = 0; i < sprites.Length; i++)
+            {
+                sprites[i].color = color;
+            }
+
+            
+        }
+
+        else
+        {
+            SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
+            var color = GetComponent<SpriteRenderer>().color;
+            color.a = 0;
+            for (int i = 0; i < sprites.Length; i++)
+            {
+                sprites[i].color = color;
+            }
+        }
     }
 }
