@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[ExecuteInEditMode]
 
+[ExecuteInEditMode]
 public class clickdis : MonoBehaviour
 {
     [Range(0.0f, 50f)]
@@ -16,7 +16,7 @@ public class clickdis : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        aztualsize = (size / 50) * (19.9f);
+        aztualsize = (size / 50) * (21.14375f);
         this.GetComponent<RectTransform>().localScale = new Vector3(aztualsize, transform.localScale.y, transform.localScale.z);
     }
 }

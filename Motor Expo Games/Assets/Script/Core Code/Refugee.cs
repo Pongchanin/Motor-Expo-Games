@@ -61,10 +61,10 @@ public class Refugee : MonoBehaviour
     {
         checkPlayerAttacked();
         checkPlayerCollideRescueBase();
-        if (moveWithPlayer)
+        /*if (moveWithPlayer)
         {
             moveToPlayer();
-        }
+        }*/
         setRefugeeType();
         TimeCountDown();
         setSprite();
@@ -72,6 +72,10 @@ public class Refugee : MonoBehaviour
     private void LateUpdate()
     {
         transform.rotation = new Quaternion(0, 0, 0, 0);
+        if (moveWithPlayer)
+        {
+            moveToPlayer();
+        }
     }
     public void checkPlayerAttacked()
     {

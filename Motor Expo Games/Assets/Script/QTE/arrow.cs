@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//[ExecuteInEditMode]
+[ExecuteInEditMode]
 
 public class arrow : MonoBehaviour
 {
@@ -19,9 +19,9 @@ public class arrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        actualvalue = (value / 100) * 504;
-        actactualvalue = actualvalue - 252;
-        this.GetComponent<RectTransform>().localPosition = new Vector3(actactualvalue, -195, 0);
+        actualvalue = (value / 100) * 412;
+        actactualvalue = actualvalue - 206;
+        this.GetComponent<RectTransform>().localPosition = new Vector3(actactualvalue, -285, 0);
 
 
 

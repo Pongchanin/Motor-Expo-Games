@@ -78,6 +78,10 @@ public class Player1_Controller_Solo : MonoBehaviour
         {
             press.SetActive(false);
         }
+        if(moveSpeed == 0)
+        {
+            moveSpeed = 10;
+        }
     }
 
     // Update is called once per frame
