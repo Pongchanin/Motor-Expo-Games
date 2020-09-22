@@ -834,7 +834,7 @@ PrefabInstance:
     - target: {fileID: 664378753558159439, guid: cf818a7195857e74987bc0e7ce760bc6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 31.723984
+      value: -137.196
       objectReference: {fileID: 0}
     - target: {fileID: 664378753558159439, guid: cf818a7195857e74987bc0e7ce760bc6,
         type: 3}
@@ -5119,11 +5119,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 996902361809554972, guid: ca36a8b6bb8864f4d88b2b88b0f15d06,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3989356090248189576, guid: ca36a8b6bb8864f4d88b2b88b0f15d06,
         type: 3}
       propertyPath: m_Name
@@ -5338,6 +5333,11 @@ PrefabInstance:
       propertyPath: itemSpawnPts.Array.data[11]
       value: 
       objectReference: {fileID: 771611333}
+    - target: {fileID: 1027365002857697109, guid: 2892bdda8b39b7d489e24886be3d82ec,
+        type: 3}
+      propertyPath: time
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1027365002857697107, guid: 2892bdda8b39b7d489e24886be3d82ec, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2892bdda8b39b7d489e24886be3d82ec, type: 3}

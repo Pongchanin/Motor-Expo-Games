@@ -107,7 +107,7 @@ public class Refugee : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
-            moveWithPlayer = true;
+           // moveWithPlayer = true;
         }
 
         if(collision.CompareTag("dest1") && dest == 0)

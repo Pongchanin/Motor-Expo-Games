@@ -49,6 +49,10 @@ public class Player1_Controller_Solo : MonoBehaviour
     public GameObject[] passenger;
     public int numOfPassenger;
 
+    [Header("Sprite Parameter")]
+    public Transform[] seats;
+    public GameObject[] occupiedSeat;
+    public Sprite normal,hurry,traveler;
 
 
     void Start()
@@ -131,7 +135,7 @@ public class Player1_Controller_Solo : MonoBehaviour
 
         quicktimeevent();
         turnSprite();
-        print(transform.position);
+        SetSprite();
     }
 
     public bool checkGetAttack()
@@ -191,7 +195,7 @@ public class Player1_Controller_Solo : MonoBehaviour
             if (refugees[i].tag == "RescuePeople")
             {
                 Refugee temp = refugees[i].GetComponent<Refugee>();
-                passenger[i-1] = refugees[i].gameObject;
+                //passenger[i-1] = refugees[i].gameObject;
                 if (temp.moveWithPlayer)
                 {
                     NumOfRescue += 1;
@@ -219,7 +223,7 @@ public class Player1_Controller_Solo : MonoBehaviour
             if (refugees[i].tag == "RescuePeople")
             {
                 Refugee temp = refugees[i].GetComponent<Refugee>();
-                passenger[i - 1] = null;
+               // passenger[i - 1] = null;
                 if (temp.moveWithPlayer)
                 {
                     NumOfRescue -= 1;
@@ -305,6 +309,38 @@ public class Player1_Controller_Solo : MonoBehaviour
         {
             passenger[i] = Game
         }*/
+    }
+
+    void SetSprite()
+    {
+        print("SetSprite");
+        for(int i = 0; i < passenger.Length; i++)
+        {
+            if(occupiedSeat[i] != null)
+            {
+                SpriteRenderer temp = seats[i].GetComponent<SpriteRenderer>();
+                print(temp.gameObject);
+                if (occupiedSeat[i].GetComponent<Refugee>().checkRefugeeType() == "Normal")
+                {
+                    temp.sprite = normal;
+                }
+                else if(occupiedSeat[i].GetComponent<Refugee>().checkRefugeeType() == "Hurry")
+                {
+                    temp.sprite = hurry;
+                }
+                else if(occupiedSeat[i].GetComponent<Refugee>().checkRefugeeType() == "Traveler")
+                {
+                    temp.sprite = traveler;
+                }
+                
+                
+            }
+            if(occupiedSeat[i] == null)
+            {
+                occupiedSeat[i] = passenger[i];
+            }
+
+        }
     }
 }
 
