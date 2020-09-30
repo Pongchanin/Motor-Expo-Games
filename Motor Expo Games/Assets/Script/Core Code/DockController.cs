@@ -8,13 +8,15 @@ public class DockController : MonoBehaviour
     GameObject dock;
     [SerializeField]
     Player1_Controller_Solo player;
-
+    [SerializeField]
+    GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindObjectOfType<Player1_Controller_Solo>();
         dock = this.gameObject;
+        gm  = GameObject.FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -39,25 +41,21 @@ public class DockController : MonoBehaviour
                 print(player.passenger[i].GetComponent<Refugee>().dest);
                 if (dock.CompareTag("dest1") && player.passenger[i].GetComponent<Refugee>().dest == 0)
                 {
-                    GameManager gm = GameObject.FindObjectOfType<GameManager>();
                     gm.point += player.passenger[i].GetComponent<Refugee>().scoreVal;
                     Destroy(player.passenger[i]);
                 }
                 else if (dock.CompareTag("dest2") && player.passenger[i].GetComponent<Refugee>().dest == 1)
                 {
-                    GameManager gm = GameObject.FindObjectOfType<GameManager>();
                     gm.point += player.passenger[i].GetComponent<Refugee>().scoreVal;
                     Destroy(player.passenger[i]);
                 }
                 else if (dock.CompareTag("dest3") && player.passenger[i].GetComponent<Refugee>().dest == 2)
                 {
-                    GameManager gm = GameObject.FindObjectOfType<GameManager>();
                     gm.point += player.passenger[i].GetComponent<Refugee>().scoreVal;
                     Destroy(player.passenger[i]);
                 }
                 else if (dock.CompareTag("dest4") && player.passenger[i].GetComponent<Refugee>().dest == 3)
                 {
-                    GameManager gm = GameObject.FindObjectOfType<GameManager>();
                     gm.point += player.passenger[i].GetComponent<Refugee>().scoreVal;
                     Destroy(player.passenger[i]);
                 }
