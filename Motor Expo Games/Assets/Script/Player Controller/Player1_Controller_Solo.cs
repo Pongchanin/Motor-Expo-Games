@@ -338,6 +338,8 @@ public class Player1_Controller_Solo : MonoBehaviour
             if(occupiedSeat[i] == null)
             {
                 occupiedSeat[i] = passenger[i];
+                SpriteRenderer temp = seats[i].GetComponent<SpriteRenderer>();
+                temp.sprite = null;
             }
 
         }

@@ -26,12 +26,12 @@ public class Refugee : MonoBehaviour
     [SerializeField]
     string RefugeeType;
     [SerializeField]
-    int scoreVal;
+    public int scoreVal;
     public float waitTimer;
     [SerializeField]
     bool timerRunning;
     [SerializeField]
-    int dest;
+    public int dest;
     bool isStun = false;
     public Animator bubble;
     // Start is called before the first frame update
