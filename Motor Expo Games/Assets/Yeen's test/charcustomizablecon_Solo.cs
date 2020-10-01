@@ -270,7 +270,7 @@ public class charcustomizablecon_Solo : MonoBehaviour
         boatstatus.Player1.movementspeed = array1[selected1].movementspeed + array2[selected2].movementspeed + array3[selected3].movementspeed;
         boatstatus.Player1.strength = array1[selected1].strength + array2[selected2].strength + array3[selected3].strength;
         PlayerPrefs.SetInt("BoatPic", index);
-        StartCoroutine(Finish(10));
+        StartCoroutine(Finish("Level Design Solo"));
     }
 
     IEnumerator Finish(int buildindex)
@@ -278,6 +278,14 @@ public class charcustomizablecon_Solo : MonoBehaviour
         GetComponent<MenuScript_Copy>().transition.SetTrigger("start");
         yield return new WaitForSeconds(GetComponent<MenuScript_Copy>().transitionTime);
         SceneManager.LoadScene(buildindex);
+    }
+
+    IEnumerator Finish(string levelName)
+    {
+        GetComponent<MenuScript_Copy>().transition.SetTrigger("start");
+        yield return new WaitForSeconds(GetComponent<MenuScript_Copy>().transitionTime);
+        SceneManager.LoadScene(levelName);
+
     }
 
     void changeBoatFinished()

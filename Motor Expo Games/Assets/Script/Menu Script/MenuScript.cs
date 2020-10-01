@@ -22,12 +22,12 @@ public class MenuScript : MonoBehaviour
 
 	public void startgamemulti()
 	{
-		StartCoroutine(LOADLEVEL(6));
+		StartCoroutine(LoadLevel("MultiLobby"));
 	}
 
 	public void startgamesolo()
 	{
-		StartCoroutine(LOADLEVEL(9));
+		StartCoroutine(LoadLevel("Phase01_Solo"));
 	}
 
 	public void playSolo()
@@ -62,5 +62,11 @@ public class MenuScript : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(buildindex);
+    }
+	IEnumerator LoadLevel(string levelName)
+    {
+		transition.SetTrigger("start");
+		yield return new WaitForSeconds(transitionTime);
+		SceneManager.LoadScene(levelName);
     }
 }
