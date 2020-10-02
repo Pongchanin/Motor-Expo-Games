@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class Player1_Controller_Solo : NetworkBehaviour
+public class Player1_Controller_Solo : MonoBehaviour
 {
 
     protected Joystick joystick;
@@ -58,7 +59,7 @@ public class Player1_Controller_Solo : NetworkBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 120;
         joystick = FindObjectOfType<Joystick>();
         joybutton = FindObjectOfType<JoyButton>();
         bar = GameObject.Find("Bar");
@@ -92,6 +93,7 @@ public class Player1_Controller_Solo : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //float angle;
 
         boatSprite = boatPics[picIndex];

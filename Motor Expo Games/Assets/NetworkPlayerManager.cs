@@ -22,13 +22,14 @@ public class NetworkPlayerManager : NetworkBehaviour
 
     [SerializeField]
     GameObject buttonCanvas, networkCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
         networkLobby = GameObject.FindObjectOfType<NetworkLobbyManager>();
         lobbyButton = GameManager.FindObjectOfType<NetworkLobbyButton>();
         isPressedNetwork = false;
-        networkCanvas.SetActive(false);
+        networkCanvas.SetActive(false);        
     }
 
     // Update is called once per frame
@@ -50,8 +51,10 @@ public class NetworkPlayerManager : NetworkBehaviour
     {
         if (networkLobby.lobbySlots[0] != null)
         {
+            networkLobby.lobbySlots[0].gameObject.name = "Player 1";
             if (networkLobby.lobbySlots[0].readyToBegin == false)
             {
+
                 p1ready.text = "Not Ready";
             }
             else
@@ -67,6 +70,7 @@ public class NetworkPlayerManager : NetworkBehaviour
         }
         if (networkLobby.lobbySlots[1] != null)
         {
+            networkLobby.lobbySlots[1].gameObject.name = "Player 2";
             if (networkLobby.lobbySlots[1].readyToBegin == false)
             {
                 p2ready.text = "Not Ready";
@@ -82,6 +86,7 @@ public class NetworkPlayerManager : NetworkBehaviour
         }
         if (networkLobby.lobbySlots[2] != null)
         {
+            networkLobby.lobbySlots[2].gameObject.name = "Player 3";
             if (networkLobby.lobbySlots[2].readyToBegin == false)
             {
                 p3ready.text = "Not Ready";
@@ -98,6 +103,7 @@ public class NetworkPlayerManager : NetworkBehaviour
         }
         if (networkLobby.lobbySlots[3] != null)
         {
+            networkLobby.lobbySlots[3].gameObject.name = "Player 4";
             if (networkLobby.lobbySlots[3].readyToBegin == false)
             {
                 p4ready.text = "Not Ready";

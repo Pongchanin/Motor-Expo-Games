@@ -9,12 +9,14 @@ public class AddPassenger : MonoBehaviour
     [SerializeField]
     Player1_Controller_Solo player1Solo;
     GameObject temp;
+    AudioSource audioSource;
 
     void Start()
     {
         player1Solo = GameObject.FindObjectOfType<Player1_Controller_Solo>();
         temp = new GameObject();
         temp = gameObject;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,6 +28,7 @@ public class AddPassenger : MonoBehaviour
     private void OnMouseDown()
     {
         print("OnMouseDown:" + gameObject.name);
+
         CopyComp();
 
         //Destroy(this.gameObject);
@@ -41,6 +44,7 @@ public class AddPassenger : MonoBehaviour
             if (player1Solo.passenger[i] == null)
             {
                 player1Solo.passenger[i] =  temp;
+                audioSource.Play();
                 gameObject.SetActive(false);
                 break;
             }

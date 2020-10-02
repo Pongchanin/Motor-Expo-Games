@@ -26,10 +26,6 @@ public class Camera_Multi : NetworkBehaviour
 			player1Solo = FindObjectOfType<Player1_Controller_Solo>();
 			lastPLayerPosition = player1Solo.transform.position;
 		}
-        if (player1Solo.isLocalPlayer)
-        {
-			gameObject.SetActive(true);
-        }
 	}
 
 	void Update()

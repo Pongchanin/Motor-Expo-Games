@@ -24,6 +24,18 @@ EditorBuildSettings:
     path: Assets/Scenes/WinScene.unity
     guid: 185bda6ba9c9b654f8e516c836ca4dbf
   - enabled: 1
-    path: Assets/Scenes/TestEnvi/MultiLobby.unity
+    path: Assets/Scenes/MultiLobby.unity
     guid: 2543cb1f3b244024ca705d0e5276efa0
+  - enabled: 1
+    path: Assets/Scenes/Level Design Mult.unity
+    guid: fd6b40c58a6e17b45b4db076c49980a9
+  - enabled: 1
+    path: Assets/Scenes/Level Design.unity
+    guid: be1fe6d968502464d9f2cdb3b8d0e2d0
+  - enabled: 1
+    path: Assets/Scenes/OKOKO.unity
+    guid: f5cb14ba33266e1479e65ef2b6144617
+  - enabled: 1
+    path: Assets/Scenes/OKOKOK.unity
+    guid: 3b4d583ab8c7e0c4c9b9fa116b40df16
   m_configObjects: {}

@@ -73,6 +73,8 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\NetworkLobbyButton.cs" />
     <Compile Include="Assets\NetworkPlayerManager.cs" />
+    <Compile Include="Assets\PlayerIdentity.cs" />
+    <Compile Include="Assets\QTEPressed.cs" />
     <Compile Include="Assets\Script\Core Code\Debugger.cs" />
     <Compile Include="Assets\Script\Core Code\DockController.cs" />
     <Compile Include="Assets\Script\Core Code\GameManager.cs" />
@@ -84,6 +86,7 @@
     <Compile Include="Assets\Script\Menu Script\MenuScript.cs" />
     <Compile Include="Assets\Script\Menu Script\MenuScript_Copy.cs" />
     <Compile Include="Assets\Script\Player Controller\Camera_Control.cs" />
+    <Compile Include="Assets\Script\Player Controller\Camera_Multi.cs" />
     <Compile Include="Assets\Script\Player Controller\JoyButton.cs" />
     <Compile Include="Assets\Script\Player Controller\Noquicktime.cs" />
     <Compile Include="Assets\Script\Player Controller\Player1_Controller.cs" />
@@ -92,6 +95,7 @@
     <Compile Include="Assets\Script\Player Controller\speed.cs" />
     <Compile Include="Assets\Script\QTE\arrow.cs" />
     <Compile Include="Assets\Script\QTE\clickdis.cs" />
+    <Compile Include="Assets\Script\TestMulti\MovementMulti.cs" />
     <Compile Include="Assets\Script\multiplay\lobby.cs" />
     <Compile Include="Assets\Yeen's test\boat parts.cs" />
     <Compile Include="Assets\Yeen's test\boatstatus.cs" />
@@ -642,43 +646,43 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/twott/Desktop/Motor Expo Games/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Editor">
-      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
+      <HintPath>C:/Users/twott/Desktop/Motor Expo Games/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/twott/Desktop/Motor Expo Games/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/twott/Desktop/Motor Expo Games/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/twott/Desktop/Motor Expo Games/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/twott/Desktop/Motor Expo Games/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/twott/Desktop/Motor Expo Games/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-weaver.Editor">
-      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
+      <HintPath>C:/Users/twott/Desktop/Motor Expo Games/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/twott/Desktop/Motor Expo Games/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>C:/Users/twott/Desktop/Motor Expo Games/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/twott/Desktop/Motor Expo Games/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/twott/Desktop/Motor Expo Games/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
-      <HintPath>D:/OneDrive/Motor Expo/New Project/Motor Expo Games/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
+      <HintPath>C:/Users/twott/Desktop/Motor Expo Games/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>

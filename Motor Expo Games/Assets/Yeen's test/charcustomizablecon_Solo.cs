@@ -273,6 +273,20 @@ public class charcustomizablecon_Solo : MonoBehaviour
         StartCoroutine(Finish("Level Design Solo"));
     }
 
+    public void FinishMulti()
+    {
+        boatstatus.Player1.part1 = array1[selected1];
+        boatstatus.Player1.part2 = array2[selected2];
+        boatstatus.Player1.part3 = array3[selected3];
+
+        boatstatus.Player1.power = array1[selected1].power + array2[selected2].power + array3[selected3].power;
+        boatstatus.Player1.weight = array1[selected1].weight + array2[selected2].weight + array3[selected3].weight;
+        boatstatus.Player1.movementspeed = array1[selected1].movementspeed + array2[selected2].movementspeed + array3[selected3].movementspeed;
+        boatstatus.Player1.strength = array1[selected1].strength + array2[selected2].strength + array3[selected3].strength;
+        PlayerPrefs.SetInt("BoatPic", index);
+        StartCoroutine(Finish("Level Design Mult"));
+    }
+
     IEnumerator Finish(int buildindex)
     {
         GetComponent<MenuScript_Copy>().transition.SetTrigger("start");

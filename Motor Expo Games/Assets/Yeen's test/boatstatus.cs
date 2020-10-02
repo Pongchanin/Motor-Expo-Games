@@ -1,26 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
+
 
 public static class boatstatus
 {
-    private static Part1 turn1 = new Part1();
-    private static Part1 turn2 = new Part1();
-    private static Part1 turn3 = new Part1();
+    [SyncVar] private static Part1 turn1 = new Part1();
+    [SyncVar] private static Part1 turn2 = new Part1();
+    [SyncVar] private static Part1 turn3 = new Part1();
 
-    private static Part2 body1 = new Part2();
-    private static Part2 body2 = new Part2();
-    private static Part2 body3 = new Part2();
+    [SyncVar] private static Part2 body1 = new Part2();
+    [SyncVar] private static Part2 body2 = new Part2();
+    [SyncVar] private static Part2 body3 = new Part2();
 
-    private static Part3 ancor1 = new Part3();
-    private static Part3 ancor2 = new Part3();
-    private static Part3 ancor3 = new Part3();
-    private static Part3 ancor4 = new Part3();
+    [SyncVar] private static Part3 ancor1 = new Part3();
+    [SyncVar] private static Part3 ancor2 = new Part3();
+    [SyncVar] private static Part3 ancor3 = new Part3();
+    [SyncVar] private static Part3 ancor4 = new Part3();
 
-    private static boat player1 = new boat();
-    private static boat player2 = new boat();
-    private static boat player3 = new boat();
-    private static boat player4 = new boat();
+    [SyncVar] private static boat player1 = new boat();
+    [SyncVar] private static boat player2 = new boat();
+    [SyncVar] private static boat player3 = new boat();
+    [SyncVar] private static boat player4 = new boat();
 
 
 

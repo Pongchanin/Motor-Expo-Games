@@ -9,17 +9,35 @@ public class spriteCheat : MonoBehaviour
     Player1_Controller_Solo player;
     [SerializeField]
     SpriteRenderer sprite;
+
+    [SerializeField]
+    Player1_Controller playermulti;
+
     void Start()
     {
-        player = GetComponentInParent<Player1_Controller_Solo>();
-        sprite = GetComponent<SpriteRenderer>();
+        if (GameObject.FindObjectOfType<Player1_Controller_Solo>() != null)
+        {
+            player = GetComponentInParent<Player1_Controller_Solo>();
+            sprite = GetComponent<SpriteRenderer>();
+        }
+        else
+        {
+            playermulti = GetComponentInParent<Player1_Controller>();
+            sprite = GetComponent<SpriteRenderer>();
+        }
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        sprite.sprite = player.boatSprite;
-        print(player.boatSprite);
+        if (GameObject.FindObjectOfType<Player1_Controller_Solo>() != null)
+        {
+            sprite.sprite = player.boatSprite;
+        }
+        else
+        {
+            sprite.sprite = playermulti.boatSprite;
+        }
     }
 }

@@ -10,10 +10,13 @@ ScriptsOnlyBuild:
     - GameManager
     - MenuScript
     - MenuScript_Copy
+    - MovementMulti
     - NetworkLobbyButton
     - NetworkPlayerManager
     - Noquicktime
     - Player1_Controller_Solo
+    - PlayerIdentity
+    - QTEPressed
     - Refugee
     - arrow
     - charcustomizablecon_Solo
@@ -49,6 +52,95 @@ ScriptsOnlyBuild:
     - UnityEngine.Networking.NetworkStartPosition
     - UnityEngine.Networking.NetworkTransform
   sceneClasses:
+    Assets/Scenes/Level Design Mult.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 60
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 14236}
+    - Class: 114
+      Script: {instanceID: 14430}
+    - Class: 114
+      Script: {instanceID: 14442}
+    - Class: 114
+      Script: {instanceID: 14480}
+    - Class: 114
+      Script: {instanceID: 14522}
+    - Class: 114
+      Script: {instanceID: 14620}
+    - Class: 114
+      Script: {instanceID: 14938}
+    - Class: 114
+      Script: {instanceID: 15056}
+    - Class: 114
+      Script: {instanceID: 15122}
+    - Class: 114
+      Script: {instanceID: 15180}
+    - Class: 114
+      Script: {instanceID: 15414}
+    - Class: 114
+      Script: {instanceID: 15514}
+    - Class: 114
+      Script: {instanceID: 15534}
+    - Class: 114
+      Script: {instanceID: 15684}
+    - Class: 114
+      Script: {instanceID: 15742}
+    - Class: 114
+      Script: {instanceID: 15766}
+    - Class: 114
+      Script: {instanceID: 15948}
+    - Class: 114
+      Script: {instanceID: 15966}
+    - Class: 114
+      Script: {instanceID: 15972}
+    - Class: 114
+      Script: {instanceID: 16394}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/Level Design Solo.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -74,6 +166,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -83,48 +179,127 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11154}
+      Script: {instanceID: 14236}
     - Class: 114
-      Script: {instanceID: 11156}
+      Script: {instanceID: 14430}
     - Class: 114
-      Script: {instanceID: 11160}
+      Script: {instanceID: 14444}
     - Class: 114
-      Script: {instanceID: 11388}
+      Script: {instanceID: 14480}
     - Class: 114
-      Script: {instanceID: 11566}
+      Script: {instanceID: 14620}
     - Class: 114
-      Script: {instanceID: 11886}
+      Script: {instanceID: 14938}
     - Class: 114
-      Script: {instanceID: 12006}
+      Script: {instanceID: 15056}
     - Class: 114
-      Script: {instanceID: 12070}
+      Script: {instanceID: 15122}
     - Class: 114
-      Script: {instanceID: 12130}
+      Script: {instanceID: 15180}
     - Class: 114
-      Script: {instanceID: 12364}
+      Script: {instanceID: 15414}
     - Class: 114
-      Script: {instanceID: 12472}
+      Script: {instanceID: 15524}
     - Class: 114
-      Script: {instanceID: 12482}
+      Script: {instanceID: 15534}
     - Class: 114
-      Script: {instanceID: 12642}
+      Script: {instanceID: 15684}
     - Class: 114
-      Script: {instanceID: 12702}
+      Script: {instanceID: 15742}
     - Class: 114
-      Script: {instanceID: 12726}
+      Script: {instanceID: 15766}
     - Class: 114
-      Script: {instanceID: 12912}
+      Script: {instanceID: 15948}
     - Class: 114
-      Script: {instanceID: 12932}
+      Script: {instanceID: 15966}
     - Class: 114
-      Script: {instanceID: 12938}
+      Script: {instanceID: 15972}
     - Class: 114
-      Script: {instanceID: 13352}
+      Script: {instanceID: 16388}
     - Class: 114
-      Script: {instanceID: 13358}
+      Script: {instanceID: 16394}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Level Design.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 60
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 14236}
+    - Class: 114
+      Script: {instanceID: 14480}
+    - Class: 114
+      Script: {instanceID: 14620}
+    - Class: 114
+      Script: {instanceID: 14938}
+    - Class: 114
+      Script: {instanceID: 15056}
+    - Class: 114
+      Script: {instanceID: 15122}
+    - Class: 114
+      Script: {instanceID: 15534}
+    - Class: 114
+      Script: {instanceID: 15684}
+    - Class: 114
+      Script: {instanceID: 15742}
+    - Class: 114
+      Script: {instanceID: 15766}
+    - Class: 114
+      Script: {instanceID: 15966}
+    - Class: 114
+      Script: {instanceID: 15972}
+    - Class: 114
+      Script: {instanceID: 16388}
+    - Class: 114
+      Script: {instanceID: 16394}
+    - Class: 115
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -164,21 +339,21 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11154}
+      Script: {instanceID: 14236}
     - Class: 114
-      Script: {instanceID: 11156}
+      Script: {instanceID: 14430}
     - Class: 114
-      Script: {instanceID: 11160}
+      Script: {instanceID: 14480}
     - Class: 114
-      Script: {instanceID: 11886}
+      Script: {instanceID: 14938}
     - Class: 114
-      Script: {instanceID: 11888}
+      Script: {instanceID: 14940}
     - Class: 114
-      Script: {instanceID: 12364}
+      Script: {instanceID: 15414}
     - Class: 114
-      Script: {instanceID: 12932}
+      Script: {instanceID: 15966}
     - Class: 114
-      Script: {instanceID: 13358}
+      Script: {instanceID: 16394}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -196,6 +371,185 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 225
+      Script: {instanceID: 0}
+    Assets/Scenes/MultiLobby.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 111
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 14236}
+    - Class: 114
+      Script: {instanceID: 14358}
+    - Class: 114
+      Script: {instanceID: 14430}
+    - Class: 114
+      Script: {instanceID: 14442}
+    - Class: 114
+      Script: {instanceID: 14480}
+    - Class: 114
+      Script: {instanceID: 14522}
+    - Class: 114
+      Script: {instanceID: 14938}
+    - Class: 114
+      Script: {instanceID: 14980}
+    - Class: 114
+      Script: {instanceID: 15080}
+    - Class: 114
+      Script: {instanceID: 15414}
+    - Class: 114
+      Script: {instanceID: 15844}
+    - Class: 114
+      Script: {instanceID: 15966}
+    - Class: 114
+      Script: {instanceID: 16318}
+    - Class: 114
+      Script: {instanceID: 16356}
+    - Class: 114
+      Script: {instanceID: 16394}
+    - Class: 114
+      Script: {instanceID: 56292}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/OKOKO.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 14236}
+    - Class: 114
+      Script: {instanceID: 14480}
+    - Class: 114
+      Script: {instanceID: 14938}
+    - Class: 114
+      Script: {instanceID: 15742}
+    - Class: 114
+      Script: {instanceID: 15966}
+    - Class: 114
+      Script: {instanceID: 16394}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/OKOKOK.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 14236}
+    - Class: 114
+      Script: {instanceID: 14480}
+    - Class: 114
+      Script: {instanceID: 14938}
+    - Class: 114
+      Script: {instanceID: 15534}
+    - Class: 114
+      Script: {instanceID: 15742}
+    - Class: 114
+      Script: {instanceID: 15966}
+    - Class: 114
+      Script: {instanceID: 16388}
+    - Class: 114
+      Script: {instanceID: 16394}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/Option.unity:
     - Class: 1
@@ -215,21 +569,21 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11154}
+      Script: {instanceID: 14236}
     - Class: 114
-      Script: {instanceID: 11156}
+      Script: {instanceID: 14430}
     - Class: 114
-      Script: {instanceID: 11160}
+      Script: {instanceID: 14480}
     - Class: 114
-      Script: {instanceID: 11846}
+      Script: {instanceID: 14898}
     - Class: 114
-      Script: {instanceID: 11886}
+      Script: {instanceID: 14938}
     - Class: 114
-      Script: {instanceID: 12364}
+      Script: {instanceID: 15414}
     - Class: 114
-      Script: {instanceID: 12932}
+      Script: {instanceID: 15966}
     - Class: 114
-      Script: {instanceID: 13358}
+      Script: {instanceID: 16394}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -270,25 +624,25 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11154}
+      Script: {instanceID: 14236}
     - Class: 114
-      Script: {instanceID: 11156}
+      Script: {instanceID: 14430}
     - Class: 114
-      Script: {instanceID: 11160}
+      Script: {instanceID: 14480}
     - Class: 114
-      Script: {instanceID: 11654}
+      Script: {instanceID: 14708}
     - Class: 114
-      Script: {instanceID: 11752}
+      Script: {instanceID: 14804}
     - Class: 114
-      Script: {instanceID: 11886}
+      Script: {instanceID: 14938}
     - Class: 114
-      Script: {instanceID: 12364}
+      Script: {instanceID: 15414}
     - Class: 114
-      Script: {instanceID: 12678}
+      Script: {instanceID: 15718}
     - Class: 114
-      Script: {instanceID: 12932}
+      Script: {instanceID: 15966}
     - Class: 114
-      Script: {instanceID: 13358}
+      Script: {instanceID: 16394}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -331,25 +685,25 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11154}
+      Script: {instanceID: 14236}
     - Class: 114
-      Script: {instanceID: 11156}
+      Script: {instanceID: 14430}
     - Class: 114
-      Script: {instanceID: 11160}
+      Script: {instanceID: 14480}
     - Class: 114
-      Script: {instanceID: 11654}
+      Script: {instanceID: 14708}
     - Class: 114
-      Script: {instanceID: 11752}
+      Script: {instanceID: 14804}
     - Class: 114
-      Script: {instanceID: 11886}
+      Script: {instanceID: 14938}
     - Class: 114
-      Script: {instanceID: 12364}
+      Script: {instanceID: 15414}
     - Class: 114
-      Script: {instanceID: 12678}
+      Script: {instanceID: 15718}
     - Class: 114
-      Script: {instanceID: 12932}
+      Script: {instanceID: 15966}
     - Class: 114
-      Script: {instanceID: 13358}
+      Script: {instanceID: 16394}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -367,87 +721,6 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 225
-      Script: {instanceID: 0}
-    Assets/Scenes/TestEnvi/MultiLobby.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 50
-      Script: {instanceID: 0}
-    - Class: 58
-      Script: {instanceID: 0}
-    - Class: 61
-      Script: {instanceID: 0}
-    - Class: 74
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 91
-      Script: {instanceID: 0}
-    - Class: 95
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 111
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 11152}
-    - Class: 114
-      Script: {instanceID: 11154}
-    - Class: 114
-      Script: {instanceID: 11156}
-    - Class: 114
-      Script: {instanceID: 11158}
-    - Class: 114
-      Script: {instanceID: 11160}
-    - Class: 114
-      Script: {instanceID: 11162}
-    - Class: 114
-      Script: {instanceID: 11306}
-    - Class: 114
-      Script: {instanceID: 11388}
-    - Class: 114
-      Script: {instanceID: 11466}
-    - Class: 114
-      Script: {instanceID: 11886}
-    - Class: 114
-      Script: {instanceID: 12364}
-    - Class: 114
-      Script: {instanceID: 12472}
-    - Class: 114
-      Script: {instanceID: 12804}
-    - Class: 114
-      Script: {instanceID: 12932}
-    - Class: 114
-      Script: {instanceID: 13320}
-    - Class: 114
-      Script: {instanceID: 13358}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 212
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/WinScene.unity:
     - Class: 1
@@ -469,46 +742,16 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: eafb77726b67b7571818a7210a3ce11e
-    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
-    namespaceName: UnityEngine.Networking
-    className: NetworkIdentity
-  - hash:
-      serializedVersion: 2
-      Hash: 89f9a1b4c64db9559e39f4a2e3bfaadd
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Image
-  - hash:
-      serializedVersion: 2
-      Hash: aeb62f729c52c814dec86c47dcac1471
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Text
-  - hash:
-      serializedVersion: 2
-      Hash: 265cf27ba050d55ff33a8acab4ded6c0
-    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
-    namespaceName: UnityEngine.Networking
-    className: NetworkLobbyManager
+      Hash: 036e676178fc57d50dac14a6bc082c95
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Joystick
   - hash:
       serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
-  - hash:
-      serializedVersion: 2
-      Hash: e0ee4b3d4e27318934cc940a969d3d96
-    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
-    namespaceName: UnityEngine.Networking
-    className: NetworkManagerHUD
-  - hash:
-      serializedVersion: 2
-      Hash: 036e676178fc57d50dac14a6bc082c95
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Joystick
   - hash:
       serializedVersion: 2
       Hash: c42672c997f8be6b1aa86a927ebea785
@@ -533,6 +776,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: charcustomizablecon
+  - hash:
+      serializedVersion: 2
+      Hash: c55a3c86c211a5cdbf7960d77fbe9e69
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Player1_Controller
   - hash:
       serializedVersion: 2
       Hash: 5bd9a19c7b5f76c563418e28f48a561b
@@ -565,10 +814,22 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
+      Hash: aeb62f729c52c814dec86c47dcac1471
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Text
+  - hash:
+      serializedVersion: 2
       Hash: 499fd23433e68e265d153aa6b95d0047
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Scrollbar
+  - hash:
+      serializedVersion: 2
+      Hash: eafb77726b67b7571818a7210a3ce11e
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkIdentity
   - hash:
       serializedVersion: 2
       Hash: de0a4b7916e1a94a1e82a49a13fb8fcd
@@ -587,6 +848,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 89f9a1b4c64db9559e39f4a2e3bfaadd
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Image
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -751,6 +1018,12 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
+      Hash: fd1618bb9a4e82d6f28be95a8ac5e9ac
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerIdentity
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -773,6 +1046,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
+  - hash:
+      serializedVersion: 2
+      Hash: 265cf27ba050d55ff33a8acab4ded6c0
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkLobbyManager
   - hash:
       serializedVersion: 2
       Hash: 5887ef1bc706b22b773d253fd443ceef
@@ -859,13 +1138,19 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: 9188efb73525287d6b554a30f5b6fd88
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: QTEPressed
+  - hash:
+      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 29db4f6f910fffa2d5bf534575c7d413
+      Hash: d2b3f33c667cf70c82ac837df93d8410
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: spriteCheat
@@ -991,12 +1276,6 @@ ScriptsOnlyBuild:
     className: arrow
   - hash:
       serializedVersion: 2
-      Hash: 50175c5ead1bb93a8d1ba7568a14b999
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Player1_Controller
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1025,6 +1304,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: 37b62a66aa1c65fcbf384f92c98870b0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Camera_Multi
   - hash:
       serializedVersion: 2
       Hash: 1dcb82730d983b77cec736c6ef19f814
@@ -1091,6 +1376,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Outline
+  - hash:
+      serializedVersion: 2
+      Hash: e0ee4b3d4e27318934cc940a969d3d96
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkManagerHUD
   - hash:
       serializedVersion: 2
       Hash: a63fc1a3b035e5a0b5839cd7f7b3086e
@@ -1181,6 +1472,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 2c00c174a3c7caf5ede201cafc27cf78
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MovementMulti
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity
@@ -1189,5 +1486,9 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Level Design Solo.unity
   - Assets/Scenes/Option.unity
   - Assets/Scenes/WinScene.unity
-  - Assets/Scenes/TestEnvi/MultiLobby.unity
+  - Assets/Scenes/MultiLobby.unity
+  - Assets/Scenes/Level Design Mult.unity
+  - Assets/Scenes/Level Design.unity
+  - Assets/Scenes/OKOKO.unity
+  - Assets/Scenes/OKOKOK.unity
   playerPath: C:/Users/twott/Desktop/TestEnvi/Motor Expo Games.exe

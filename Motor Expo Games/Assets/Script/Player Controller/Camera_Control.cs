@@ -31,6 +31,7 @@ public class Camera_Control : MonoBehaviour
 
 	void Update()
 	{
+		this.gameObject.SetActive(true);
 		if(player1 != null)
         {
 			distanceToMove = player1.transform.position.x - lastPLayerPosition.x;
@@ -39,6 +40,7 @@ public class Camera_Control : MonoBehaviour
 		}
         else
         {
+			
 			distanceToMove = player1Solo.transform.position.x - lastPLayerPosition.x;
 			transform.position = new Vector3(transform.position.x + distanceToMove, player1Solo.transform.position.y, transform.position.z) + offset;
 			lastPLayerPosition = player1Solo.transform.position;
