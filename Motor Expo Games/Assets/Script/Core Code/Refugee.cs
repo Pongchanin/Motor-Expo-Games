@@ -103,7 +103,7 @@ public class Refugee : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("hit");
+        /*print("hit");
 
         if (collision.CompareTag("Player"))
         {
@@ -133,11 +133,11 @@ public class Refugee : MonoBehaviour
             GameManager gm = GameObject.FindObjectOfType<GameManager>();
             gm.point += scoreVal;
             Destroy(this.gameObject);
-        }
+        }*/
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+       /* if (collision.CompareTag("Player"))
         {
             if (!isStun)
             {
@@ -148,14 +148,14 @@ public class Refugee : MonoBehaviour
                 moveWithPlayer = false;
             }
             
-        }
+        }*/
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        /*if (collision.CompareTag("Player"))
         {
             moveWithPlayer = false;
-        }
+        }*/
     }
     public void moveToPlayer()
     {

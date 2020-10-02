@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         }
         
         //rescueBasePos = GameObject.FindGameObjectWithTag("RescuePlace").transform;
-        InvokeRepeating("SpawnRefugee",0f,.5f);
+        InvokeRepeating("SpawnRefugee",0f,1.5f);
         InvokeRepeating("SpawnItem", 0f, 3f);
     }
 

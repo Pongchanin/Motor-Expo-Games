@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Player1_Controller_Solo : MonoBehaviour
+public class Player1_Controller_Solo : NetworkBehaviour
 {
 
     protected Joystick joystick;
@@ -189,6 +190,7 @@ public class Player1_Controller_Solo : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        /*
         Collider2D[] refugees = Physics2D.OverlapCircleAll(transform.position, 5f);
         for (int i = 0; i < refugees.Length; i++)
         {
@@ -202,11 +204,11 @@ public class Player1_Controller_Solo : MonoBehaviour
                 }
             }
             numOfPassenger = refugees.Length;
-        }
+        }*/
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.CompareTag("RescuePlace"))
+       /* if(collision.CompareTag("RescuePlace"))
         {
             print("Exit from RescuePlace");
             setInRescue(false);
@@ -229,7 +231,7 @@ public class Player1_Controller_Solo : MonoBehaviour
                     NumOfRescue -= 1;
                 }
             }
-        }
+        }*/
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
