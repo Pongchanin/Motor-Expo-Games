@@ -205,3 +205,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   gm: {fileID: 0}
+  circleRadius: 7.5

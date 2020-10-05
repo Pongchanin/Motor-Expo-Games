@@ -32,11 +32,11 @@ public class arrow : MonoBehaviour
 
         if (left_right)
         {
-            value += 1;
+            value += 125 * Time.deltaTime;
         }
         else
         {
-            value -= 1;
+            value -= 125 * Time.deltaTime;
         }
     }
 }

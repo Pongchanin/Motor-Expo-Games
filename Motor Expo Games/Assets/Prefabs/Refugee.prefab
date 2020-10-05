@@ -365,6 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1Solo: {fileID: 0}
+  circleRadius: 5
 --- !u!82 &852975164492302159
 AudioSource:
   m_ObjectHideFlags: 0

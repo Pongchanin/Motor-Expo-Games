@@ -11,18 +11,23 @@ public class DockController : MonoBehaviour
     [SerializeField]
     GameManager gm;
 
+    Vector2 center;
+    [SerializeField]
+    float circleRadius;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindObjectOfType<Player1_Controller_Solo>();
         dock = this.gameObject;
         gm  = GameObject.FindObjectOfType<GameManager>();
+        center = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        OverlapCircle();
     }
 
     private void OnMouseDown()
@@ -67,5 +72,27 @@ public class DockController : MonoBehaviour
             
         }
         
+
+    }
+    void OverlapCircle()
+    {
+        Collider2D cir = Physics2D.OverlapCircle(center, circleRadius);
+        print(cir.name);
+
+        Collider2D[] cirs = Physics2D.OverlapCircleAll(center, circleRadius);
+        for (int i = 0; i < cirs.Length; i++)
+        {
+            print(cirs[i].name);
+            if (cirs[i].GetComponent<Player1_Controller_Solo>() != null)
+            {
+                returnRefugee();
+            }
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, circleRadius);
+
     }
 }

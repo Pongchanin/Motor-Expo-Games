@@ -297,7 +297,7 @@ public class Player1_Controller_Solo : MonoBehaviour
         if ((joystick.input.y > 0 || joystick.input.y < 0 || joystick.input.x > 0 || joystick.input.x < 0) && !QTE && !isStun)
         {
             Vector2 direc = new Vector2(Input.GetAxisRaw("Horizontal") + joystick.input.x,
-        Input.GetAxisRaw("Vertical") + joystick.input.y);
+            Input.GetAxisRaw("Vertical") + joystick.input.y);
             sprite.transform.up = direc;
         }
     }
@@ -317,7 +317,7 @@ public class Player1_Controller_Solo : MonoBehaviour
 
     void SetSprite()
     {
-        print("SetSprite");
+        //print("SetSprite");
         for(int i = 0; i < passenger.Length; i++)
         {
             if(occupiedSeat[i] != null)
