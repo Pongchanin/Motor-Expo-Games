@@ -33,8 +33,8 @@ public class MovementMulti : NetworkBehaviour
         if (joystick.input.x > 0 || joystick.input.x < 0)
         {
             
-            Boat.transform.position = new Vector3(joystick.input.x * (moveSpeed) * Time.deltaTime, 0f, 0f);
-            CmdProvidePositiontoServer(Boat, new Vector3(joystick.input.x * (moveSpeed) * Time.deltaTime, 0f, 0f));
+            Boat.transform.position += new Vector3(joystick.input.x * (moveSpeed) * Time.deltaTime, 0f, 0f);
+            CmdProvidePositiontoServer(Boat, Boat.transform.position);
             /*angle = Mathf.Atan2(joystick.input.y, joystick.input.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);*/
             //print("X: " + joystick.input.x);
@@ -42,8 +42,8 @@ public class MovementMulti : NetworkBehaviour
         }
         if (joystick.input.y > 0 || joystick.input.y < 0)
         {
-            transform.Translate(new Vector3(0f, joystick.input.y * (moveSpeed) * Time.deltaTime, 0f));
-            CmdProvidePositiontoServer(Boat, new Vector3(0f, joystick.input.y * (moveSpeed) * Time.deltaTime, 0f));
+            Boat.transform.position += new Vector3(0f, joystick.input.y * (moveSpeed) * Time.deltaTime, 0f);
+            CmdProvidePositiontoServer(Boat, Boat.transform.position);
             /*angle = Mathf.Atan2(joystick.input.y, joystick.input.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);*/
             //print("Y: " + joystick.input.y);
