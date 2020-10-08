@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class QTEPressed : MonoBehaviour
+public class QTEPressed : NetworkBehaviour
 {
     // Start is called before the first frame update
     public bool isClicked;
@@ -19,7 +20,11 @@ public class QTEPressed : MonoBehaviour
 
     public void setIsClicked()
     {
-        isClicked = true;
+        if (isLocalPlayer)
+        {
+            isClicked = true;
+        }
+        
     }
 
 

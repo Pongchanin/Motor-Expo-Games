@@ -1,10 +1,10 @@
-﻿using System.Collections;
+﻿using Mirror;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.Networking;
 
-public class Player1_Controller_Solo : MonoBehaviour
+public class Player1_Controller_Solo : NetworkBehaviour
 {
 
     protected Joystick joystick;
@@ -91,55 +91,54 @@ public class Player1_Controller_Solo : MonoBehaviour
     }
 
     // Update is called once per frame
+    [Command]
     void Update()
     {
-        
-        //float angle;
+            boatSprite = boatPics[picIndex];
+            if ((joystick.input.x > 0 || joystick.input.x < 0) && isStun != true && !QTE)
+            {
+                transform.Translate(new Vector3(joystick.input.x * (moveSpeed) * Time.deltaTime, 0f, 0f));
 
-        boatSprite = boatPics[picIndex];
-        if ((joystick.input.x > 0 ||joystick.input.x < 0) && isStun != true && !QTE)
-        {
-            transform.Translate(new Vector3(joystick.input.x * (moveSpeed) * Time.deltaTime, 0f, 0f));
-            
-            /*angle = Mathf.Atan2(joystick.input.y, joystick.input.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);*/
-            //print("X: " + joystick.input.x);
-           // transform.rotation = new Quaternion(0, 0, 180 * joystick.input.x,0);
-        }
-        if ((joystick.input.y > 0 || joystick.input.y < 0) && isStun != true && !QTE)
-        {
-            transform.Translate(new Vector3(0f, joystick.input.y * (moveSpeed) * Time.deltaTime, 0f));
+                /*angle = Mathf.Atan2(joystick.input.y, joystick.input.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);*/
+                //print("X: " + joystick.input.x);
+                // transform.rotation = new Quaternion(0, 0, 180 * joystick.input.x,0);
+            }
+            if ((joystick.input.y > 0 || joystick.input.y < 0) && isStun != true && !QTE)
+            {
+                transform.Translate(new Vector3(0f, joystick.input.y * (moveSpeed) * Time.deltaTime, 0f));
 
-            /*angle = Mathf.Atan2(joystick.input.y, joystick.input.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);*/
-            //print("Y: " + joystick.input.y);
-        }
+                /*angle = Mathf.Atan2(joystick.input.y, joystick.input.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);*/
+                //print("Y: " + joystick.input.y);
+            }
 
-        if ((Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f) && isStun != true && !QTE)
-        {
-            transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal") * (moveSpeed) * Time.deltaTime, 0f, 0f));
-            //print("X: " + Input.GetAxisRaw("Horizontal"));
-        }
-        if ((Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f) && isStun != true && !QTE)
-        {
-           transform.Translate(new Vector3(0f, Input.GetAxisRaw("Vertical") * (moveSpeed) * Time.deltaTime, 0f));
-            //print("Y: " + Input.GetAxisRaw("Vertical"));
-        }
-        if (!result_pass)
-        {
-            setStun(true);
-            Invoke("ResetStun", stunDuration);
-        }
+            if ((Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f) && isStun != true && !QTE)
+            {
+                transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal") * (moveSpeed) * Time.deltaTime, 0f, 0f));
+                //print("X: " + Input.GetAxisRaw("Horizontal"));
+            }
+            if ((Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f) && isStun != true && !QTE)
+            {
+                transform.Translate(new Vector3(0f, Input.GetAxisRaw("Vertical") * (moveSpeed) * Time.deltaTime, 0f));
+                //print("Y: " + Input.GetAxisRaw("Vertical"));
+            }
+            if (!result_pass)
+            {
+                setStun(true);
+                Invoke("ResetStun", stunDuration);
+            }
 
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            QTE = true;
-        }
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                QTE = true;
+            }
 
-        quicktimeevent();
-        turnSprite();
-        SetSprite();
+            quicktimeevent();
+            turnSprite();
+            SetSprite();
     }
+        
 
     public bool checkGetAttack()
     {
@@ -315,6 +314,7 @@ public class Player1_Controller_Solo : MonoBehaviour
         }*/
     }
 
+    [Command]
     void SetSprite()
     {
         //print("SetSprite");

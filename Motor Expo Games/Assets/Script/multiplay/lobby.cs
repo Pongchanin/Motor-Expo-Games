@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.Networking.Match;
+using Mirror;
 
 public class lobby : NetworkLobbyManager
 {
     // Start is called before the first frame update
-    void Start()
+    /*void Start()
     {
         MMstart();
         MMlistmatches();
@@ -87,4 +88,5 @@ public class lobby : NetworkLobbyManager
             Debug.Log("Successfully created match: " + matchInfo.networkId);
         }
     }
+    */
 }

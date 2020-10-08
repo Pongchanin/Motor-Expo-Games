@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.UI;
+using Mirror;
 
 public class Player1_Controller : NetworkBehaviour
 {

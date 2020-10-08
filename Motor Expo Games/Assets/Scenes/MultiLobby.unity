@@ -372,6 +372,63 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 9152381953351324611}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &542643697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542643696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showGUI: 1
+  offsetX: 0
+  offsetY: 0
+--- !u!114 &542643698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542643696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7424c1070fad4ba2a7a96b02fbeb4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClientConnected:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClientDataReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClientError:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClientDisconnected:
+    m_PersistentCalls:
+      m_Calls: []
+  OnServerConnected:
+    m_PersistentCalls:
+      m_Calls: []
+  OnServerDataReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnServerError:
+    m_PersistentCalls:
+      m_Calls: []
+  OnServerDisconnected:
+    m_PersistentCalls:
+      m_Calls: []
+  port: 7777
+  NoDelay: 1
+  serverMaxMessageSize: 16384
+  serverMaxReceivesPerTick: 10000
+  clientMaxMessageSize: 16384
+  clientMaxReceivesPerTick: 1000
 --- !u!114 &542643700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,7 +441,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb8c535e50e78749849aeb238c55d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   identity: {fileID: 0}
+--- !u!114 &542643701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542643696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615e6c6589cf9e54cad646b5a11e0529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 1
+  runInBackground: 1
+  autoStartServerBuild: 1
+  showDebugMessages: 0
+  serverTickRate: 30
+  offlineScene: 
+  onlineScene: 
+  transport: {fileID: 542643698}
+  networkAddress: localhost
+  maxConnections: 4
+  disconnectInactiveConnections: 0
+  disconnectInactiveTimeout: 60
+  authenticator: {fileID: 0}
+  playerPrefab: {fileID: 3989356090248189576, guid: 0e6a14441b081004095ffc77fa2c2ebe,
+    type: 3}
+  autoCreatePlayer: 1
+  playerSpawnMethod: 1
+  spawnPrefabs: []
+  showRoomGUI: 1
+  minPlayers: 1
+  roomPlayerPrefab: {fileID: 8891808049374585147, guid: 5ea8c56bf7f38604f8f79ccce5e9b6cb,
+    type: 3}
+  RoomScene: Assets/Scenes/MultiLobby.unity
+  GameplayScene: Assets/Scenes/Level Design Mult.unity
+  _allPlayersReady: 0
+  roomSlots: []
 --- !u!1 &568146540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,6 +1638,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28371d0f94ccfa44bbefb8c0250d38b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   isPressed: 0
 --- !u!4 &1534123565
 Transform:
@@ -1995,6 +2094,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a733c09bb6b0fd54c95d7e77f5e39403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   networkLobby: {fileID: 0}
   lobbyButton: {fileID: 0}
   numOfPlayer: 0
@@ -2254,5 +2355,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9152381953084003476, guid: 887efd7744edd3f47b7cd193afa01299, type: 3}
+    - {fileID: 9152381953084003482, guid: 887efd7744edd3f47b7cd193afa01299, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 887efd7744edd3f47b7cd193afa01299, type: 3}

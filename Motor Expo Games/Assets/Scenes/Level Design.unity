@@ -1526,6 +1526,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7990198160427687685, guid: 4e30f54ba6c216948a225e68432930b8,
+        type: 3}
+      propertyPath: sceneId
+      value: 152680473
+      objectReference: {fileID: 0}
     - target: {fileID: 7251909373617638790, guid: 4e30f54ba6c216948a225e68432930b8,
         type: 3}
       propertyPath: m_SortingOrder
@@ -1709,6 +1714,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d057b74fac6713549bcc915db6065ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   player1Solo: {fileID: 0}
   player1: {fileID: 0}
   offset: {x: 0, y: 0, z: -1}
@@ -1891,6 +1898,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3296509513699590017, guid: 81d42c7361f77b24fb97562aeba937b8,
+        type: 3}
+      propertyPath: sceneId
+      value: 3229694650
       objectReference: {fileID: 0}
     - target: {fileID: 7147593331570975030, guid: 81d42c7361f77b24fb97562aeba937b8,
         type: 3}
@@ -3938,6 +3950,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5729732699470468720, guid: 68f14886f32c5fb42b263dbf7ffd0631,
+        type: 3}
+      propertyPath: sceneId
+      value: 2511370532
+      objectReference: {fileID: 0}
     - target: {fileID: 8691737480578033304, guid: 68f14886f32c5fb42b263dbf7ffd0631,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4089,6 +4106,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5764800574140896192, guid: 0fd3cd112f825324d9836076c081c1c9,
+        type: 3}
+      propertyPath: sceneId
+      value: 2226959175
+      objectReference: {fileID: 0}
     - target: {fileID: 403472852480085528, guid: 0fd3cd112f825324d9836076c081c1c9,
         type: 3}
       propertyPath: m_SortingOrder

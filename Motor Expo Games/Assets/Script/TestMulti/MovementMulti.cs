@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
+using Mirror;
 
 public class MovementMulti : NetworkBehaviour
 {
@@ -22,9 +22,10 @@ public class MovementMulti : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Move();
-        
+        if (isLocalPlayer)
+        {
+            Move();
+        }
     }
 
     void Move()

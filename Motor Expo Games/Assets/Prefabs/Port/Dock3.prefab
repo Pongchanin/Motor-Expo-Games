@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1824438664673987731}
   - component: {fileID: 1824438664673987730}
   - component: {fileID: 6616900538636339202}
+  - component: {fileID: -5764800574140896192}
   m_Layer: 0
   m_Name: Dock3
   m_TagString: dest3
@@ -125,6 +126,22 @@ MonoBehaviour:
   player: {fileID: 0}
   gm: {fileID: 0}
   circleRadius: 7.5
+--- !u!114 &-5764800574140896192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824438664673987728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  m_AssetId: 
+  hasSpawned: 0
 --- !u!1 &3080313590813464728
 GameObject:
   m_ObjectHideFlags: 0

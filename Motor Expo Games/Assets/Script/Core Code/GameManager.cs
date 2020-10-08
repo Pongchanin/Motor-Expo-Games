@@ -3,37 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Mirror;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     public int point;
-    public float time;
+    [SyncVar]public float time;
     [SerializeField]
     int OnRescue;
     Player1_Controller_Solo playerSolo;
     Player1_Controller player;
 
     public Text ScoreUI;
-    public Text TimeUI;
+    [SyncVar] public Text TimeUI;
 
     public Text RescueUI;
 
     [Header("Game Parameter")]
-    public int limitRefugee;
+    [SyncVar]public int limitRefugee;
     [SerializeField]
-    int curRefugee;
+    [SyncVar] int curRefugee;
     public GameObject[] refugeePrefab;
 
     [Header("Item Parameter")]
-    public int limitItem;
+    [SyncVar] public int limitItem;
     [SerializeField]
-    int curItem;
-    public GameObject[] itemPrefab;
+    [SyncVar] int curItem;
+    [SyncVar] public GameObject[] itemPrefab;
 
     Transform rescueBasePos;
 
-    public Transform[] spawnPts;
-    public Transform[] itemSpawnPts;
+    [SyncVar]public Transform[] spawnPts;
+    [SyncVar]public Transform[] itemSpawnPts;
     // Start is called before the first frame update
     void Start()
     {
@@ -93,12 +94,14 @@ public class GameManager : MonoBehaviour
 
         }
     }
+    [Server]
     void getNumOfRefugee()
     {
         Refugee[] refugee;
         refugee = GameObject.FindObjectsOfType<Refugee>();
         curRefugee = refugee.Length; 
     }
+    [Server]
     void SpawnRefugee()
     {
         int rand = Mathf.CeilToInt(Random.Range(0, spawnPts.Length-1));
@@ -115,7 +118,7 @@ public class GameManager : MonoBehaviour
 
 
     }
-
+    [Server]
     void SpawnItem()
     {
         int rand = Mathf.CeilToInt(Random.Range(0, itemSpawnPts.Length - 1));

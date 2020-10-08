@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
+using Mirror;
 using UnityEngine.UI;
 
 public class NetworkPlayerManager : NetworkBehaviour
 {
     [SerializeField]
-    NetworkLobbyManager networkLobby;
+    NetworkRoomManager networkLobby;
     [SerializeField]
     NetworkLobbyButton lobbyButton;
 
@@ -26,7 +26,7 @@ public class NetworkPlayerManager : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        networkLobby = GameObject.FindObjectOfType<NetworkLobbyManager>();
+        networkLobby = GameObject.FindObjectOfType<NetworkRoomManager>();
         lobbyButton = GameManager.FindObjectOfType<NetworkLobbyButton>();
         isPressedNetwork = false;
         networkCanvas.SetActive(false);        
@@ -42,6 +42,11 @@ public class NetworkPlayerManager : NetworkBehaviour
             networkCanvas.SetActive(true);
             buttonCanvas.SetActive(false);
             UpdateStat();
+            for (int i = 9; i < networkLobby.roomSlots.Count; i++)
+            {
+                print(networkLobby.roomSlots[i].index);
+            }
+            
         }
 
 
@@ -49,10 +54,10 @@ public class NetworkPlayerManager : NetworkBehaviour
     }
     void UpdateStat()
     {
-        if (networkLobby.lobbySlots[0] != null)
+        if (networkLobby.roomSlots[0] != null)
         {
-            networkLobby.lobbySlots[0].gameObject.name = "Player 1";
-            if (networkLobby.lobbySlots[0].readyToBegin == false)
+            networkLobby.roomSlots[0].gameObject.name = "Player 1";
+            if (networkLobby.roomSlots[0].readyToBegin == false)
             {
 
                 p1ready.text = "Not Ready";
@@ -62,16 +67,16 @@ public class NetworkPlayerManager : NetworkBehaviour
                 p1ready.text = "Ready";
             }
             
-            //print(networkLobby.lobbySlots[0].netId);
+            //print(networkLobby.roomSlots[0].netId);
         }
         else
         {
             p1ready.text = "Not Exist";
         }
-        if (networkLobby.lobbySlots[1] != null)
+        if (networkLobby.roomSlots[1] != null)
         {
-            networkLobby.lobbySlots[1].gameObject.name = "Player 2";
-            if (networkLobby.lobbySlots[1].readyToBegin == false)
+            networkLobby.roomSlots[1].gameObject.name = "Player 2";
+            if (networkLobby.roomSlots[1].readyToBegin == false)
             {
                 p2ready.text = "Not Ready";
             }
@@ -84,10 +89,10 @@ public class NetworkPlayerManager : NetworkBehaviour
         {
             p2ready.text = "Not Exist";
         }
-        if (networkLobby.lobbySlots[2] != null)
+        if (networkLobby.roomSlots[2] != null)
         {
-            networkLobby.lobbySlots[2].gameObject.name = "Player 3";
-            if (networkLobby.lobbySlots[2].readyToBegin == false)
+            networkLobby.roomSlots[2].gameObject.name = "Player 3";
+            if (networkLobby.roomSlots[2].readyToBegin == false)
             {
                 p3ready.text = "Not Ready";
             }
@@ -95,16 +100,16 @@ public class NetworkPlayerManager : NetworkBehaviour
             {
                 p3ready.text = "Ready";
             }
-            print(networkLobby.lobbySlots[2].netId);
+            print(networkLobby.roomSlots[2].netId);
         }
         else
         {
             p3ready.text = "Not Exist";
         }
-        if (networkLobby.lobbySlots[3] != null)
+        if (networkLobby.roomSlots[3] != null)
         {
-            networkLobby.lobbySlots[3].gameObject.name = "Player 4";
-            if (networkLobby.lobbySlots[3].readyToBegin == false)
+            networkLobby.roomSlots[3].gameObject.name = "Player 4";
+            if (networkLobby.roomSlots[3].readyToBegin == false)
             {
                 p4ready.text = "Not Ready";
             }
@@ -112,7 +117,7 @@ public class NetworkPlayerManager : NetworkBehaviour
             {
                 p4ready.text = "Ready";
             }
-            print(networkLobby.lobbySlots[3].netId);
+            print(networkLobby.roomSlots[3].netId);
         }
         else
         {
@@ -122,52 +127,52 @@ public class NetworkPlayerManager : NetworkBehaviour
 
     public void Ready()
     {
-        if (networkLobby.lobbySlots[0].isLocalPlayer)
+        if (networkLobby.roomSlots[0].isLocalPlayer)
         {
-            if(networkLobby.lobbySlots[0].readyToBegin == false)
+            if(networkLobby.roomSlots[0].readyToBegin == false)
             {
-                networkLobby.lobbySlots[0].SendReadyToBeginMessage();
+                networkLobby.roomSlots[0].CmdChangeReadyState(true);
             }
             else
             {
-                networkLobby.lobbySlots[0].SendNotReadyToBeginMessage();
+                networkLobby.roomSlots[0].CmdChangeReadyState(false);
             }
             
         }
 
-        else if (networkLobby.lobbySlots[1].isLocalPlayer)
+        else if (networkLobby.roomSlots[1].isLocalPlayer)
         {
-            if (networkLobby.lobbySlots[1].readyToBegin == false)
+            if (networkLobby.roomSlots[1].readyToBegin == false)
             {
-                networkLobby.lobbySlots[1].SendReadyToBeginMessage();
+                networkLobby.roomSlots[1].CmdChangeReadyState(true);
             }
             else
             {
-                networkLobby.lobbySlots[1].SendNotReadyToBeginMessage();
+                networkLobby.roomSlots[1].CmdChangeReadyState(false);
             }
 
         }
-        else if (networkLobby.lobbySlots[2].isLocalPlayer)
+        else if (networkLobby.roomSlots[2].isLocalPlayer)
         {
-            if (networkLobby.lobbySlots[2].readyToBegin == false)
+            if (networkLobby.roomSlots[2].readyToBegin == false)
             {
-                networkLobby.lobbySlots[2].SendReadyToBeginMessage();
+                networkLobby.roomSlots[2].CmdChangeReadyState(true);
             }
             else
             {
-                networkLobby.lobbySlots[2].SendNotReadyToBeginMessage();
+                networkLobby.roomSlots[2].CmdChangeReadyState(false);
             }
 
         }
-        else if (networkLobby.lobbySlots[3].isLocalPlayer)
+        else if (networkLobby.roomSlots[3].isLocalPlayer)
         {
-            if (networkLobby.lobbySlots[3].readyToBegin == false)
+            if (networkLobby.roomSlots[3].readyToBegin == false)
             {
-                networkLobby.lobbySlots[3].SendReadyToBeginMessage();
+                networkLobby.roomSlots[3].CmdChangeReadyState(true);
             }
             else
             {
-                networkLobby.lobbySlots[3].SendNotReadyToBeginMessage();
+                networkLobby.roomSlots[3].CmdChangeReadyState(false);
             }
 
         }
