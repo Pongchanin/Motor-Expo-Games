@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1027365002857697108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1027365002857697106}
+  - component: {fileID: 1027365002857697109}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1027365002857697106
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027365002857697108}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 432.41638, y: 424.63788, z: -170.58847}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1027365002857697109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027365002857697108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0f99a557ed14a44bf2c42673893eee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: 0
+  time: 1000
+  OnRescue: 0
+  ScoreUI: {fileID: 0}
+  TimeUI: {fileID: 0}
+  RescueUI: {fileID: 0}
+  limitRefugee: 4
+  curRefugee: 0
+  refugeePrefab:
+  - {fileID: 8771277994476024457, guid: bed4b4ce147024f0fb563f09dc5322fc, type: 3}
+  - {fileID: 8771277994476024457, guid: d67d541dedec44ede867d129e64b67a3, type: 3}
+  - {fileID: 8771277994476024457, guid: 7534f3ae6b8874af9a7a1f7a15e378f8, type: 3}
+  limitItem: 8
+  curItem: 0
+  itemPrefab:
+  - {fileID: 7467805183547732207, guid: 42437ef251d22034ca307120aa28a8ba, type: 3}
+  - {fileID: 6240399696178863302, guid: d5890333d8addff46bd889b8e9116f93, type: 3}
+  - {fileID: 868265655305690050, guid: 1ba93f66e053ba545809ec6a8d8dcab8, type: 3}
+  spawnPts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  itemSpawnPts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

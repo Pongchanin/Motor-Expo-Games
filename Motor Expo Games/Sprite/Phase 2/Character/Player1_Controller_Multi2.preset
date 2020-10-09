@@ -1,0 +1,339 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player1_Controller_Multi2
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 22977d6402417204caf45cb9a7bc69d1,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: syncMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: syncInterval
+    value: 0.1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: moveSpeed
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: stunDuration
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scoreMultiplier
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: getAttack
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inRescue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: isStun
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: atBase
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: NumOfRescue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: picIndex
+    value: 15
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.size
+    value: 36
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[0]
+    value: 
+    objectReference: {fileID: 21300000, guid: 5c2f74d4b1ec54bf4a93fc300cd67131, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[1]
+    value: 
+    objectReference: {fileID: 21300000, guid: abb6835a6609844bf8dbccb590993547, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[2]
+    value: 
+    objectReference: {fileID: 21300000, guid: ad89528b394b24faea8009309d41d99c, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[3]
+    value: 
+    objectReference: {fileID: 21300000, guid: f656fe9ad45704031a935d1057b11c80, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[4]
+    value: 
+    objectReference: {fileID: 21300000, guid: daab6b7e51c10412c91311ef6a2167cb, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[5]
+    value: 
+    objectReference: {fileID: 21300000, guid: 02064418a742643ea9e28e2eb791f7c4, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[6]
+    value: 
+    objectReference: {fileID: 21300000, guid: ab97dda1618164586b211e023b8509fb, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[7]
+    value: 
+    objectReference: {fileID: 21300000, guid: 107a8bcac6e2b49c9a1843f6c8e5f373, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[8]
+    value: 
+    objectReference: {fileID: 21300000, guid: 9543a52b425664f1e9b7e78207c1821e, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[9]
+    value: 
+    objectReference: {fileID: 21300000, guid: 4b8124b73e27a453a815e89f4f19c0d9, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[10]
+    value: 
+    objectReference: {fileID: 21300000, guid: f9c6bc97eebcb4df397455444470b27a, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[11]
+    value: 
+    objectReference: {fileID: 21300000, guid: c90f75d871dbc4460a0a952ccd4c2182, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[12]
+    value: 
+    objectReference: {fileID: 21300000, guid: a27ba480a6d7b4c909b75d7971b88678, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[13]
+    value: 
+    objectReference: {fileID: 21300000, guid: 9fa4dacbaf1f948319034516ec9dd81a, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[14]
+    value: 
+    objectReference: {fileID: 21300000, guid: e4dac7406b9ec4d9082ffcb0f2507841, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[15]
+    value: 
+    objectReference: {fileID: 21300000, guid: 96534937e14954a25947f2913c601e6b, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[16]
+    value: 
+    objectReference: {fileID: 21300000, guid: da94f33c212bd49898fe203739b6f634, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[17]
+    value: 
+    objectReference: {fileID: 21300000, guid: 0e26d08eec67746649a299c405dfcad8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[18]
+    value: 
+    objectReference: {fileID: 21300000, guid: 0524a9944c68c468984cdb869001eb4c, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[19]
+    value: 
+    objectReference: {fileID: 21300000, guid: 19dfc28fc2894487cac6da066d198480, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[20]
+    value: 
+    objectReference: {fileID: 21300000, guid: 9b27dcba281ea408e876f16b723f2da1, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[21]
+    value: 
+    objectReference: {fileID: 21300000, guid: e543e6debf48c47498c0b16a42842b0e, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[22]
+    value: 
+    objectReference: {fileID: 21300000, guid: 3ad3fcaf1ff8940e9b52d351a8f10a0e, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[23]
+    value: 
+    objectReference: {fileID: 21300000, guid: 20a542b27bcf04b0485bde7a39bd33d8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[24]
+    value: 
+    objectReference: {fileID: 21300000, guid: ac3681189b2014aa894c86035c47c2f9, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[25]
+    value: 
+    objectReference: {fileID: 21300000, guid: 0b0fb5ff010444100bd64ff0a571ec53, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[26]
+    value: 
+    objectReference: {fileID: 21300000, guid: 44e2062070ba14e218157ef12aa91adc, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[27]
+    value: 
+    objectReference: {fileID: 21300000, guid: 1bf604869014445988281451353740eb, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[28]
+    value: 
+    objectReference: {fileID: 21300000, guid: 1f12db339520740dd93e2b8d08f3db47, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[29]
+    value: 
+    objectReference: {fileID: 21300000, guid: 28dbb62e350884f32ad842ad9f64ea81, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[30]
+    value: 
+    objectReference: {fileID: 21300000, guid: eef67fc61b31240efb613d6e07da23fa, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[31]
+    value: 
+    objectReference: {fileID: 21300000, guid: c84d14acffe3141ecbc8c6bfe746293e, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[32]
+    value: 
+    objectReference: {fileID: 21300000, guid: 10aee8517ca844630af6dd4410e0f4e6, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[33]
+    value: 
+    objectReference: {fileID: 21300000, guid: 45468398a8a9f483ca8774ea682a6767, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[34]
+    value: 
+    objectReference: {fileID: 21300000, guid: 0b493547a2c124fdf8b01491763f9df6, type: 3}
+  - target: {fileID: 0}
+    propertyPath: boatPics.Array.data[35]
+    value: 
+    objectReference: {fileID: 21300000, guid: b1190305802e0471285fda362fca252f, type: 3}
+  - target: {fileID: 0}
+    propertyPath: currentSprite
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boatSprite
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noquicktime
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: bar
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: arrow
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: press
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sprite
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: passenger.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: numOfPassenger
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: seats.Array.size
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: seats.Array.data[0]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: seats.Array.data[1]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: seats.Array.data[2]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: seats.Array.data[3]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: seats.Array.data[4]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: seats.Array.data[5]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: seats.Array.data[6]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: seats.Array.data[7]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: occupiedSeat.Array.size
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: occupiedSeat.Array.data[0]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: occupiedSeat.Array.data[1]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: occupiedSeat.Array.data[2]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: occupiedSeat.Array.data[3]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: occupiedSeat.Array.data[4]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: occupiedSeat.Array.data[5]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: occupiedSeat.Array.data[6]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: occupiedSeat.Array.data[7]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: normal
+    value: 
+    objectReference: {fileID: 21300000, guid: a1b2bf23ae06bd44eaf09cc6f793ec0c, type: 3}
+  - target: {fileID: 0}
+    propertyPath: hurry
+    value: 
+    objectReference: {fileID: 21300000, guid: 249e873ca8a449d4caba957b5fbc4361, type: 3}
+  - target: {fileID: 0}
+    propertyPath: traveler
+    value: 
+    objectReference: {fileID: 21300000, guid: 02aaf66804c779e488460f535a8b18a1, type: 3}
