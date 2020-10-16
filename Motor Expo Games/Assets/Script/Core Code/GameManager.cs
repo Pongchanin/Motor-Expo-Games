@@ -164,14 +164,14 @@ public class GameManager : NetworkBehaviour
     {
         PlayerPrefs.SetInt("Score", point);
     }
-    [Command]
+    [ClientRpc]
     void FindCorrectPlayer()
     {
         temps = NetworkBehaviour.FindObjectsOfType<Player1_Controller_Mult>();
         for (int i = 0; i < temps.Length; i++)
         {
             players[i] = temps[i];
-            if (players[i].isLocalPlayer)
+            if (temps[i].isLocalPlayer)
             {
                 player = players[i];
             }

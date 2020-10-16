@@ -83,10 +83,11 @@ public class AddPassenger : NetworkBehaviour
     [Command]
     void CopyCompMult()
     {
-        print("Add me Up");
-        for (int i = 0; i < playerMult.passenger.Length; i++)
+        if (playerMult.isLocalPlayer)
         {
-            print("Multi: " + i);
+            for (int i = 0; i < playerMult.passenger.Length; i++)
+            {
+                print("Multi: " + i);
                 if (playerMult.passenger[i] == null)
                 {
                     playerMult.passenger[i] = temp;
@@ -101,7 +102,10 @@ public class AddPassenger : NetworkBehaviour
 
                 //Ignored
 
+            }
         }
+        print("Add me Up");
+        
     }
     void OverlapCircle()
     {

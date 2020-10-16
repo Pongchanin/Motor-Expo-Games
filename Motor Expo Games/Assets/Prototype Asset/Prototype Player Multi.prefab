@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 1
-  syncInterval: 0.1
+  syncInterval: 0
   moveSpeed: 10
   stunDuration: 0
   scoreMultiplier: 1

@@ -93,39 +93,43 @@ public class DockController : NetworkBehaviour
         }
         else
         {
-            for (int i = 0; i < playerMult.passenger.Length; i++)
+            if (playerMult.isLocalPlayer)
             {
-                if (playerMult.passenger[i] != null)
+                for (int i = 0; i < playerMult.passenger.Length; i++)
                 {
-                    print(playerMult.passenger[i].GetComponent<Refugee>().dest);
-                    if (dock.CompareTag("dest1") && playerMult.passenger[i].GetComponent<Refugee>().dest == 0)
+                    if (playerMult.passenger[i] != null)
                     {
-                        gm.point += playerMult.passenger[i].GetComponent<Refugee>().scoreVal;
-                        Destroy(playerMult.passenger[i]);
+                        print(playerMult.passenger[i].GetComponent<Refugee>().dest);
+                        if (dock.CompareTag("dest1") && playerMult.passenger[i].GetComponent<Refugee>().dest == 0)
+                        {
+                            gm.point += playerMult.passenger[i].GetComponent<Refugee>().scoreVal;
+                            Destroy(playerMult.passenger[i]);
+                        }
+                        else if (dock.CompareTag("dest2") && playerMult.passenger[i].GetComponent<Refugee>().dest == 1)
+                        {
+                            gm.point += playerMult.passenger[i].GetComponent<Refugee>().scoreVal;
+                            Destroy(playerMult.passenger[i]);
+                        }
+                        else if (dock.CompareTag("dest3") && playerMult.passenger[i].GetComponent<Refugee>().dest == 2)
+                        {
+                            gm.point += playerMult.passenger[i].GetComponent<Refugee>().scoreVal;
+                            Destroy(playerMult.passenger[i]);
+                        }
+                        else if (dock.CompareTag("dest4") && playerMult.passenger[i].GetComponent<Refugee>().dest == 3)
+                        {
+                            gm.point += playerMult.passenger[i].GetComponent<Refugee>().scoreVal;
+                            Destroy(playerMult.passenger[i]);
+                        }
                     }
-                    else if (dock.CompareTag("dest2") && playerMult.passenger[i].GetComponent<Refugee>().dest == 1)
+                    else
                     {
-                        gm.point += playerMult.passenger[i].GetComponent<Refugee>().scoreVal;
-                        Destroy(playerMult.passenger[i]);
-                    }
-                    else if (dock.CompareTag("dest3") && playerMult.passenger[i].GetComponent<Refugee>().dest == 2)
-                    {
-                        gm.point += playerMult.passenger[i].GetComponent<Refugee>().scoreVal;
-                        Destroy(playerMult.passenger[i]);
-                    }
-                    else if (dock.CompareTag("dest4") && playerMult.passenger[i].GetComponent<Refugee>().dest == 3)
-                    {
-                        gm.point += playerMult.passenger[i].GetComponent<Refugee>().scoreVal;
-                        Destroy(playerMult.passenger[i]);
+                        continue;
                     }
                 }
-                else
-                {
-                    continue;
-                }
+                PlayerPrefs.SetInt("PlayerScore", gm.point);
             }
-            PlayerPrefs.SetInt("PlayerScore", gm.point);
         }
+           
         
 
     }

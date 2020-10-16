@@ -36,13 +36,19 @@ public class Player1_Controller_Mult : NetworkBehaviour
     Vector2 movement;
 
     //----------------------
+    [SerializeField]
     private bool QTE = false;
     private bool result_pass = true;
     public bool noquicktime = false;
-    [SyncVar]public Bar bar;
-    [SyncVar] public ArrowObj arrow;
-    [SyncVar] public Press press;
+    public Bar bar;
+    public ArrowObj arrow;
+    public Press press;
     public GameObject sprite;
+
+    Bar[] bars;
+    ArrowObj[] arrows;
+    Press[] presses;
+
     //public GameObject waveSprite;
 
     bool quickTimePressed;
@@ -62,9 +68,9 @@ public class Player1_Controller_Mult : NetworkBehaviour
         Application.targetFrameRate = 120;
         joystick = FindObjectOfType<Joystick>();
         joybutton = FindObjectOfType<JoyButton>();
-        bar = FindObjectOfType<Bar>();
-        arrow = FindObjectOfType<ArrowObj>();
-        press = FindObjectOfType<Press>();
+        bar = NetworkBehaviour.FindObjectOfType<Bar>();
+        arrow = NetworkBehaviour.FindObjectOfType<ArrowObj>();
+        press = NetworkBehaviour.FindObjectOfType<Press>();
 
         moveSpeed = boatstatus.Player1.movementspeed * 3;
         picIndex = PlayerPrefs.GetInt("BoatPic");
@@ -244,17 +250,17 @@ public class Player1_Controller_Mult : NetworkBehaviour
         }*/
     }
 
-    [Command]
+    [ClientRpc]
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //-------------------------
         if (collision.gameObject.CompareTag("Player") && !QTE && !noquicktime)
         {
-            QTE = true;
+           // QTE = true;
         }
         //-------------------------
     }
-    [Command]
+    [ClientRpc]
     void ResetStun()
     {
         isStun = false;
@@ -264,40 +270,44 @@ public class Player1_Controller_Mult : NetworkBehaviour
     {
         yield return new WaitForSeconds(time);
     }
-
+    [ClientRpc]
     private void quicktimeevent()
     {
-        if (QTE)
+        if (isLocalPlayer)
         {
-            bar.gameObject.SetActive(true);
-            arrow.gameObject.SetActive(true);
-            press.gameObject.SetActive(true);
-
-            if (Input.GetKeyDown(KeyCode.L) || quickTimePressed)
+            if (QTE)
             {
-                print("L");
-                if (arrow.GetComponent<arrow>().value >= (50 - press.GetComponent<clickdis>().size) && arrow.GetComponent<arrow>().value <= (50 + press.GetComponent<clickdis>().size))
+                bar.gameObject.SetActive(true);
+                arrow.gameObject.SetActive(true);
+                press.gameObject.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.L) || quickTimePressed)
                 {
-                    print("goood");
-                    bar.gameObject.SetActive(false);
-                    arrow.gameObject.SetActive(false);
-                    press.gameObject.SetActive(false);
-                    QTE = false;
-                    result_pass = true;
-                    quickTimePressed = false;
-                }
-                else
-                {
-                    print("bad");
-                    bar.gameObject.SetActive(false);
-                    arrow.gameObject.SetActive(false);
-                    press.gameObject.SetActive(false);
-                    QTE = false;
-                    result_pass = false;
-                    quickTimePressed = false;
+                    print("L");
+                    if (arrow.GetComponent<arrow>().value >= (50 - press.GetComponent<clickdis>().size) && arrow.GetComponent<arrow>().value <= (50 + press.GetComponent<clickdis>().size))
+                    {
+                        print("goood");
+                        bar.gameObject.SetActive(false);
+                        arrow.gameObject.SetActive(false);
+                        press.gameObject.SetActive(false);
+                        QTE = false;
+                        result_pass = true;
+                        quickTimePressed = false;
+                    }
+                    else
+                    {
+                        print("bad");
+                        bar.gameObject.SetActive(false);
+                        arrow.gameObject.SetActive(false);
+                        press.gameObject.SetActive(false);
+                        QTE = false;
+                        result_pass = false;
+                        quickTimePressed = false;
+                    }
                 }
             }
         }
+       
     }
     void turnSprite() {
         Vector3 mousePos = Input.mousePosition;
@@ -365,6 +375,8 @@ public class Player1_Controller_Mult : NetworkBehaviour
     {
         base.OnStartLocalPlayer();
         gameObject.name = "Local";
+        
+
     }
 
     public override void OnStartClient()
@@ -385,6 +397,21 @@ public class Player1_Controller_Mult : NetworkBehaviour
         if(netId == 14)
         {
             gameObject.name = "Player 4";
+        }
+        bars = Resources.FindObjectsOfTypeAll<Bar>();
+        arrows = Resources.FindObjectsOfTypeAll<ArrowObj>();
+        presses = Resources.FindObjectsOfTypeAll<Press>();
+        if (bars.Length > 0)
+        {
+            bar = bars[0];
+        }
+        if (arrows.Length > 0)
+        {
+            arrow = arrows[0];
+        }
+        if (presses.Length > 0)
+        {
+            press = presses[0];
         }
     }
 }
