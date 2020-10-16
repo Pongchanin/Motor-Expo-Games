@@ -30,13 +30,13 @@ public class speed : MonoBehaviour
         {
             if(playerhitted != null)
             {
-                if (playerhitted.GetComponent<Player1_Controller>() != null)
+                if (playerhitted.GetComponent<Player1_Controller_Solo>() != null)
                 {
-                    playerhitted.GetComponent<Player1_Controller>().moveSpeed = playerspeed;
+                    playerhitted.GetComponent<Player1_Controller_Solo>().moveSpeed = playerspeed;
                 }
                 else
                 {
-                    playerhitted.GetComponent<Player1_Controller>().moveSpeed = playerspeed;
+                    playerhitted.GetComponent<Player1_Controller_Mult>().moveSpeed = playerspeed;
                 }
                 
                 Destroy(this.gameObject);
@@ -59,30 +59,30 @@ public class speed : MonoBehaviour
         timerstart = true;
         if (playerhitted != null)
         {
-            if (playerhitted.GetComponent<Player1_Controller>() != null)
-            {
-                playerspeed = playerhitted.GetComponent<Player1_Controller>().moveSpeed;
-                playerhitted.GetComponent<Player1_Controller>().moveSpeed = speedbonus;
-            }
-            else
+            if (playerhitted.GetComponent<Player1_Controller_Solo>() != null)
             {
                 playerspeed = playerhitted.GetComponent<Player1_Controller_Solo>().moveSpeed;
                 playerhitted.GetComponent<Player1_Controller_Solo>().moveSpeed = speedbonus;
+            }
+            else
+            {
+                playerspeed = playerhitted.GetComponent<Player1_Controller_Mult>().moveSpeed;
+                playerhitted.GetComponent<Player1_Controller_Mult>().moveSpeed = speedbonus;
             }
         }
         
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(2.5f);
-        if (playerhitted.GetComponent<Player1_Controller>() != null)
+        if (playerhitted.GetComponent<Player1_Controller_Solo>() != null)
         {
-            playerspeed = playerhitted.GetComponent<Player1_Controller>().moveSpeed;
-            playerhitted.GetComponent<Player1_Controller>().moveSpeed = tempSpeed;
+            playerspeed = playerhitted.GetComponent<Player1_Controller_Solo>().moveSpeed;
+            playerhitted.GetComponent<Player1_Controller_Solo>().moveSpeed = tempSpeed;
         }
         else
         {
-            playerspeed = playerhitted.GetComponent<Player1_Controller_Solo>().moveSpeed;
-            playerhitted.GetComponent<Player1_Controller_Solo>().moveSpeed =tempSpeed;
+            playerspeed = playerhitted.GetComponent<Player1_Controller_Mult>().moveSpeed;
+            playerhitted.GetComponent<Player1_Controller_Mult>().moveSpeed =tempSpeed;
         }
     }
 }

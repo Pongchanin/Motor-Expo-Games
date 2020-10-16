@@ -8,19 +8,26 @@ using Mirror;
 public class GameManager : NetworkBehaviour
 {
     public int point;
-    [SyncVar]public float time;
+    [SyncVar] public float time;
     [SerializeField]
     int OnRescue;
     Player1_Controller_Solo playerSolo;
-    Player1_Controller player;
+    Player1_Controller_Mult player;
 
+    [SerializeField]
+    Player1_Controller_Mult[] players;
+    [SerializeField]
+    Player1_Controller_Mult[] temps = new Player1_Controller_Mult[4];
+
+    [SyncVar]
     public Text ScoreUI;
     [SyncVar] public Text TimeUI;
 
+    [SyncVar]
     public Text RescueUI;
 
     [Header("Game Parameter")]
-    [SyncVar]public int limitRefugee;
+    [SyncVar] public int limitRefugee;
     [SerializeField]
     [SyncVar] int curRefugee;
     public GameObject[] refugeePrefab;
@@ -33,29 +40,41 @@ public class GameManager : NetworkBehaviour
 
     Transform rescueBasePos;
 
-    [SyncVar]public Transform[] spawnPts;
-    [SyncVar]public Transform[] itemSpawnPts;
+    [SyncVar] public Transform[] spawnPts;
+    [SyncVar] public Transform[] itemSpawnPts;
     // Start is called before the first frame update
     void Start()
     {
-        if(GameObject.FindObjectOfType<Player1_Controller>() != null)
+        if (GameObject.FindObjectOfType<Player1_Controller_Solo>() != null)
         {
-            player = GameObject.FindObjectOfType<Player1_Controller>();
+            playerSolo = GameObject.FindObjectOfType<Player1_Controller_Solo>();
         }
         else
         {
-            player = null;
-            playerSolo = GameObject.FindObjectOfType<Player1_Controller_Solo>();
+            playerSolo = null;
+            player = GameObject.FindObjectOfType<Player1_Controller_Mult>();
+        }
+
+        //rescueBasePos = GameObject.FindGameObjectWithTag("RescuePlace").transform;
+        SpawnAll();
+        FindCorrectPlayer();
+        if(PlayerPrefs.GetInt("PlayerScore") != 0)
+        {
+            point = 0;
+            
         }
         
-        //rescueBasePos = GameObject.FindGameObjectWithTag("RescuePlace").transform;
-        InvokeRepeating("SpawnRefugee",0f,1.5f);
-        InvokeRepeating("SpawnItem", 0f, 3f);
+
     }
 
-    // Update is called once per frame
+    // Update is called once per 
     void Update()
     {
+        if(Time.time < 1)
+        {
+            PlayerPrefs.DeleteKey("PlayerScore");
+        }
+      // point = PlayerPrefs.GetInt("PlayerScore");
         ScoreUI.text = point.ToString();
 
         /// (int)time.ToString() --> Invalid because it will convert (time.ToString()) to int;  Ex. int(f(x).ToString())
@@ -64,7 +83,7 @@ public class GameManager : NetworkBehaviour
 
         TimeUI.text = ((int)time).ToString();
         CountDown();
-        if(player != null)
+        if (player != null)
         {
             OnRescue = player.NumOfRescue;
         }
@@ -72,15 +91,23 @@ public class GameManager : NetworkBehaviour
         {
             OnRescue = playerSolo.NumOfRescue;
         }
-       
+
         RescueUI.text = curRefugee.ToString();
 
         getNumOfRefugee();
+        FindCorrectPlayer();
+    }
+    [Server]
+    void SpawnAll()
+    {
+        InvokeRepeating("SpawnRefugee", 0f, 1.5f);
+        InvokeRepeating("SpawnItem", 0f, 3f);
     }
 
+    [Server]
     void CountDown()
     {
-        if(time >= 0)
+        if (time >= 0)
         {
             time -= Time.deltaTime;
         }
@@ -99,12 +126,12 @@ public class GameManager : NetworkBehaviour
     {
         Refugee[] refugee;
         refugee = GameObject.FindObjectsOfType<Refugee>();
-        curRefugee = refugee.Length; 
+        curRefugee = refugee.Length;
     }
     [Server]
     void SpawnRefugee()
     {
-        int rand = Mathf.CeilToInt(Random.Range(0, spawnPts.Length-1));
+        int rand = Mathf.CeilToInt(Random.Range(0, spawnPts.Length - 1));
         //int randDest = Mathf.CeilToInt(Random.Range(0, spawnPts.Length - 1));
 
         if (curRefugee < limitRefugee)
@@ -113,7 +140,7 @@ public class GameManager : NetworkBehaviour
             randInt = (int)Random.Range(0, 3);
 
             Instantiate(refugeePrefab[randInt], new Vector3(spawnPts[rand].localPosition.x
-                , spawnPts[rand].localPosition.y),Quaternion.identity);
+                , spawnPts[rand].localPosition.y), Quaternion.identity);
         }
 
 
@@ -136,5 +163,24 @@ public class GameManager : NetworkBehaviour
     void SaveScore()
     {
         PlayerPrefs.SetInt("Score", point);
+    }
+    [Command]
+    void FindCorrectPlayer()
+    {
+        temps = NetworkBehaviour.FindObjectsOfType<Player1_Controller_Mult>();
+        for (int i = 0; i < temps.Length; i++)
+        {
+            players[i] = temps[i];
+            if (players[i].isLocalPlayer)
+            {
+                player = players[i];
+            }
+        }
+    }
+    public override void OnStartClient()
+    {
+        base.OnStartClient();
+       // SpawnAll();
+        FindCorrectPlayer();
     }
 }

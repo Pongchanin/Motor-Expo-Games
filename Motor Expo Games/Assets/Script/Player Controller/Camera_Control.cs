@@ -36,7 +36,7 @@ public class Camera_Control : NetworkBehaviour
 			if (player1 != null)
 			{
 				distanceToMove = player1.transform.position.x - lastPLayerPosition.x;
-			transform.position = new Vector3(transform.position.x, player1.transform.position.y, 0) + offset;
+				transform.position = new Vector3(transform.position.x, player1.transform.position.y, 0) + offset;
 				lastPLayerPosition = player1.transform.position;
 			}
 			else

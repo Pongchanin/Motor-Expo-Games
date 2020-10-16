@@ -11,7 +11,7 @@ public class spriteCheat : MonoBehaviour
     SpriteRenderer sprite;
 
     [SerializeField]
-    Player1_Controller playermulti;
+    Player1_Controller_Mult playermulti;
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class spriteCheat : MonoBehaviour
         }
         else
         {
-            playermulti = GetComponentInParent<Player1_Controller>();
+            playermulti = GetComponentInParent<Player1_Controller_Mult>();
             sprite = GetComponent<SpriteRenderer>();
         }
         

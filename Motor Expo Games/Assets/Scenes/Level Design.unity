@@ -310,6 +310,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1583342783}
     m_Modifications:
+    - target: {fileID: 670196647595585695, guid: d5890333d8addff46bd889b8e9116f93,
+        type: 3}
+      propertyPath: sceneId
+      value: 632111719
+      objectReference: {fileID: 0}
     - target: {fileID: 6240399696178863298, guid: d5890333d8addff46bd889b8e9116f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -562,6 +567,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1583342783}
     m_Modifications:
+    - target: {fileID: 670196647595585695, guid: d5890333d8addff46bd889b8e9116f93,
+        type: 3}
+      propertyPath: sceneId
+      value: 3478844707
+      objectReference: {fileID: 0}
     - target: {fileID: 6240399696178863298, guid: d5890333d8addff46bd889b8e9116f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1412,6 +1422,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1583342783}
     m_Modifications:
+    - target: {fileID: 670196647595585695, guid: d5890333d8addff46bd889b8e9116f93,
+        type: 3}
+      propertyPath: sceneId
+      value: 1747165626
+      objectReference: {fileID: 0}
     - target: {fileID: 6240399696178863298, guid: d5890333d8addff46bd889b8e9116f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2156,6 +2171,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1583342783}
     m_Modifications:
+    - target: {fileID: 670196647595585695, guid: d5890333d8addff46bd889b8e9116f93,
+        type: 3}
+      propertyPath: sceneId
+      value: 1817836386
+      objectReference: {fileID: 0}
     - target: {fileID: 6240399696178863298, guid: d5890333d8addff46bd889b8e9116f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2240,6 +2260,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1583342783}
     m_Modifications:
+    - target: {fileID: 670196647595585695, guid: d5890333d8addff46bd889b8e9116f93,
+        type: 3}
+      propertyPath: sceneId
+      value: 331765900
+      objectReference: {fileID: 0}
     - target: {fileID: 6240399696178863298, guid: d5890333d8addff46bd889b8e9116f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2875,6 +2900,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1583342783}
     m_Modifications:
+    - target: {fileID: 670196647595585695, guid: d5890333d8addff46bd889b8e9116f93,
+        type: 3}
+      propertyPath: sceneId
+      value: 4125683247
+      objectReference: {fileID: 0}
     - target: {fileID: 6240399696178863298, guid: d5890333d8addff46bd889b8e9116f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3666,6 +3696,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1583342783}
     m_Modifications:
+    - target: {fileID: 670196647595585695, guid: d5890333d8addff46bd889b8e9116f93,
+        type: 3}
+      propertyPath: sceneId
+      value: 2884931182
+      objectReference: {fileID: 0}
     - target: {fileID: 6240399696178863298, guid: d5890333d8addff46bd889b8e9116f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3786,6 +3821,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1583342783}
     m_Modifications:
+    - target: {fileID: 670196647595585695, guid: d5890333d8addff46bd889b8e9116f93,
+        type: 3}
+      propertyPath: sceneId
+      value: 4058289520
+      objectReference: {fileID: 0}
     - target: {fileID: 6240399696178863298, guid: d5890333d8addff46bd889b8e9116f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4882,6 +4922,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1583342783}
     m_Modifications:
+    - target: {fileID: 670196647595585695, guid: d5890333d8addff46bd889b8e9116f93,
+        type: 3}
+      propertyPath: sceneId
+      value: 1916189566
+      objectReference: {fileID: 0}
     - target: {fileID: 6240399696178863298, guid: d5890333d8addff46bd889b8e9116f93,
         type: 3}
       propertyPath: m_LocalPosition.x

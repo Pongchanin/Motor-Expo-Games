@@ -204,7 +204,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f655fa52473734e8fa41a761b2bdd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   player: {fileID: 0}
+  playerMult: {fileID: 0}
+  players:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  temps:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   gm: {fileID: 0}
   circleRadius: 7.5
 --- !u!114 &-7990198160427687685

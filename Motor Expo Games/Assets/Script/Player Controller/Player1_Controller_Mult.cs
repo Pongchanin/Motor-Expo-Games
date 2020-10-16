@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class Player1_Controller_Solo : NetworkBehaviour
+public class Player1_Controller_Mult : NetworkBehaviour
 {
 
     protected Joystick joystick;
     protected JoyButton joybutton;
 
     [Header("Player Parameter")] 
-    public float moveSpeed;
-    public float stunDuration;
-    public float scoreMultiplier;
+    [SyncVar]public float moveSpeed;
+    [SyncVar] public float stunDuration;
+    [SyncVar] public float scoreMultiplier;
 
     [Header("Condition Checker")]
     [SerializeField]
@@ -27,11 +27,11 @@ public class Player1_Controller_Solo : NetworkBehaviour
     public int NumOfRescue;
     [SerializeField]
     int picIndex;
-    public Sprite[] boatPics;
+    [SyncVar] public Sprite[] boatPics;
     [SerializeField]
-    GameObject currentSprite;
+    [SyncVar] GameObject currentSprite;
     [SerializeField]
-    public Sprite boatSprite;
+    [SyncVar] public Sprite boatSprite;
 
     Vector2 movement;
 
@@ -39,9 +39,9 @@ public class Player1_Controller_Solo : NetworkBehaviour
     private bool QTE = false;
     private bool result_pass = true;
     public bool noquicktime = false;
-    public GameObject bar;
-    public GameObject arrow;
-    public GameObject press;
+    [SyncVar]public Bar bar;
+    [SyncVar] public ArrowObj arrow;
+    [SyncVar] public Press press;
     public GameObject sprite;
     //public GameObject waveSprite;
 
@@ -52,7 +52,7 @@ public class Player1_Controller_Solo : NetworkBehaviour
     public int numOfPassenger;
 
     [Header("Sprite Parameter")]
-    public Transform[] seats;
+    [SyncVar] public Transform[] seats;
     public GameObject[] occupiedSeat;
     public Sprite normal,hurry,traveler;
 
@@ -62,9 +62,9 @@ public class Player1_Controller_Solo : NetworkBehaviour
         Application.targetFrameRate = 120;
         joystick = FindObjectOfType<Joystick>();
         joybutton = FindObjectOfType<JoyButton>();
-        bar = GameObject.Find("Bar");
-        arrow = GameObject.Find("arrow");
-        press = GameObject.Find("press");
+        bar = FindObjectOfType<Bar>();
+        arrow = FindObjectOfType<ArrowObj>();
+        press = FindObjectOfType<Press>();
 
         moveSpeed = boatstatus.Player1.movementspeed * 3;
         picIndex = PlayerPrefs.GetInt("BoatPic");
@@ -74,15 +74,15 @@ public class Player1_Controller_Solo : NetworkBehaviour
 
         if (bar != null)
         {
-            bar.SetActive(false);
+            bar.gameObject.SetActive(false);
         }
         if(arrow != null)
         {
-            arrow.SetActive(false);
+            arrow.gameObject.SetActive(false);
         }
         if(press != null)
         {
-            press.SetActive(false);
+            press.gameObject.SetActive(false);
         }
         if(moveSpeed == 0)
         {
@@ -91,9 +91,13 @@ public class Player1_Controller_Solo : NetworkBehaviour
     }
 
     // Update is called once per frame
-    [Client]
+    [ClientRpc]
     void Update()
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
             boatSprite = boatPics[picIndex];
             if ((joystick.input.x > 0 || joystick.input.x < 0) && isStun != true && !QTE)
             {
@@ -265,9 +269,9 @@ public class Player1_Controller_Solo : NetworkBehaviour
     {
         if (QTE)
         {
-            bar.SetActive(true);
-            arrow.SetActive(true);
-            press.SetActive(true);
+            bar.gameObject.SetActive(true);
+            arrow.gameObject.SetActive(true);
+            press.gameObject.SetActive(true);
 
             if (Input.GetKeyDown(KeyCode.L) || quickTimePressed)
             {
@@ -275,9 +279,9 @@ public class Player1_Controller_Solo : NetworkBehaviour
                 if (arrow.GetComponent<arrow>().value >= (50 - press.GetComponent<clickdis>().size) && arrow.GetComponent<arrow>().value <= (50 + press.GetComponent<clickdis>().size))
                 {
                     print("goood");
-                    bar.SetActive(false);
-                    arrow.SetActive(false);
-                    press.SetActive(false);
+                    bar.gameObject.SetActive(false);
+                    arrow.gameObject.SetActive(false);
+                    press.gameObject.SetActive(false);
                     QTE = false;
                     result_pass = true;
                     quickTimePressed = false;
@@ -285,9 +289,9 @@ public class Player1_Controller_Solo : NetworkBehaviour
                 else
                 {
                     print("bad");
-                    bar.SetActive(false);
-                    arrow.SetActive(false);
-                    press.SetActive(false);
+                    bar.gameObject.SetActive(false);
+                    arrow.gameObject.SetActive(false);
+                    press.gameObject.SetActive(false);
                     QTE = false;
                     result_pass = false;
                     quickTimePressed = false;

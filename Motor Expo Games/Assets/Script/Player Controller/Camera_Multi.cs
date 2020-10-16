@@ -13,38 +13,30 @@ public class Camera_Multi : NetworkBehaviour
 
 	public Vector3 offset;
 
+	[Client]
 	void Start()
 	{
-		if(FindObjectOfType<Player1_Controller>() != null)
-        {
-			player1 = FindObjectOfType<Player1_Controller>();
-			lastPLayerPosition = player1.transform.position;
-		}
-        else
-        {
-			player1 = null;
-			player1Solo = FindObjectOfType<Player1_Controller_Solo>();
-			lastPLayerPosition = player1Solo.transform.position;
-		}
+		player1Solo = GetComponentInParent<Player1_Controller_Solo>();
+		lastPLayerPosition = player1Solo.transform.position;
 	}
 
 	void Update()
 	{
-		if(player1 != null)
-        {
+		this.gameObject.SetActive(true);
+		if (player1 != null)
+		{
 			distanceToMove = player1.transform.position.x - lastPLayerPosition.x;
-			transform.position = new Vector3(transform.position.x + distanceToMove, player1.transform.position.y, transform.position.z) + offset;
+			transform.position = new Vector3(transform.position.x, player1.transform.position.y, 0) + offset;
 			lastPLayerPosition = player1.transform.position;
 		}
-        else
-        {
-            {
-				distanceToMove = player1Solo.transform.position.x - lastPLayerPosition.x;
-				transform.position = new Vector3(transform.position.x + distanceToMove, player1Solo.transform.position.y, transform.position.z) + offset;
-				lastPLayerPosition = player1Solo.transform.position;
-			}
+		else
+		{
+
+			distanceToMove = player1Solo.transform.position.x - lastPLayerPosition.x;
+			transform.position = new Vector3(transform.position.x, player1Solo.transform.position.y, 0) + offset;
+			lastPLayerPosition = player1Solo.transform.position;
 		}
-		
+
 	}
     private void LateUpdate()
     {

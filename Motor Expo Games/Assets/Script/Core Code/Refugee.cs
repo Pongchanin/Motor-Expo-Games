@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Mirror;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -7,12 +8,17 @@ public enum Type
 {
     Normal, Hurry, Traveler
 }
-public class Refugee : MonoBehaviour
+public class Refugee : NetworkBehaviour
 {
     [Header("Player Reference")]
     [SerializeField]
-    Player1_Controller player;
+    Player1_Controller_Mult player;
     Player1_Controller_Solo playerSolo;
+    [SerializeField]
+    Player1_Controller_Mult[] players;
+    [SerializeField]
+    Player1_Controller_Mult[] temps = new Player1_Controller_Mult[4];
+
     public Type type;  
 
     [Header("Refugee Parameter")]
@@ -37,9 +43,10 @@ public class Refugee : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(GameObject.FindObjectOfType<Player1_Controller>() != null)
+        if(NetworkBehaviour.FindObjectOfType<Player1_Controller_Mult>() != null)
         {
-            player = GameObject.FindObjectOfType<Player1_Controller>();
+            player = NetworkBehaviour.FindObjectOfType<Player1_Controller_Mult>();
+            print("Player" + player.name);
         }
         else
         {
@@ -52,6 +59,8 @@ public class Refugee : MonoBehaviour
         timerRunning = true;
         dest = (int)Random.Range(0,  4);
         animate();
+        FindCorrectPlayer();
+
 
     }
 
@@ -68,6 +77,7 @@ public class Refugee : MonoBehaviour
         setRefugeeType();
         TimeCountDown();
         setSprite();
+        FindCorrectPlayer();
     }
     private void LateUpdate()
     {
@@ -283,6 +293,20 @@ public class Refugee : MonoBehaviour
             for (int i = 0; i < sprites.Length; i++)
             {
                 sprites[i].color = color;
+            }
+        }
+    }
+
+    [Command]
+    void FindCorrectPlayer()
+    {
+        temps = NetworkBehaviour.FindObjectsOfType<Player1_Controller_Mult>();
+        for (int i = 0; i < temps.Length; i++)
+        {
+            players[i] = temps[i];
+            if (players[i].isLocalPlayer)
+            {
+                player = players[i];
             }
         }
     }

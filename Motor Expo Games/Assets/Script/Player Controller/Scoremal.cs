@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using Mirror;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 //[Obsolete]
-public class Scoremal : MonoBehaviour
+public class Scoremal : NetworkBehaviour
 {
     private float timer;
     public float duration;
@@ -28,8 +29,16 @@ public class Scoremal : MonoBehaviour
 
         if (timer == 0 && timerstart)
         {
-            playerhitted.GetComponent<Player1_Controller>().scoreMultiplier = playermal;
-            Destroy(this.gameObject);
+            if(playerhitted.GetComponent<Player1_Controller_Solo>() != null)
+            {
+                playerhitted.GetComponent<Player1_Controller_Solo>().scoreMultiplier = playermal;
+                Destroy(this.gameObject);
+            }
+            else if (playerhitted.GetComponent<Player1_Controller_Mult>() != null)
+            {
+                playerhitted.GetComponent<Player1_Controller_Mult>().scoreMultiplier = playermal;
+                Destroy(this.gameObject);
+            }
         }
     }
 
@@ -45,10 +54,10 @@ public class Scoremal : MonoBehaviour
     {
         timer = duration;
         timerstart = true;
-        if(playerhitted.GetComponent<Player1_Controller>() != null)
+        if(playerhitted.GetComponent<Player1_Controller_Mult>() != null)
         {
-            playermal = playerhitted.GetComponent<Player1_Controller>().scoreMultiplier;
-            playerhitted.GetComponent<Player1_Controller>().scoreMultiplier += scoremulti;
+            playermal = playerhitted.GetComponent<Player1_Controller_Mult>().scoreMultiplier;
+            playerhitted.GetComponent<Player1_Controller_Mult>().scoreMultiplier += scoremulti;
         }
         else
         {

@@ -458,7 +458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
   runInBackground: 1
-  autoStartServerBuild: 1
+  autoStartServerBuild: 0
   showDebugMessages: 0
   serverTickRate: 30
   offlineScene: 
@@ -466,8 +466,8 @@ MonoBehaviour:
   transport: {fileID: 542643698}
   networkAddress: localhost
   maxConnections: 4
-  disconnectInactiveConnections: 0
-  disconnectInactiveTimeout: 60
+  disconnectInactiveConnections: 1
+  disconnectInactiveTimeout: 30
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 3989356090248189576, guid: 0e6a14441b081004095ffc77fa2c2ebe,
     type: 3}
