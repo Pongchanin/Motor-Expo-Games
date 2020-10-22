@@ -104,7 +104,7 @@ public class GameManager : NetworkBehaviour
         InvokeRepeating("SpawnItem", 0f, 3f);
     }
 
-    [Server]
+    [ClientRpc]
     void CountDown()
     {
         if (time >= 0)
