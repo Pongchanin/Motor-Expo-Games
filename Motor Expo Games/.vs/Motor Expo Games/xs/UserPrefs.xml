@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{931CE0BB-4591-DC16-E8EC-0E64E7322DAB}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Mirror/Components/Discovery/NetworkDiscovery.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Mirror/Components/Discovery/NetworkDiscoveryBase.cs">
     <Files>
-      <File FileName="Assets/Mirror/Components/Discovery/NetworkDiscovery.cs" Line="45" Column="70" />
+      <File FileName="Assets/Mirror/Components/Discovery/NetworkDiscovery.cs" Line="1" Column="1" />
       <File FileName="Assets/Mirror/Components/Discovery/NetworkDiscoveryBase.cs" Line="5" Column="19" />
     </Files>
     <Pads>
@@ -12,7 +12,7 @@
               <Node name="Mirror" expanded="True">
                 <Node name="Components" expanded="True">
                   <Node name="Discovery" expanded="True">
-                    <Node name="NetworkDiscovery.cs" selected="True" />
+                    <Node name="NetworkDiscoveryBase.cs" selected="True" />
                   </Node>
                 </Node>
               </Node>
@@ -31,7 +31,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d1f7a556-d2c0-4d13-9719-c31c3a8eb84b" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6a83200b-8a22-46a3-86c7-d837cde92b85" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
