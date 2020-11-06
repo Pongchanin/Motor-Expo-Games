@@ -430,7 +430,7 @@ MonoBehaviour:
   isStun: 0
   atBase: 0
   NumOfRescue: 0
-  picIndex: 0
+  picIndex: 15
   boatPics:
   - {fileID: 21300000, guid: 5c2f74d4b1ec54bf4a93fc300cd67131, type: 3}
   - {fileID: 21300000, guid: abb6835a6609844bf8dbccb590993547, type: 3}
@@ -470,7 +470,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b1190305802e0471285fda362fca252f, type: 3}
   currentSprite: {fileID: 0}
   boatSprite: {fileID: 0}
-  QTE: 0
   noquicktime: 0
   bar: {fileID: 0}
   arrow: {fileID: 0}
@@ -517,6 +516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5942147696149212752}
   - component: {fileID: 4268691330753222237}
+  - component: {fileID: 1881739058}
   m_Layer: 0
   m_Name: Player_Sprite
   m_TagString: Player
@@ -597,6 +597,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1881739058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4906397932021175287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb9f969be6750f4c85d769f9791c6bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  sprite: {fileID: 0}
+  playermulti: {fileID: 0}
 --- !u!1 &6243727367597343531
 GameObject:
   m_ObjectHideFlags: 0

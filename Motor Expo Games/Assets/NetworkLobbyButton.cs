@@ -6,12 +6,11 @@ using Mirror.Discovery;
 [System.Obsolete]
 public class NetworkLobbyButton : NetworkBehaviour
 {
-    readonly Dictionary<long, ServerResponse> discoveredServers = new Dictionary<long, ServerResponse>();
     NetworkRoomManager networkLobby;
     NetworkDiscovery networkDiscovery;
     NetworkManager networkManager;
 
-    
+    Dictionary<long, ServerResponse> discoveredServers = new Dictionary<long, ServerResponse>();
     public bool isPressed;
     // Start is called before the first frame update
     void Start()
@@ -25,11 +24,7 @@ public class NetworkLobbyButton : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        networkDiscovery.StartDiscovery();
-        foreach (ServerResponse info in discoveredServers.Values)
-        {
-            print(info.uri);
-        }
+        //networkDiscovery.StartDiscovery();
     }
     public void Host()
     {
@@ -45,7 +40,7 @@ public class NetworkLobbyButton : NetworkBehaviour
             networkDiscovery.AdvertiseServer();
             isPressed = true;
         }
-        networkLobby.StartClient();
+       // networkLobby.StartClient();
         
         
     }
