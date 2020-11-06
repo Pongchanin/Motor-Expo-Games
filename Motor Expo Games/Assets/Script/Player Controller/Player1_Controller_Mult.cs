@@ -25,14 +25,6 @@ public class Player1_Controller_Mult : NetworkBehaviour
     [SerializeField]
     private bool atBase;
     public int NumOfRescue;
-    [SerializeField]
-    int picIndex;
-    [SyncVar] public Sprite[] boatPics;
-    [SerializeField]
-    [SyncVar] GameObject currentSprite;
-    [SerializeField]
-    [SyncVar] public Sprite boatSprite;
-
     Vector2 movement;
 
     //----------------------
@@ -73,10 +65,6 @@ public class Player1_Controller_Mult : NetworkBehaviour
         press = NetworkBehaviour.FindObjectOfType<Press>();
 
         moveSpeed = boatstatus.Player1.movementspeed * 3;
-        picIndex = PlayerPrefs.GetInt("BoatPic");
-        currentSprite = sprite;
-        boatSprite = currentSprite.GetComponentInChildren<SpriteRenderer>().sprite;
-
 
         if (bar != null)
         {
@@ -104,7 +92,6 @@ public class Player1_Controller_Mult : NetworkBehaviour
         {
             return;
         }
-            boatSprite = boatPics[picIndex];
             if ((joystick.input.x > 0 || joystick.input.x < 0) && isStun != true && !QTE)
             {
                 transform.Translate(new Vector3(joystick.input.x * (moveSpeed) * Time.deltaTime, 0f, 0f));
@@ -146,7 +133,7 @@ public class Player1_Controller_Mult : NetworkBehaviour
 
             quicktimeevent();
             turnSprite();
-            SetSprite();
+            //SetSprite();
     }
         
     [Command]
@@ -335,7 +322,7 @@ public class Player1_Controller_Mult : NetworkBehaviour
             passenger[i] = Game
         }*/
     }
-
+    /*
     [Command]
     void SetSprite()
     {
@@ -369,7 +356,7 @@ public class Player1_Controller_Mult : NetworkBehaviour
             }
 
         }
-    }
+    }*/
     [ClientRpc]
     public override void OnStartLocalPlayer()
     {
