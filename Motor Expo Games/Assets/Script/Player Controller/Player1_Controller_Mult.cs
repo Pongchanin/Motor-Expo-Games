@@ -25,6 +25,7 @@ public class Player1_Controller_Mult : NetworkBehaviour
     [SerializeField]
     private bool atBase;
     public int NumOfRescue;
+    /*
     [SerializeField]
     int picIndex;
     [SyncVar] public Sprite[] boatPics;
@@ -32,7 +33,7 @@ public class Player1_Controller_Mult : NetworkBehaviour
     [SyncVar] GameObject currentSprite;
     [SerializeField]
     [SyncVar] public Sprite boatSprite;
-
+    */
     Vector2 movement;
 
     //----------------------
@@ -42,7 +43,7 @@ public class Player1_Controller_Mult : NetworkBehaviour
     public bool noquicktime = false;
     public Bar bar;
     public ArrowObj arrow;
-    public Press press;
+    //public Press press;
     public GameObject sprite;
 
     Bar[] bars;
@@ -70,12 +71,12 @@ public class Player1_Controller_Mult : NetworkBehaviour
         joybutton = FindObjectOfType<JoyButton>();
         bar = NetworkBehaviour.FindObjectOfType<Bar>();
         arrow = NetworkBehaviour.FindObjectOfType<ArrowObj>();
-        press = NetworkBehaviour.FindObjectOfType<Press>();
+        //press = NetworkBehaviour.FindObjectOfType<Press>();
 
         moveSpeed = boatstatus.Player1.movementspeed * 3;
-        picIndex = PlayerPrefs.GetInt("BoatPic");
-        currentSprite = sprite;
-        boatSprite = currentSprite.GetComponentInChildren<SpriteRenderer>().sprite;
+        //picIndex = PlayerPrefs.GetInt("BoatPic");
+        //currentSprite = sprite;
+        //boatSprite = currentSprite.GetComponentInChildren<SpriteRenderer>().sprite;
 
 
         if (bar != null)
@@ -86,10 +87,10 @@ public class Player1_Controller_Mult : NetworkBehaviour
         {
             arrow.gameObject.SetActive(false);
         }
-        if(press != null)
+        /*if(press != null)
         {
             press.gameObject.SetActive(false);
-        }
+        }*/
         if(moveSpeed == 0)
         {
             moveSpeed = 10;
@@ -104,7 +105,7 @@ public class Player1_Controller_Mult : NetworkBehaviour
         {
             return;
         }
-            boatSprite = boatPics[picIndex];
+            //boatSprite = boatPics[picIndex];
             if ((joystick.input.x > 0 || joystick.input.x < 0) && isStun != true && !QTE)
             {
                 transform.Translate(new Vector3(joystick.input.x * (moveSpeed) * Time.deltaTime, 0f, 0f));
@@ -146,7 +147,7 @@ public class Player1_Controller_Mult : NetworkBehaviour
 
             quicktimeevent();
             turnSprite();
-            SetSprite();
+            //SetSprite();
     }
         
     [Command]
@@ -275,7 +276,7 @@ public class Player1_Controller_Mult : NetworkBehaviour
     {
         if (isLocalPlayer)
         {
-            if (QTE)
+           /* if (QTE)
             {
                 bar.gameObject.SetActive(true);
                 arrow.gameObject.SetActive(true);
@@ -305,10 +306,11 @@ public class Player1_Controller_Mult : NetworkBehaviour
                         quickTimePressed = false;
                     }
                 }
-            }
+            }*/
         }
        
     }
+    [ClientRpc]
     void turnSprite() {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 10;
@@ -335,7 +337,7 @@ public class Player1_Controller_Mult : NetworkBehaviour
             passenger[i] = Game
         }*/
     }
-
+    /*
     [Command]
     void SetSprite()
     {
@@ -369,7 +371,7 @@ public class Player1_Controller_Mult : NetworkBehaviour
             }
 
         }
-    }
+    }*/
     [ClientRpc]
     public override void OnStartLocalPlayer()
     {
@@ -409,10 +411,10 @@ public class Player1_Controller_Mult : NetworkBehaviour
         {
             arrow = arrows[0];
         }
-        if (presses.Length > 0)
+        /*if (presses.Length > 0)
         {
             press = presses[0];
-        }
+        }*/
     }
 }
 

@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using Mirror.Discovery;
+using UnityEngine.UI;
+
 [System.Obsolete]
-public class NetworkLobbyButton : NetworkBehaviour
+public class NetworkLobbyButton : NetworkDiscovery
 {
     NetworkRoomManager networkLobby;
     NetworkDiscovery networkDiscovery;
     NetworkManager networkManager;
+    NetworkDiscoveryHUD networkDiscoveryHUD;
+    public Text jionBtnText;
 
-    Dictionary<long, ServerResponse> discoveredServers = new Dictionary<long, ServerResponse>();
+    [SerializeField]
+    ServerResponse serverResponse;
+    
     public bool isPressed;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +24,7 @@ public class NetworkLobbyButton : NetworkBehaviour
         networkLobby = GameObject.FindObjectOfType<NetworkRoomManager>();
         networkDiscovery = FindObjectOfType<NetworkDiscovery>();
         networkManager = FindObjectOfType<NetworkManager>();
+        networkDiscoveryHUD = FindObjectOfType<NetworkDiscoveryHUD>();
         InvokeRepeating("Discovery", 0, 1.5f);
     }
 
@@ -34,20 +41,43 @@ public class NetworkLobbyButton : NetworkBehaviour
     }
     public void Join()
     {
-        if(discoveredServers.Count == 0)
+        if(networkDiscoveryHUD.discoveredServers.Count != 0)
         {
-            networkManager.StartClient(discoveredServers[0].uri);
-            networkDiscovery.AdvertiseServer();
+            networkManager.StartClient(serverResponse.uri);
+            //networkDiscovery.AdvertiseServer();
+            isPressed = true;
+
+        }
+        else
+        {
+            networkLobby.StartClient();
             isPressed = true;
         }
-       // networkLobby.StartClient();
+       
         
         
     }
     void Discovery()
     {
         networkDiscovery.StartDiscovery();
-        
-        
+        if(networkDiscoveryHUD.discoveredServers.Count > 0)
+        {
+
+        }
+        print(networkDiscoveryHUD.discoveredServers.Count);
+        foreach (ServerResponse info in networkDiscoveryHUD.discoveredServers.Values)
+        {
+            if (networkDiscoveryHUD.discoveredServers.Count > 0)
+            {
+                jionBtnText.color = Color.red;
+                jionBtnText.text = info.EndPoint.Address.ToString();
+            }
+            print(info.EndPoint.Address.ToString());
+            serverResponse = info;
+
+        }
+
+
+
     }
 }

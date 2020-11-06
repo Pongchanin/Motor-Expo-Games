@@ -37,7 +37,7 @@ public class spriteCheat : MonoBehaviour
         }
         else
         {
-            sprite.sprite = playermulti.boatSprite;
+            //sprite.sprite = playermulti.boatSprite;
         }
     }
 }
