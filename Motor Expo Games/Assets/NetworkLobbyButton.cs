@@ -6,7 +6,7 @@ using Mirror.Discovery;
 using UnityEngine.UI;
 
 [System.Obsolete]
-public class NetworkLobbyButton : NetworkDiscovery
+public class NetworkLobbyButton : NetworkBehaviour
 {
     NetworkRoomManager networkLobby;
     NetworkDiscovery networkDiscovery;

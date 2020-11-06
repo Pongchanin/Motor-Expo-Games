@@ -34,8 +34,8 @@ namespace Mirror.Discovery
             if (NetworkServer.active || NetworkClient.active)
                 return;
 
-            if (!NetworkClient.isConnected && !NetworkServer.active && !NetworkClient.active)
-                DrawGUI();
+            /*if (!NetworkClient.isConnected && !NetworkServer.active && !NetworkClient.active)
+                DrawGUI();*/
         }
 
         void DrawGUI()
