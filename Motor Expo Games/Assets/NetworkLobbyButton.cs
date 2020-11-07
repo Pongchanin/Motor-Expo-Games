@@ -5,7 +5,6 @@ using Mirror;
 using Mirror.Discovery;
 using UnityEngine.UI;
 
-[System.Obsolete]
 public class NetworkLobbyButton : NetworkBehaviour
 {
     NetworkRoomManager networkLobby;
@@ -25,7 +24,7 @@ public class NetworkLobbyButton : NetworkBehaviour
         networkDiscovery = FindObjectOfType<NetworkDiscovery>();
         networkManager = FindObjectOfType<NetworkManager>();
         networkDiscoveryHUD = FindObjectOfType<NetworkDiscoveryHUD>();
-        InvokeRepeating("Discovery", 0, 1.5f);
+        InvokeRepeating("Discovery", 0, .5f);
     }
 
     // Update is called once per frame
@@ -35,8 +34,7 @@ public class NetworkLobbyButton : NetworkBehaviour
     }
     public void Host()
     {
-        networkManager.StartHost();
-        networkDiscovery.AdvertiseServer();
+        networkDiscoveryHUD.Host();
         isPressed = true;
     }
     public void Join()
@@ -60,10 +58,6 @@ public class NetworkLobbyButton : NetworkBehaviour
     void Discovery()
     {
         networkDiscovery.StartDiscovery();
-        if(networkDiscoveryHUD.discoveredServers.Count > 0)
-        {
-
-        }
         print(networkDiscoveryHUD.discoveredServers.Count);
         foreach (ServerResponse info in networkDiscoveryHUD.discoveredServers.Values)
         {

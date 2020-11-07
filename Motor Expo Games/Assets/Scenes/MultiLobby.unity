@@ -487,7 +487,7 @@ MonoBehaviour:
   autoCreatePlayer: 1
   playerSpawnMethod: 1
   spawnPrefabs: []
-  showRoomGUI: 0
+  showRoomGUI: 1
   minPlayers: 1
   roomPlayerPrefab: {fileID: 8891808049374585147, guid: 5ea8c56bf7f38604f8f79ccce5e9b6cb,
     type: 3}
@@ -1681,13 +1681,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28371d0f94ccfa44bbefb8c0250d38b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secretHandshake: -5291348921857734100
-  serverBroadcastListenPort: 47777
-  ActiveDiscoveryInterval: 3
-  transport: {fileID: 0}
-  OnServerFound:
-    m_PersistentCalls:
-      m_Calls: []
+  syncMode: 0
+  syncInterval: 0.1
   jionBtnText: {fileID: 2003531841}
   isPressed: 0
 --- !u!4 &1534123565

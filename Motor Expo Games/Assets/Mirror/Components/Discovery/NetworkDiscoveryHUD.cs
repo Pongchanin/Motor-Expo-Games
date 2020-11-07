@@ -34,8 +34,8 @@ namespace Mirror.Discovery
             if (NetworkServer.active || NetworkClient.active)
                 return;
 
-            /*if (!NetworkClient.isConnected && !NetworkServer.active && !NetworkClient.active)
-                DrawGUI();*/
+            if (!NetworkClient.isConnected && !NetworkServer.active && !NetworkClient.active)
+                DrawGUI();
         }
 
         void DrawGUI()
@@ -91,5 +91,13 @@ namespace Mirror.Discovery
             // Note that you can check the versioning to decide if you can connect to the server or not using this method
             discoveredServers[info.serverId] = info;
         }
+
+        public void Host()
+        {
+            discoveredServers.Clear();
+            NetworkManager.singleton.StartHost();
+            networkDiscovery.AdvertiseServer();
+        }
+        
     }
 }
